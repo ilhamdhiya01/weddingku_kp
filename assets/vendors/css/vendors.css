@@ -1,3 +1,4 @@
+
 /* My fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
@@ -241,6 +242,70 @@
     color: #FFFFFF;
     background-color: #EBA1A1;
     font-size: 11px;
+}
+/* / */
+/* left card */
+.section-profile-vendor .card-profile-vendor .card-left {
+    background-color: #FEF3EC;
+}
+.section-profile-vendor .card-profile-vendor .card-left-1 {
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+.section-profile-vendor .card-profile-vendor .card-left-1 p {
+    font-size: 14px;
+    position: relative;
+    left: 10px;
+    color: #7e7b7b;
+}
+.section-profile-vendor .card-profile-vendor .card-left-2 {
+    position: relative;
+    left: 30px;
+    top: 15px;
+}
+.section-profile-vendor .card-profile-vendor .card-left-2 .img-style-vendor .fa-check-circle{
+    color: #619aa7;
+    font-size: 17px;
+}
+.section-profile-vendor .card-profile-vendor .card-left-2 .img-style-vendor span {
+    font-family: 'Great Vibes', cursive;
+    color:#252525;
+    font-size: 20px;
+} 
+.section-profile-vendor .card-profile-vendor .card-left-2 .pay {
+    max-width: 80%;
+    height: 50px;
+}
+.section-profile-vendor .card-profile-vendor .card-left-2 .pay .span-1,
+.section-profile-vendor .card-profile-vendor .card-left-2 .pay .span-2,
+.section-profile-vendor .card-profile-vendor .card-left-2 .pay .span-3{
+    color: #7e7b7b;
+    font-size: 13px;
+}
+.section-profile-vendor .card-profile-vendor .card-left-2 .pay small {
+    position: relative;
+    color: #b1b0b0;
+    right: 8px;
+}
+.section-profile-vendor .card-profile-vendor .card-left-2 .pay .icon-text i {
+    color: #619aa7;
+}
+.section-profile-vendor .card-profile-vendor .card-left-3 .top-menu {
+    border-bottom: 1px solid #cac8c8;
+    padding: 10px 0;
+}
+.section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3{
+    text-align: center;
+}
+.section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3 a{
+    font-size: 15px;
+    text-decoration: none;
+    color: #4b4949;
+}
+.section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3 small {
+    position: relative;
+    left: 40px;
 }
 /* / */
 /* Mobile version */

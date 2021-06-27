@@ -1,0 +1,344 @@
+/* All version */
+/* Promo title */
+.section-promo {
+    padding-top: 35px;
+}
+.promo-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.section-promo .promo-title {
+    width: 100%;
+    padding-bottom: 15px;
+}
+.section-promo .promo-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+}
+.section-promo .promo-title p {
+    font-size: 15px;
+}
+/* / */
+/* Find Vendor */
+.find-kategori {
+    padding-bottom: 10px;
+}
+.find-kategori .icon-find {
+    position: relative;
+    left: 10px;
+}.find-kategori .icon-find i {
+    font-size: 15px;
+    color: #555555;
+}
+.find-kategori .kategori-option #kategori{
+    border: none;
+    position: relative;
+    right: 75px;
+    top: -8px;
+    font-size: 11px;
+}
+.find-kategori .btn-find-kategori a {
+    border: 1px solid gray;
+    padding: 5px 10px;
+    text-decoration: none;
+    position: relative;
+    /* left: 50px; */
+    top:-3px;
+    font-size: 11px;
+    background-color: #555555;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+.find-kategori .btn-find-kategori a:hover {
+    opacity: 0.8;
+}
+/* / */
+/* Card promo */
+.card-promo .promo-info{
+    padding: 13px 12px;
+}
+.card-promo .promo-info p {
+    font-weight: bold;
+    font-size: 11px;
+}
+.card-promo .col-md-3 {
+    padding-bottom: 25px;
+}
+.card-promo .card {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 265px;
+}
+.card-promo .card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 150px;
+    position: relative;
+}
+.card-promo .promo-info span {
+    color: #000000;
+    font-size: 9px;
+}
+.card-promo .promo-info .tgl-value {
+    color: gray;
+}
+.card-promo .btn-selengkapnya {
+    padding: 0 12px;
+    padding-bottom: 13px;
+}
+.card-promo .btn-selengkapnya a {
+    border: 1px solid #EBA1A1 !important;
+    color: #EBA1A1 !important;
+    font-size: 11px;
+    font-weight: bold;
+}
+.card-promo .btn-selengkapnya a:hover {
+    background-color: #EBA1A1;
+    color: #FFFFFF !important;
+}
+.card-promo .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    /* max-width: 100%; */
+    width: 50px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top:10px;
+}
+.card-promo .img-style .span-disc-1 {
+    font-size: 8px;
+    color: white;
+    font-size: 10px;
+    position: relative;
+    top:-8px;
+}
+.card-promo .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 9px;
+    position: relative;
+    top:-17px;
+} 
+.card-promo .kota {
+    position: relative;
+    top: 130px;
+    left:10px;
+    font-size: 11px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    position: absolute;
+}
+.card-promo .info-promo {
+    padding-left: 8px;
+    position: relative;
+    top: 10px;
+}
+.card-promo .info-promo h4 {
+    font-size: 13px;
+    color: #000000;
+}
+.card-promo .info-promo .vendor {
+    color: #737373;
+    font-size: 10px;
+    position: relative;
+    top: -10px;
+}
+.card-promo .info-promo .promo-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.card-promo .info-promo .promo-harga .after-price{
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
+}
+/* / */
+/* / */
+/* mobile version */
+@media(max-width:600px) {
+    .find-kategori {
+        padding-bottom: 10px;
+        position: relative;
+        left: 120px;
+    }
+    .find-kategori .kategori-option #kategori{
+        border: none;
+        position: relative;
+        right: 100px;
+        top: -8px;
+        font-size: 14px;
+        width: 150px;
+    }
+    .find-kategori .icon-find i {
+        position: relative;
+        right: 100px;
+    }
+    .card-promo .col-6 {
+        padding: 5px 5px;
+    }
+    .promo-desktop-v {
+        display: none;
+    }
+}
+@media(min-width:600px) {
+    .promo-mobile-v {
+        display: none;
+    }
+}
+/* / */
+/* desktop version */
+@media (min-width: 992px) {
+    /* Promo title */
+    .section-promo {
+        padding-top: 55px;
+    }
+    .promo-container {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    .section-promo .promo-title {
+        width: 40%;
+        padding-bottom: 25px;
+    }
+    .section-promo .promo-title h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #000000;
+    }
+    .section-promo .promo-title p {
+        font-size: 17px;
+    }
+    /* / */
+    /* Find Vendor */
+    .find-kategori {
+        padding-bottom: 20px;
+    }
+    .find-kategori .icon-find {
+        position: relative;
+        left: 10px;
+    }.find-kategori .icon-find i {
+        font-size: 20px;
+        color: #555555;
+    }
+    .find-kategori .kategori-option #kategori{
+        border: none;
+        position: relative;
+        right: 75px;
+        top: -8px;
+        font-size: 14px;
+
+    }
+    .find-kategori .btn-find-kategori a {
+        border: 1px solid gray;
+        padding: 5px 10px;
+        text-decoration: none;
+        position: relative;
+        right: 90px;
+        top:-3px;
+        font-size: 13px;
+        background-color: #555555;
+        color: #FFFFFF;
+        border-radius: 5px;
+    }
+    .find-kategori .btn-find-kategori a:hover {
+        opacity: 0.8;
+    }
+    /* / */
+    /* Card promo*/
+    .card-promo .card {
+        height: 305px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+    .card-promo .col-md-3 {
+        padding-bottom: 30px;
+    }
+    .card-promo a {
+        text-decoration: none;
+    }
+    .card-promo .card img {
+        height: 170px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        position: relative;
+    }
+    .card-promo .img-style {
+        border: 1px solid #f35a50;
+        background: #f35a50;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        /* max-width: 100%; */
+        width: 65px;
+        height: 40px;
+        padding: 5px 5px;
+        position: absolute;
+        top:10px;
+    }
+    .card-promo .img-style .span-disc-1 {
+        font-size: 9px;
+        color: white;
+        font-size: 11px;
+        position: relative;
+        top:-8px;
+    }
+    .card-promo .img-style .span-disc-2 {
+        color: white;
+        position: relative;
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+        top:-17px;
+    } 
+    .card-promo .kota {
+        position: relative;
+        top: 145px;
+        left:1rem;
+        font-size: 12px;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        position: absolute;
+    }
+    .card-promo .info-promo {
+        padding-left: 10px;
+        position: relative;
+        top: 15px;
+    }
+    .card-promo .info-promo h4 {
+        font-size: 16px;
+        color: #000000;
+    }
+    .card-promo .info-promo .vendor {
+        color: #737373;
+        font-size: 11px;
+        position: relative;
+        top: -10px;
+    }
+    .card-promo .info-promo .promo-harga .before-price {
+        color: #737373;
+        font-size: 10px;
+        text-decoration: line-through;
+    }
+    .card-promo .info-promo .promo-harga .after-price{
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        /* top: -5px; */
+    }
+    /* / */
+    /* / */
+}
+/* / */

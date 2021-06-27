@@ -1,0 +1,442 @@
+ /* daftar events */
+.daftar-paket {
+    height: 20px;
+}
+.daftar-paket .container-paket {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+.text-daftar-paket {
+    position: relative;
+    top: 15px;
+}
+.text-daftar-paket a{
+    padding-right: 10px;
+    font-size: 14px;
+}
+.text-daftar-paket span {
+    color: black;
+    font-size: 13px;
+}
+.text-daftar-paket a {
+    color: #EBA1A1;
+}
+.text-daftar-paket .span-1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    color: #555555;
+}
+.text-daftar-paket .span-2 {
+    color: #777474;
+    font-size: 13px;
+    position: relative;
+    right: 10px;
+}
+/* / */
+/* paket */
+.paket {
+    padding: 0 10px;
+    padding-top: 30px;
+}
+/* / */
+/* paket title */
+.paket-title {
+    padding-bottom: 20px;
+}
+.paket-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+.paket-title a {
+    color: #000000;
+    border: 1px solid #FFFFFF;
+    border-radius: 100%;
+    padding: 10px 10px;
+    font-size: 14px;
+    position: relative;
+    left: 10px;
+}
+.paket-title a:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.close span {
+    font-size: 20px;
+    color: #222121 !important;
+}
+/* .paket-modal .modal-body {
+    height: 80vh;
+} */
+.paket-modal .modal-title h3 {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    /* top: -10px; */
+    /* padding-bottom: 10px; */
+
+}
+.paket-modal .close {
+    margin-left: auto;
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+.paket-modal .card img {
+    width: 30px;
+    height: 30px;
+}
+.paket-modal .card span {
+    text-align: center;
+    position: relative;
+    padding-top: 10px;
+    font-size: 9px;
+}
+.paket-modal .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px 0;
+    border: none;
+}
+.paket-modal .col-md-2 {
+    padding-bottom: 5px;
+}
+.paket-modal .col-md-2 a {
+    text-decoration: none;
+}
+.paket-modal .card:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+/* / */
+/* / */
+/* jenis paket */
+.jenis-paket {
+    padding-bottom: 20px;
+}
+.jenis-paket .btn-paket{
+    color: #E77472;
+    /* display: block; */
+    border: 1px solid #E77472;
+    width: 110px;
+    height: 40px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-weight: bold;
+    z-index: 999;
+}
+.jenis-paket a {
+    text-decoration: none;
+}
+.jenis-paket .btn-paket:hover {
+    background-color: #E77472;
+    color: #FFFFFF !important;
+}
+
+/* Card paket */
+.card-paket {
+    /* padding: 0 5px; */
+    padding: 0 8px;
+}
+.card-paket .card {
+    height: 290px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+.card-paket a {
+    text-decoration: none;
+}
+.card-paket .card img{
+    height: 170px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.card-paket .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 50px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 8px;
+}
+.card-paket .img-style .span-disc-1 {
+    font-size: 10px;
+    color: white;
+    position: relative;
+    top:-8px;
+}
+.card-paket .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 10px;
+    position: relative;
+    top:-17px;
+} 
+.card-paket .kota {
+    position: absolute;
+    top: 145px;
+    /* top: -65px; */
+    left:1rem;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.card-paket .info-paket {
+    padding-left: 7px;
+    position: relative;
+    top: 10px;
+}
+.card-paket .info-paket h4 {
+    font-size: 13px;
+    color: #000000;
+}
+.card-paket .info-paket .vendor {
+    color: #737373;
+    font-size: 10px;
+    position: relative;
+    top: -10px;
+}
+.card-paket .info-paket .paket-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.card-paket .info-paket .paket-harga .after-price{
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
+}
+/* / */
+
+@media(max-width:600px) {
+    .card-paket .col-md-3 {
+        display: none;
+    }
+    .card-paket .col-6 {
+        padding: 4px 4px;
+    }
+    .paket-modal .modal-d-v {
+        display: none;
+    }
+}
+@media(min-width:600px){
+    .card-paket .col-6 {
+        display: none;
+    }
+    .paket-modal .modal-m-v {
+        display: none;
+    }
+}
+@media (min-width: 992px) {
+    /* daftar events */
+    .daftar-paket {
+        height: 45px;
+    }
+    .daftar-paket .container-paket {
+        padding: 0 70px;
+        display: flex;
+        align-items: center;
+    }
+    .text-daftar-paket {
+        position: relative;
+        top: 30px;
+    }
+    .text-daftar-paket a{
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    .text-daftar-paket span {
+        color: black;
+        font-size: 13px;
+    }
+    .text-daftar-paket a {
+        color: #EBA1A1;
+    }
+    .text-daftar-paket .span-1 {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 15px;
+        color: #555555;
+    }
+    .text-daftar-paket .span-2 {
+        color: #777474;
+        font-size: 13px;
+        position: relative;
+        right: 10px;
+    }
+    /* / */
+    /* paket */
+    .paket {
+        padding: 0 70px;
+        padding-top: 30px;
+    }
+    /* / */
+    /* paket title */
+    .paket-title {
+        padding-bottom: 35px;
+    }
+    .paket-title h2 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    /* / */
+    /* jenis paket */
+    .jenis-paket {
+        padding-bottom: 30px;
+    }
+    .jenis-paket .btn-paket{
+        color: #E77472;
+        /* display: block; */
+        border: 1px solid #E77472;
+        width: 120px;
+        height: 45px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px;
+        font-weight: bold;
+    }
+    .jenis-paket a {
+        text-decoration: none;
+    }
+    /* Card paket */
+    .card-paket .card {
+        height: 305px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+    .card-paket .col-md-3 {
+        padding-bottom: 30px;
+    }
+    .card-paket a {
+        text-decoration: none;
+    }
+    .card-paket .card img{
+        height: 170px;
+        position: relative;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .card-paket .img-style {
+        border: 1px solid #f35a50;
+        background: #f35a50;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 65px;
+        height: 40px;
+        padding: 5px 5px;
+        position: absolute;
+        top: 8px;
+    }
+    .card-paket .img-style .span-disc-1 {
+        font-size: 9px;
+        color: white;
+        font-size: 11px;
+        position: relative;
+        top:-8px;
+    }
+    .card-paket .img-style .span-disc-2 {
+        color: white;
+        position: relative;
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+        top:-17px;
+    } 
+    .card-paket .kota {
+        position: absolute;
+        top: 145px;
+        /* top: -65px; */
+        left:1rem;
+        font-size: 12px;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    .card-paket .info-paket {
+        padding-left: 10px;
+        position: relative;
+        top: 10px;
+    }
+    .card-paket .info-paket h4 {
+        font-size: 16px;
+        color: #000000;
+    }
+    .card-paket .info-paket .vendor {
+        color: #737373;
+        font-size: 12px;
+        position: relative;
+        top: -10px;
+    }
+    .card-paket .info-paket .paket-harga .before-price {
+        color: #737373;
+        font-size: 10px;
+        text-decoration: line-through;
+    }
+    .card-paket .info-paket .paket-harga .after-price{
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        /* top: -3px; */
+    }
+    /* / */
+     /* modal */
+    .paket-modal .card span {
+        font-size: 12px;
+    }
+    .paket-title a {
+        font-size: 20px; 
+    }
+    .paket-modal .modal-title h3 {
+        font-size: 30px;
+        font-weight: bold;
+        position: relative;
+        /* top: -10px; */
+        /* padding-bottom: 10px; */
+
+    }
+    .paket-modal .close {
+        margin-left: auto;
+        position: relative;
+        top: 10px;
+    }
+    .paket-modal .card img {
+        width: 40px;
+        height: 40px;
+    }
+    .paket-modal .card span {
+        text-align: center;
+        position: relative;
+        left: 10px;
+        padding-top: 10px;
+    }
+    .paket-modal .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:20px 0;
+        border: none;
+    }
+    .paket-modal .col-md-2 {
+        padding-bottom: 5px;
+    }
+    .paket-modal .col-md-2 a {
+        text-decoration: none;
+    }
+    .paket-modal .card:hover {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+    /* / */
+}

@@ -1,0 +1,268 @@
+/* All version */
+/* daftar events */
+.daftar-events {
+    height: 20px;
+}
+.text-daftar-events {
+    position: relative;
+    top: 20px;
+}
+.text-daftar-events a{
+    padding-right: 10px;
+    font-size: 14px;
+}
+.text-daftar-events span {
+    color: black;
+    font-size: 13px;
+}
+.text-daftar-events a {
+    color: #EBA1A1;
+}
+.text-daftar-events .span-1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    color: #555555;
+    position: relative;
+    right: 10px;
+}
+.text-daftar-events .span-2 {
+    color: #777474;
+    font-size: 13px;
+    position: relative;
+    right: 10px;
+}
+/* / */
+/* section events */
+.events-title {
+    padding-top: 60px;
+} 
+.events-title h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.events-title p {
+    color: #6e6a6a;
+    font-size: 15px;
+}
+.section-events .card-events {
+    padding-bottom: 20px;
+}
+.card-events .card {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.card-events .card .img-events {
+    width: 343px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-events .card .img-events:hover {
+    opacity: 0.8;
+}
+.info-event  span{
+    color: #000000;
+    font-size: 7px;
+}
+.card-events .btn-event {
+    margin-top: 12px;
+}
+.card-body .periode-tgl {
+    padding-bottom: 5px;
+}
+.card-body .periode-tgl span{
+    font-size: 14px;
+    color: #978484;
+}
+.card-body .nama-event h3{
+    font-size: 19px;
+    color: #ECACA6;
+    font-weight: bold;
+}
+.card-events .nama-event a {
+    text-decoration: none;
+}
+.card-events .info-event .info-lokasi {
+    color: #6e6a6a;
+    font-size: 13px;
+}
+.card-events .info-event .info {
+    color: #6e6a6a;
+    font-size: 13px;
+    position: relative;
+    top: 5px;
+}
+.card-events .btn-event {
+    position: relative;
+    top: 3px;
+}
+.card-events .btn-event a {
+    text-decoration: none;
+    border: 1px solid #ECACA6;
+    color: #ECACA6;
+    padding: 8px 8px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.card-events .btn-event a:hover {
+    color: #FFFFFF;
+    background-color: #ECACA6;
+}
+.card-events .btn-event .rsvp {
+    position: relative;
+    right: 40px;
+    text-transform: uppercase;
+}
+/* / */
+/* / */
+@media(max-width:600px) {
+    .card-events .info-event-d-v {
+        display: none;
+    }
+    .card .nama-event-d-v {
+        display: none;
+    }
+}
+@media(min-width:600px){
+    .card-events .info-event-m-v {
+        display: none;
+    }
+    .card .nama-event-m-v {
+        display: none;
+    }
+}
+/* desktop version */
+@media (min-width: 992px) {
+    /* daftar events */
+    .daftar-events {
+        height: 45px;
+    }
+    .daftar-events .container {
+        padding: 0 55px;
+        display: flex;
+        align-items: center;
+    }
+    .text-daftar-events {
+        position: relative;
+        top: 30px;
+    }
+    .text-daftar-events a{
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    .text-daftar-events span {
+        color: black;
+        font-size: 13px;
+    }
+    .text-daftar-events a {
+        color: #EBA1A1;
+    }
+    .text-daftar-events .span-1 {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 15px;
+        color: #555555;
+    }
+    .text-daftar-events .span-2 {
+        color: #777474;
+        font-size: 13px;
+        position: relative;
+        right: 10px;
+    }
+    /* / */
+    /* section events */
+    .section-events .container{
+        padding: 0 55px;
+    }
+    .events-title {
+        padding-top: 60px;
+        padding-bottom: 10px;
+    } 
+    .events-title h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .events-title p {
+        color: #6e6a6a;
+    }
+    .section-events .card-events {
+        padding-bottom: 25px;
+    }
+    .card-events .card {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .card-events .card .img-events {
+        width: 450px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 0px;
+    }
+    .card-events .card .img-events:hover {
+        opacity: 0.8;
+    }
+    .info-event  span{
+        color: #000000;
+        font-size: 14px;
+    }
+    .card-events .btn-event {
+        margin-top: 12px;
+    }
+    .card-body .periode-tgl {
+        padding-bottom: 5px;
+    }
+    .card-body .periode-tgl span{
+        font-size: 15px;
+        color: #978484;
+    }
+    .card-body .nama-event h3{
+        font-size: 22px;
+        color: #ECACA6;
+        font-weight: bold;
+    }
+    .card-events .nama-event a {
+        text-decoration: none;
+    }
+    .card-events .info-event .info-lokasi {
+        color: #6e6a6a;
+        font-size: 14px;
+    }
+    .card-events .info-event .info {
+        color: #6e6a6a;
+        font-size: 14px;
+        position: relative;
+        top: 5px;
+    }
+    .card-events .btn-event {
+        position: relative;
+        top: 15px;
+    }
+    .card-events .btn-event a {
+        text-decoration: none;
+        border: 1px solid #ECACA6;
+        color: #ECACA6;
+        padding: 8px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    .card-events .btn-event a:hover {
+        color: #FFFFFF;
+        background-color: #ECACA6;
+    }
+    .card-events .btn-event .rsvp {
+        position: relative;
+        right: 110px;
+        text-transform: uppercase;
+    }
+    .card-events .card-body {
+        margin-left: 10px;
+    }
+    /* / */
+}
+/* / */

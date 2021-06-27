@@ -1,0 +1,955 @@
+/* Banner */
+.banner-promo {
+    margin-top: 9px;
+}
+
+.banner-promo .img-banner-promo {
+    height: 130px;
+}
+/* / */
+/* Card option */
+.store-option {
+    margin-top: 15px;
+}
+.options .content .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.options .content .card img {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: 10px;
+}
+.options .content {
+    text-decoration: none;
+}
+
+.options .content .content-1 {
+    position: relative;
+    left: 5px;
+}
+.options .content .content-2 {
+    position: relative;
+    right: 5px;
+}
+.options .content .card small {
+    font-size: 10px;
+    color: #535151;
+    padding: 5px 0;
+    /* margin-top: -15px; */
+}
+/* / */
+/* section paket */
+.paket-store .judul {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.paket-store .judul span {
+    font-size: 12px;
+    color: #000000;
+    position: relative;
+    top: -5px;
+}
+.paket-store .judul a {
+    float: right;
+    position: relative;
+    top: 50px;
+    right: 5px;
+}
+.paket-store {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+}
+.paket-store .card {
+    height: 295px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.paket-store a {
+    text-decoration: none;
+}
+.paket-store .card img{
+    height: 160px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.paket-store .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 55px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 8px;
+}
+.paket-store .img-style .span-disc-1 {
+    font-size: 8px;
+    color: white;
+    position: relative;
+    top:-8px;
+}
+.paket-store .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 10px;
+    position: relative;
+    top:5px;
+} 
+.paket-store .kota {
+    position: absolute;
+    top: 135px;
+    /* top: -65px; */
+    left:1rem;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.paket-store .info-paket {
+    padding-left: 8px;
+    position: relative;
+    top: 8px;
+}
+.paket-store .info-paket h4 {
+    font-size: 13px;
+    color: #000000;
+}
+.paket-store .judul h4 {
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+}
+.paket-store .judul a {
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+}
+.paket-store .info-paket .vendor {
+    color: #737373;
+    font-size: 10px;
+    position: relative;
+    top: -10px;
+}
+.paket-store .info-paket .paket-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.paket-store .info-paket .paket-harga .after-price{
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    /* top: -3px; */
+}
+#store-paket .owl-prev {
+    left:-40px;
+}
+#store-paket .owl-next {
+    right:-50px;
+}
+#store-paket .owl-prev, #store-paket .owl-next{
+    position: absolute;
+    bottom: 40%;
+} 
+#store-paket .owl-prev span, #store-paket .owl-next span {
+    font-size: 35px;
+    color: #737373;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+#store-paket .owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
+}
+/* / */
+/* Section venue delas */
+.store-option {
+    margin-top: -15px;
+}
+.options .content .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.options .content .card img {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: 10px;
+}
+.options .content a {
+    text-decoration: none;
+}
+
+.options .content .content-1 {
+    position: relative;
+    left: 5px;
+}
+.options .content .content-2 {
+    position: relative;
+    right: 5px;
+}
+.options .content .card small {
+    font-size: 10px;
+    color: #535151;
+    padding: 5px 0;
+    /* margin-top: -15px; */
+}
+/* / */
+/* section venue */
+.venue-store .judul {
+    padding-bottom: 10px;
+}
+
+.venue-store .judul span {
+    color: #000000;
+    position: relative;
+    top: -5px;
+    font-size: 12px;
+}
+.venue-store .judul a {
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+    float: right;
+    position: relative;
+    right: 5px;
+    top: 50px;
+}
+.venue-store {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+}
+.venue-store .card {
+    height: 295px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+.venue-store a {
+    text-decoration: none;
+}
+.venue-store .card img{
+    height: 160px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.venue-store .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 55px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 8px;
+}
+.venue-store .img-style .span-disc-1 {
+    font-size: 8px;
+    color: white;
+    position: relative;
+    top:-8px;
+}
+.venue-store .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 10px;
+    position: relative;
+    top:5px;
+} 
+.venue-store .kota {
+    position: absolute;
+    top: 135px;
+    /* top: -65px; */
+    left:1rem;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.venue-store .info-venue {
+    padding-left: 10px;
+    position: relative;
+    top: 10px;
+}
+.venue-store .info-venue h4 {
+    font-size: 13px;
+    color: #000000;
+}
+.venue-store .judul h4 {
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+}
+.venue-store .judul a {
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+}
+.venue-store .info-venue .vendor {
+    color: #737373;
+    font-size: 10px;
+    position: relative;
+    top: -10px;
+}
+.venue-store .info-venue .venue-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.venue-store .info-venue .venue-harga .after-price{
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    /* top: -3px; */
+}
+#store-venue .owl-prev {
+    left:-40px;
+}
+#store-venue .owl-next {
+    right:-50px;
+}
+#store-venue .owl-prev, #store-venue .owl-next{
+    position: absolute;
+    bottom: 40%;
+} 
+#store-venue .owl-prev span, #store-venue .owl-next span {
+    font-size: 35px;
+    color: #737373;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+#store-venue .owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
+}
+/* / */
+/* section all produk */
+.all-produk {
+    padding-top: 25px;
+}
+.all-produk .all-produk-title h4 {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.all-produk .produk {
+    padding: 0 20px;
+}
+.all-produk .produk .card {
+    height: 295px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+.all-produk .produk .col-6 {
+    padding-bottom: 5px;
+}
+.all-produk .produk a {
+    text-decoration: none;
+}
+.all-produk .produk .card img{
+    height: 170px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.all-produk .produk .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 55px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 8px;
+}
+.all-produk .produk .img-style .span-disc-1 {
+    font-size: 9px;
+    color: white;
+    position: relative;
+    top:-8px;
+}
+.all-produk .produk .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 10px;
+    position: relative;
+    top:-17px;
+} 
+.all-produk .produk .kota {
+    position: absolute;
+    top: 145px;
+    /* top: -65px; */
+    left:1rem;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.all-produk .produk .info-produk {
+    padding-left: 10px;
+    position: relative;
+    top: 10px;
+}
+.all-produk .produk .info-produk h4 {
+    font-size: 14px;
+    color: #000000;
+}
+.all-produk .produk .judul h4 {
+    font-size: 22px;
+    color: #000000;
+    font-weight: bold;
+}
+.all-produk .produk .judul a {
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+}
+.all-produk .produk .info-produk .vendor {
+    color: #737373;
+    font-size: 11px;
+    position: relative;
+    top: -10px;
+}
+.all-produk .produk .info-produk .produk-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.all-produk .produk .info-produk .produk-harga .after-price{
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    /* top: -3px; */
+}
+
+/* / */
+/* mobile version */
+@media(max-width:600px) {
+    .store-desktop-v {
+        display: none;
+    }
+    .options .content .card{
+        width: 100px;
+        /* border: none; */
+        /* box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); */
+    }
+    .banner-promo {
+        padding-bottom: 20px;
+    }
+    .paket-store .judul .desktop-v, .venue-store .desktop-v {
+        display: none;
+    }
+    .paket-store .judul .mobile-v, .venue-store .judul .mobile-v{
+        font-size: 14px !important;
+        color: #979191;
+    }
+    .paket-store .info-paket .desktop-v,.paket-store .info-paket .vendor-d-v, .venue-store .info-venue .desktop-v, .venue-store .info-venue .vendor-d-v {
+        display: none;
+    }
+    .paket-store .info-paket .paket-harga {
+        position: relative;
+        top: 10px;
+    }
+    .all-produk .produk .all-produk-d-v {
+        display: none;
+    }
+    .all-produk .produk .card {
+        width: 180px;
+        position: relative;
+        right: 13px;
+    }
+    .all-produk .produk .info-produk .produk-harga .before-price {
+        position: relative;
+        top: 5px;
+    }
+    .paket-store .img-style .span-disc-2 {
+        right: 27px;
+    }
+    .venue-store .img-style .span-disc-2 {
+        right: 27px;
+    }  
+    
+}
+@media(min-width:600px) {
+    .store-mobile-v {
+        display: none;
+    }
+    .paket-store .judul .mobile-v, .venue-store .judul .mobile-v, .venue-store .info-venue .mobile-v{
+        display: none;
+    }
+    .paket-store .info-paket .mobile-v, .paket-store .info-paket .vendor-m-v, .venue-store .info-venue .vendor-m-v {
+        display: none;
+    }
+    .all-produk .produk .all-produk-m-v {
+        display: none;
+    }
+}
+@media (min-width: 992px) {
+    /* Banner */
+    .banner-promo {
+        margin-top: 15px;
+    }
+    .banner-promo .img-banner-promo {
+        height: 150px;
+    }
+    /* / */
+    /* Card option */
+    .store-option {
+        margin-top: -25px;
+    }
+    .options .content .card{
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+        align-items: center;
+    }
+    .options .content .card img {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        top: 10px;
+    }
+    .options .content a {
+        text-decoration: none;
+    }
+    .options .content .content-1 {
+        position: relative;
+        left: 25px;
+    }
+    .options .content .content-2 {
+        position: relative;
+        right: 25px;
+    }
+    .options .content .card .card-body {
+        font-size: 13px;
+        color: #535151;
+        margin-top: -15px;
+    }
+    /* / */
+        /* section paket */
+    .paket-store .judul {
+        padding-bottom: 30px;
+    }
+    .paket-store .judul h4 {
+        font-size: 20px;
+        /* font-weight: bold; */
+    }
+    .paket-store .judul span {
+        color: #000000;
+        position: relative;
+        top: -5px;
+    }
+    .paket-store .judul a {
+        font-size: 15px;
+        color: #000000;
+        font-weight: bold;
+        float: right;
+        position: relative;
+        top: 35px;
+    }
+    .paket-store {
+        padding-left: 70px;
+        padding-right: 70px;
+        margin-top: 70px;
+    }
+    .paket-store .card {
+        height: 305px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+    .paket-store .col-md-3 {
+        padding-bottom: 30px;
+    }
+    .paket-store a {
+        text-decoration: none;
+    }
+    .paket-store .card img{
+        height: 170px;
+        position: relative;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .paket-store .img-style {
+        border: 1px solid #f35a50;
+        background: #f35a50;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 65px;
+        height: 40px;
+        padding: 5px 5px;
+        position: absolute;
+        top: 8px;
+    }
+    .paket-store .img-style .span-disc-1 {
+        font-size: 9px;
+        color: white;
+        font-size: 11px;
+        position: relative;
+        top:-8px;
+    }
+    .paket-store .img-style .span-disc-2 {
+        color: white;
+        position: relative;
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+        top:-17px;
+    } 
+    .paket-store .kota {
+        position: absolute;
+        top: 145px;
+        /* top: -65px; */
+        left:1rem;
+        font-size: 12px;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    .paket-store .info-paket {
+        padding-left: 10px;
+        position: relative;
+        top: 10px;
+    }
+    .paket-store .info-paket h4 {
+        font-size: 16px;
+        color: #000000;
+    }
+    .paket-store .judul h4 {
+        font-size: 24px !important;
+        color: #000000;
+        font-weight: bold;
+    }
+    .paket-store .judul a {
+        font-size: 15px !important;
+        color: #000000;
+        font-weight: bold;
+    }
+    .paket-store .info-paket .vendor {
+        color: #737373;
+        font-size: 12px;
+        position: relative;
+        top: -10px;
+    }
+    .paket-store .info-paket .paket-harga .before-price {
+        color: #737373;
+        font-size: 10px;
+        text-decoration: line-through;
+    }
+    .paket-store .info-paket .paket-harga .after-price{
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        /* top: -3px; */
+    }
+    #store-paket .owl-prev {
+        left:-40px;
+    }
+    #store-paket .owl-next {
+        right:-50px;
+    }
+    #store-paket .owl-prev, #store-paket .owl-next{
+        position: absolute;
+        bottom: 40%;
+    } 
+    #store-paket .owl-prev span, #store-paket .owl-next span {
+        font-size: 35px;
+        color: #737373;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    }
+    #store-paket .owl-theme .owl-nav [class*="owl-"]:hover {
+        background-color: transparent;
+    }
+    /* / */
+    /* Section venue delas */
+    .store-option {
+        margin-top: -15px;
+    }
+    .options .content .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    }
+    .options .content .card img {
+        width: 45px;
+        height: 45px;
+        position: relative;
+        top: 10px;
+    }
+    .options .content a {
+        text-decoration: none;
+    }
+
+    .options .content .content-1 {
+        position: relative;
+        left: 5px;
+    }
+    .options .content .content-2 {
+        position: relative;
+        right: 5px;
+    }
+    .options .content .card small {
+        font-size: 10px;
+        color: #535151;
+        padding: 5px 0;
+        /* margin-top: -15px; */
+    }
+    /* / */
+    /* section paket */
+    .venue-store .judul {
+        padding-bottom: 30px;
+    }
+    .venue-store .judul h4 {
+        font-size: 14px;
+        /* font-weight: bold; */
+    }
+    .venue-store .judul span {
+        color: #000000;
+        position: relative;
+        top: -5px;
+    }
+    .venue-store .judul a {
+        font-size: 15px;
+        color: #000000;
+        font-weight: bold;
+        float: right;
+        position: relative;
+        top: 35px;
+    }
+    .venue-store {
+        padding-left: 70px;
+        padding-right: 70px;
+        margin-top: 70px;
+    }
+    .venue-store .card {
+        height: 305px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+    .venue-store .col-md-3 {
+        padding-bottom: 30px;
+    }
+    .venue-store a {
+        text-decoration: none;
+    }
+    .venue-store .card img{
+        height: 170px;
+        position: relative;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .venue-store .img-style {
+        border: 1px solid #f35a50;
+        background: #f35a50;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 65px;
+        height: 40px;
+        padding: 5px 5px;
+        position: absolute;
+        top: 8px;
+    }
+    .venue-store .img-style .span-disc-1 {
+        font-size: 9px;
+        color: white;
+        font-size: 11px;
+        position: relative;
+        top:-8px;
+    }
+    .venue-store .img-style .span-disc-2 {
+        color: white;
+        position: relative;
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+        top:-17px;
+    } 
+    .venue-store .kota {
+        position: absolute;
+        top: 145px;
+        /* top: -65px; */
+        left:1rem;
+        font-size: 12px;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    .venue-store .info-venue {
+        padding-left: 10px;
+        position: relative;
+        top: 10px;
+    }
+    .venue-store .info-venue h4 {
+        font-size: 16px;
+        color: #000000;
+    }
+    .venue-store .judul h4 {
+        font-size: 22px;
+        color: #000000;
+        font-weight: bold;
+    }
+    .venue-store .judul a {
+        font-size: 15px;
+        color: #000000;
+        font-weight: bold;
+    }
+    .venue-store .info-venue .vendor {
+        color: #737373;
+        font-size: 12px;
+        position: relative;
+        top: -10px;
+    }
+    .venue-store .info-venue .venue-harga .before-price {
+        color: #737373;
+        font-size: 10px;
+        text-decoration: line-through;
+    }
+    .venue-store .info-venue .venue-harga .after-price{
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        /* top: -3px; */
+    }
+    #store-venue .owl-prev {
+        left:-40px;
+    }
+    #store-venue .owl-next {
+        right:-50px;
+    }
+    #store-venue .owl-prev, #store-venue .owl-next{
+        position: absolute;
+        bottom: 40%;
+    } 
+    #store-venue .owl-prev span, #store-venue .owl-next span {
+        font-size: 35px;
+        color: #737373;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    }
+    #store-venue .owl-theme .owl-nav [class*="owl-"]:hover {
+        background-color: transparent;
+    }
+    /* / */
+    /* section all produk */
+    .all-produk {
+        padding-top: 40px;
+    }
+    .all-produk .all-produk-title h4 {
+        font-size: 25px;
+        font-weight: bold;
+        padding-left: 70px;
+        padding-bottom: 20px;
+    }
+    .all-produk .produk {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    .all-produk .produk .card {
+        height: 305px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+    .all-produk .produk .col-md-3 {
+        padding-bottom: 30px;
+    }
+    .all-produk .produk a {
+        text-decoration: none;
+    }
+    .all-produk .produk .card img{
+        height: 170px;
+        position: relative;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .all-produk .produk .img-style {
+        border: 1px solid #f35a50;
+        background: #f35a50;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 65px;
+        height: 40px;
+        padding: 5px 5px;
+        position: absolute;
+        top: 8px;
+    }
+    .all-produk .produk .img-style .span-disc-1 {
+        font-size: 9px;
+        color: white;
+        font-size: 11px;
+        position: relative;
+        top:-8px;
+    }
+    .all-produk .produk .img-style .span-disc-2 {
+        color: white;
+        position: relative;
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+        top:-17px;
+    } 
+    .all-produk .produk .kota {
+        position: absolute;
+        top: 145px;
+        /* top: -65px; */
+        left:1rem;
+        font-size: 12px;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    .all-produk .produk .info-produk {
+        padding-left: 10px;
+        position: relative;
+        top: 10px;
+    }
+    .all-produk .produk .info-produk h4 {
+        font-size: 16px;
+        color: #000000;
+    }
+    .all-produk .produk .judul h4 {
+        font-size: 22px;
+        color: #000000;
+        font-weight: bold;
+    }
+    .all-produk .produk .judul a {
+        font-size: 15px;
+        color: #000000;
+        font-weight: bold;
+    }
+    .all-produk .produk .info-produk .vendor {
+        color: #737373;
+        font-size: 12px;
+        position: relative;
+        top: -10px;
+    }
+    .all-produk .produk .info-produk .produk-harga .before-price {
+        color: #737373;
+        font-size: 10px;
+        text-decoration: line-through;
+    }
+    .all-produk .produk .info-produk .produk-harga .after-price{
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        /* top: -3px; */
+    }
+
+/* mobile version */
+}

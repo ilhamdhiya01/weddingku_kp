@@ -39,24 +39,6 @@
                         <option>Jaguar</option>
                         <option>Jeep</option>
                         <option>Lancia</option>
-                        <option>Semua Kategori</option>
-                        <option>Audi</option>
-                        <option>BMW</option>
-                        <option>Citroen</option>
-                        <option>Fiat</option>
-                        <option>Ford</option>
-                        <option>Jaguar</option>
-                        <option>Jeep</option>
-                        <option>Lancia</option>
-                        <option>Semua Kategori</option>
-                        <option>Audi</option>
-                        <option>BMW</option>
-                        <option>Citroen</option>
-                        <option>Fiat</option>
-                        <option>Ford</option>
-                        <option>Jaguar</option>
-                        <option>Jeep</option>
-                        <option>Lancia</option>
                     </select>
                 </div>
                 <div class="col-3">
@@ -138,7 +120,12 @@
                                         <i class="fas fa-desktop"></i>
                                     </div>
                                     <div class="col-10">
-                                        <a href="">ilhjsajhvajshjashvjashvjhasvjhasjhvasxhvasvxhajshx</a>
+                                        <a href="">
+                                            <?php 
+                                            $website = "http://www.facebook.com/ilhamDhiyaUlhaq";
+                                            echo strlen($website) > 28 ? substr($website, 0, 28) . '...' : substr($website, 0, 28);
+                                            ?>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -176,9 +163,9 @@
                                     </div>
                                 </div>
                                 <div class="icon">
+                                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                                    <a href=""><i class="fab fa-twitter-square"></i></a>
                                     <a href=""><i class="fab fa-instagram"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-twitter"></i></a>
                                 </div>
                             </div>
                         </div>

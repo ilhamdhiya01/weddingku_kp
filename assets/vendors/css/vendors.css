@@ -227,8 +227,20 @@
 .section-profile-vendor .card-profile-vendor .card-right-3 .website a,
 .section-profile-vendor .card-profile-vendor .card-right-3 .email span,
 .section-profile-vendor .card-profile-vendor .card-right-3 .phone span {
-    font-size: 13px;
+    font-size: 12px;
     text-decoration: none;
+}
+.section-profile-vendor .card-profile-vendor .card-right-3 .social-media .icon{
+    position: relative;
+    left: 40px;
+}
+.section-profile-vendor .card-profile-vendor .card-right-3 .social-media .icon a {
+    border: 1px solid #EBA1A1;
+    padding: 5px 5px;
+    border-radius: 100%;
+    color: #FFFFFF;
+    background-color: #EBA1A1;
+    font-size: 11px;
 }
 /* / */
 /* Mobile version */

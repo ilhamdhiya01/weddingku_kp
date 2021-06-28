@@ -100,7 +100,7 @@
 /* / */
 /* _________________________________________Profile Vendor__________________________________ */
  /* daftar events */
-.top-menu .container-paket {
+.top-menu .container-promo {
     /* padding: 0 10px; */
     display: flex;
     align-items: center;
@@ -294,18 +294,295 @@
 .section-profile-vendor .card-profile-vendor .card-left-3 .top-menu {
     border-bottom: 1px solid #cac8c8;
     padding: 10px 0;
+    background-color: #f3f0f0;
 }
 .section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3{
     text-align: center;
 }
 .section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3 a{
-    font-size: 15px;
+    font-size: 13px;
     text-decoration: none;
     color: #4b4949;
+}
+.section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3 a:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid #EBA1A1;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 9px;
+    margin-bottom: -13px;
+}
+.section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3 a:hover {
+    color: #EBA1A1;
+    
+}
+.active::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid #EBA1A1;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 9px;
+    margin-bottom: -13px;
 }
 .section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3 small {
     position: relative;
     left: 40px;
+}
+/* / */
+/* slider promo profile vendor */
+.produk-profile-vendor  .title-promo  {
+    padding-bottom: 10px;
+}
+.produk-profile-vendor  .title-promo h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #535151;
+}
+.produk-profile-vendor  .title-promo a {
+    font-size: 13px;
+    float: right;
+    color: #535151;
+    font-weight: bold;
+} 
+.produk-profile-vendor .card {
+    height: 290px;
+    border-radius: 8px;
+    border: none;
+}
+.produk-profile-vendor .col-md-3 {
+    padding-bottom: 30px;
+}
+.produk-profile-vendor a {
+    text-decoration: none;
+}
+.produk-profile-vendor .card img{
+    height: 170px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.produk-profile-vendor .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 65px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 8px;
+}
+.produk-profile-vendor .img-style .span-disc-1 {
+    font-size: 9px;
+    color: white;
+    font-size: 11px;
+    position: relative;
+    top:-8px;
+}
+.produk-profile-vendor .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top:-17px;
+} 
+.produk-profile-vendor .kota {
+    position: absolute;
+    top: 145px;
+    /* top: -65px; */
+    left:1rem;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.produk-profile-vendor .info-promo {
+    padding-left: 10px;
+    position: relative;
+    top: 10px;
+}
+.produk-profile-vendor .info-promo h4 {
+    font-size: 16px;
+    color: #000000;
+}
+.produk-profile-vendor .judul h4 {
+    font-size: 24px !important;
+    color: #000000;
+    font-weight: bold;
+}
+.produk-profile-vendor .judul a {
+    font-size: 15px !important;
+    color: #000000;
+    font-weight: bold;
+}
+.produk-profile-vendor .info-promo .vendor {
+    color: #737373;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+}
+.produk-profile-vendor .info-promo .promo-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.produk-profile-vendor .info-promo .promo-harga .after-price{
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    /* top: -3px; */
+}
+#promo-profile-vendor .owl-prev {
+    left:20px;
+}
+#promo-profile-vendor .owl-next {
+    right:10px;
+}
+#promo-profile-vendor .owl-prev, #promo-profile-vendor .owl-next{
+    position: absolute;
+    bottom: 45%;
+} 
+#promo-profile-vendor .owl-prev span, #promo-profile-vendor .owl-next span {
+    font-size: 70px;
+    opacity: 0.8;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+#promo-profile-vendor .owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
+}
+/* / */
+
+/* slider all produk */
+.produk-profile-vendor  .title-all  {
+    padding-bottom: 10px;
+    padding-top: 40px;
+}
+.produk-profile-vendor  .title-all h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #535151;
+}
+.produk-profile-vendor  .title-all a {
+    font-size: 13px;
+    float: right;
+    color: #535151;
+    font-weight: bold;
+} 
+.produk-profile-vendor .card {
+    height: 290px;
+    border-radius: 8px;
+    border: none;
+}
+.produk-profile-vendor .col-md-3 {
+    padding-bottom: 30px;
+}
+.produk-profile-vendor a {
+    text-decoration: none;
+}
+.produk-profile-vendor .card img{
+    height: 170px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.produk-profile-vendor .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 65px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 8px;
+}
+.produk-profile-vendor .img-style .span-disc-1 {
+    font-size: 9px;
+    color: white;
+    font-size: 11px;
+    position: relative;
+    top:-8px;
+}
+.produk-profile-vendor .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top:-17px;
+} 
+.produk-profile-vendor .kota {
+    position: absolute;
+    top: 145px;
+    /* top: -65px; */
+    left:1rem;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.produk-profile-vendor .info-allProduk {
+    padding-left: 10px;
+    position: relative;
+    top: 10px;
+}
+.produk-profile-vendor .info-allProduk h4 {
+    font-size: 16px;
+    color: #000000;
+}
+.produk-profile-vendor .judul h4 {
+    font-size: 24px !important;
+    color: #000000;
+    font-weight: bold;
+}
+.produk-profile-vendor .judul a {
+    font-size: 15px !important;
+    color: #000000;
+    font-weight: bold;
+}
+.produk-profile-vendor .info-allProduk .vendor {
+    color: #737373;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+}
+.produk-profile-vendor .info-allProduk .allProduk-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.produk-profile-vendor .info-allProduk .allProduk-harga .after-price{
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    /* top: -3px; */
+}
+#all-produk-profile .owl-prev {
+    left:20px;
+}
+#all-produk-profile .owl-next {
+    right:10px;
+}
+#all-produk-profile .owl-prev, #all-produk-profile .owl-next{
+    position: absolute;
+    bottom: 45%;
+} 
+#all-produk-profile .owl-prev span, #all-produk-profile .owl-next span {
+    font-size: 70px;
+    opacity: 0.8;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+#all-produk-profile .owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
 }
 /* / */
 /* Mobile version */

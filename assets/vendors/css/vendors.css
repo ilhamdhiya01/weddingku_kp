@@ -100,6 +100,9 @@
 /* / */
 /* _________________________________________Profile Vendor__________________________________ */
  /* daftar events */
+.section-profile-vendor .top-menu {
+    padding-bottom: 40px;
+}
 .top-menu .container-promo {
     /* padding: 0 10px; */
     display: flex;
@@ -150,7 +153,7 @@
 .section-profile-vendor .card-profile-vendor .card-right-1 .kategori-vendor,
 .section-profile-vendor .card-profile-vendor .card-right-1 .kota {
     font-size: 12px;
-    color: #504d4d;
+    color: #7e7b7b;
     font-weight: bold;
 }
 .section-profile-vendor .card-profile-vendor .card-right-1 .kategori-kota {
@@ -230,6 +233,17 @@
 .section-profile-vendor .card-profile-vendor .card-right-3 .phone span {
     font-size: 12px;
     text-decoration: none;
+    color: #e49595;
+}
+.section-profile-vendor .card-profile-vendor .card-right-3 .website i,
+.section-profile-vendor .card-profile-vendor .card-right-3 .email i,
+.section-profile-vendor .card-profile-vendor .card-right-3 .phone i,
+.section-profile-vendor .card-profile-vendor .card-right-3 .social-media .col-2 i,
+.section-profile-vendor .card-profile-vendor .card-right-3 .social-media span,
+.section-profile-vendor .card-profile-vendor .card-right-3 .phone span,
+.section-profile-vendor .card-profile-vendor .card-right-3 .email span 
+{
+    color: #7e7b7b;
 }
 .section-profile-vendor .card-profile-vendor .card-right-3 .social-media .icon{
     position: relative;
@@ -242,6 +256,20 @@
     color: #FFFFFF;
     background-color: #EBA1A1;
     font-size: 11px;
+}
+.section-profile-vendor .card-profile-vendor .lokasi span{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 5px;
+    color: #383838;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.section-profile-vendor .card-profile-vendor .lokasi .google-map iframe {
+    width: 215px;
+    height: 250px;
+    border: 1px solid #a5a4a4;
 }
 /* / */
 /* left card */
@@ -318,7 +346,7 @@
     color: #EBA1A1;
     
 }
-.active::after {
+/* .active::after {
     content: '';
     display: block;
     border-bottom: 3px solid #EBA1A1;
@@ -327,10 +355,62 @@
     position: relative;
     top: 9px;
     margin-bottom: -13px;
-}
+} */
 .section-profile-vendor .card-profile-vendor .card-left-3 .top-menu .col-3 small {
     position: relative;
     left: 40px;
+}
+/* / */
+/* section vendor serupa */
+.vendor-serupa {
+    padding-top: 50px;
+}
+.vendor-serupa .card {
+    padding: 10px 10px;
+}
+.vendor-serupa .item .img-vendor-serupa {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-top: 3px;
+}
+.vendor-serupa .vendor-serupa-title {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.vendor-serupa .vendor-serupa-title h4{
+    font-size: 15px;
+    font-weight: bold;
+    color: #4b4949;
+}
+.vendor-serupa .info-vendor .nama-vendor h5{
+    font-size: 16px;
+    color: #EBA1A1;
+    position: relative;
+    top: 5px;
+}
+.vendor-serupa .info-vendor .kategori span {
+    color: #4b4949;
+    font-size: 12px;
+}
+
+#vendor-serupa .owl-prev {
+    left:-35px;
+}
+#vendor-serupa .owl-next {
+    right:-45px;
+}
+#vendor-serupa .owl-prev, #vendor-serupa .owl-next{
+    position: absolute;
+    bottom: 35%;
+} 
+#vendor-serupa .owl-prev span, #vendor-serupa .owl-next span {
+    font-size: 40px;
+    color: #EBA1A1;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+#vendor-serupa .owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
 }
 /* / */
 /* slider promo profile vendor */

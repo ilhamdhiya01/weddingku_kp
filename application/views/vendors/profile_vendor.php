@@ -58,7 +58,7 @@
                 <div class="text-top-menu">
                     <a href="">Home</a>
                     <span class="span-1">></span>
-                    <span class="span-2">Paket</span>
+                    <span class="span-2">Profile Vendor</span>
                 </div>
             </div>
         </div>
@@ -94,6 +94,7 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
+                                <span class="text-dark">5/5</span>
                             </div>
                             <!-- / -->
                         </div>
@@ -135,7 +136,7 @@
                                         <i class="far fa-envelope"></i>
                                     </div>
                                     <div class="col-10">
-                                        <span class="text-dark">ulhaqilhamdhiya@gmail.com</span>
+                                        <span>ulhaqilhamdhiya@gmail.com</span>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +146,7 @@
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
                                     <div class="col-10">
-                                        <span class="text-dark">081239438228</span>
+                                        <span>081239438228</span>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +158,7 @@
                                                 <i class="fas fa-user-friends"></i>
                                             </div>
                                             <div class="col-10">
-                                                <span class="text-dark">Social Media</span>
+                                                <span><b>Social Media</b></span>
                                             </div>
                                         </div>
                                     </div>
@@ -170,9 +171,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card mt-3">
+                    <div class="card mt-3 lokasi">
                         <div class="card-body">
-                            This is some text within a card body.
+                            <span>Lokasi Vendor</span>
+                            <div class="google-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0382434928233!2d110.37401381407616!3d-7.004779670553886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708ae24dfb7ce5%3A0xb0af18ad2051af96!2sPT%20Jasa%20Marga%20(Persero)%20Tbk%20Cabang%20Semarang!5e0!3m2!1sid!2sid!4v1624970283353!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -212,7 +216,7 @@
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col-3">
-                                                <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk</a>
+                                                <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href=""><i class="fas fa-tags"></i> Harga</a>
@@ -346,5 +350,35 @@
                 </div>
             </div>
         </div>
+        <section class="vendor-serupa">
+            <div class="vendor-serupa-title">
+                <h4>Vendor Lain Yang Mungkin Anda Suka</h4>
+            </div>
+            <section id="vendor-serupa">
+                <div class="owl-carousel owl-theme">
+                    <?php for ($i = 1; $i <= 5; $i++) : ?>
+                        <div class="item">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="<?= base_url(); ?>assets/vendors/img/news/vendor<?= $i; ?>.webp" class="img-vendor-serupa" alt="...">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="info-vendor">
+                                            <div class="nama-vendor">
+                                                <h5>Sky Wedding Entertaintemnt</h5>
+                                            </div>
+                                            <div class="kategori">
+                                                <span>Entertaiment - Jakarta.ID</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+            </section>
+        </section>
     </div>
 </section>

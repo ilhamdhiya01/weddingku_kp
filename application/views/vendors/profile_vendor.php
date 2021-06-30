@@ -121,10 +121,16 @@
                                         <i class="fas fa-desktop"></i>
                                     </div>
                                     <div class="col-10">
-                                        <a href="">
+                                        <a href="" class="desktop-v">
                                             <?php
                                             $website = "http://www.facebook.com/ilhamDhiyaUlhaq";
                                             echo strlen($website) > 28 ? substr($website, 0, 28) . '...' : substr($website, 0, 28);
+                                            ?>
+                                        </a>
+                                        <a href="" class="mobile-v">
+                                            <?php
+                                            $website = "http://www.facebook.com/ilhamDhiyaUlhaq";
+                                            echo $website;
                                             ?>
                                         </a>
                                     </div>
@@ -200,9 +206,25 @@
                             <div class="img-style-vendor">
                                 <span><i class="fas fa-check-circle"></i> Weddingku</span>
                             </div>
-                            <div class="pay">
+                            <div class="pay desktop-v ">
                                 <div class="icon-text">
                                     <span class="span-1"><i class="fas fa-hourglass-half"></i> Cicilan 0% hingga 24 bulan</span> <small>|</small> <span class="span-2"><i class="far fa-credit-card"></i> Opsi pembayaran lebih banyak</span> <small>|</small> <span class="span-3"><i class="fas fa-file-invoice"></i> Pembayaran aman & mudah</span>
+                                </div>
+                            </div>
+                            <div class="pay mobile-v">
+                                <div class="icon-text">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <span class="span-1"><i class="fas fa-hourglass-half"></i> Cicilan 0% hingga 24 bulan</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="span-2"><i class="far fa-credit-card"></i> Opsi pembayaran lebih banyak</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="span-3"><i class="fas fa-file-invoice"></i> Pembayaran aman & mudah
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -211,9 +233,29 @@
                     <!--  -->
                     <div class="card">
                         <div class="card-left-3">
-                            <div class="top-menu">
+                            <div class="top-menu desktop-v">
                                 <div class="row justify-content-center">
                                     <div class="col-8">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
+                                            </div>
+                                            <div class="col-3">
+                                                <a href=""><i class="fas fa-tags"></i> Harga</a>
+                                            </div>
+                                            <div class="col-3">
+                                                <a href=""><i class="fas fa-address-card"></i> Tentang Kami</a>
+                                            </div>
+                                            <div class="col-3">
+                                                <a href=""><i class="fas fa-percent"></i> Promo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="top-menu mobile-v">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
                                         <div class="row">
                                             <div class="col-3">
                                                 <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
@@ -239,8 +281,11 @@
                                         <div class="col-9">
                                             <h4>Penawaran Terbaik</h4>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-3 desktop-v">
                                             <a href="">Lihat Semua (15)</a>
+                                        </div>
+                                        <div class="col-3 mobile-v">
+                                            <a href=""><i class="fas fa-ellipsis-h"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -294,8 +339,11 @@
                                         <div class="col-9">
                                             <h4>Semua Produk</h4>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-3 desktop-v">
                                             <a href="">Lihat Semua (15)</a>
+                                        </div>
+                                        <div class="col-3 mobile-v">
+                                            <a href=""><i class="fas fa-ellipsis-h"></i></a>
                                         </div>
                                     </div>
                                 </div>

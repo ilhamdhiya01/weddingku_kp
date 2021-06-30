@@ -132,7 +132,7 @@
     text-decoration: none;
 }
 .jenis-paket .btn-paket:hover {
-    background-color: #E77472;
+    background: linear-gradient(to right, #e46d6b, #daa7a5); 
     color: #FFFFFF !important;
 }
 

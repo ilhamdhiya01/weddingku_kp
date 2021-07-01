@@ -293,7 +293,7 @@
                                     <div class="owl-carousel owl-theme">
                                         <?php for ($i = 1; $i <= 10; $i++) : ?>
                                             <div class="item">
-                                                <a href="">
+                                                <a href="<?= base_url(); ?>ui/produk">
                                                     <div class="card">
                                                         <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
                                                         <?php
@@ -351,7 +351,7 @@
                                     <div class="owl-carousel owl-theme">
                                         <?php for ($i = 1; $i <= 10; $i++) : ?>
                                             <div class="item">
-                                                <a href="">
+                                                <a href="<?= base_url(); ?>ui/produk">
                                                     <div class="card">
                                                         <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
                                                         <?php

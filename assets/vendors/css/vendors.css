@@ -379,17 +379,17 @@
 }
 
 #vendor-serupa .owl-prev {
-    left:-35px;
+    left:-20px;
 }
 #vendor-serupa .owl-next {
-    right:-45px;
+    right:-20px;
 }
 #vendor-serupa .owl-prev, #vendor-serupa .owl-next{
     position: absolute;
-    bottom: 35%;
+    bottom: 10%;
 } 
 #vendor-serupa .owl-prev span, #vendor-serupa .owl-next span {
-    font-size: 40px;
+    font-size: 30px;
     color: #EBA1A1;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
@@ -1366,7 +1366,7 @@
     }
     #vendor-serupa .owl-prev, #vendor-serupa .owl-next{
         position: absolute;
-        bottom: 35%;
+        bottom: 10%;
     } 
     #vendor-serupa .owl-prev span, #vendor-serupa .owl-next span {
         font-size: 40px;

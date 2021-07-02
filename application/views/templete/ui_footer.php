@@ -103,6 +103,7 @@
 <!-- / -->
 <script src="<?= base_url("assets/vendors/vendor/bootstrap/dist/js/bootstrap.bundle.min.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/offcanvas.js") ?>"></script>
+<script src="<?= base_url("assets/vendors/js/baguetteBox.min.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/custom.js") ?>"></script>
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <script>

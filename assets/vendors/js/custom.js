@@ -262,3 +262,29 @@ $('#vendor-serupa .owl-carousel').owlCarousel({
         }
     }
 })
+
+$('#gambar-lain .owl-carousel').owlCarousel({
+    loop:false,
+    margin:10,
+    nav:true,
+    dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+// baguetBox
+baguetteBox.run('.thumbnail', {
+    animation: 'fadeIn',
+    noScrollbars: false,
+    buttons: true,
+    overlayBackgroundColor: 'rgba(0,0,0,0.8)'
+});

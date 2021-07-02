@@ -17,6 +17,7 @@
     <!-- Bootstrap core CSS -->
     <link href="<?= base_url("assets/vendors/vendor/bootstrap/dist/css/bootstrap.min.css") ?>" rel="stylesheet">
     <!-- My CSS -->
+    <link rel="stylesheet" href="<?= base_url("assets/vendors/css/baguetteBox.min.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/custom.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/vendors.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/events.css") ?>">
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/venue.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/store.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/allproduk.css") ?>">
+    <link rel="stylesheet" href="<?= base_url("assets/vendors/css/produkInfo.css") ?>">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="<?= base_url("assets/vendors/vendor/fontawesome-free/css/all.min.css") ?>">
 

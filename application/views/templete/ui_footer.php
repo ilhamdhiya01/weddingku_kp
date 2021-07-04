@@ -85,9 +85,6 @@
         </div>
     </div>
 </section>
-<div class="chat-fixed">
-    <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
-</div>
 </main>
 <!-- Optional JavaScript; choose one of the two! -->
 
@@ -105,6 +102,7 @@
 <script src="<?= base_url("assets/vendors/js/offcanvas.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/baguetteBox.min.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/custom.js") ?>"></script>
+<script src="<?= base_url("assets/vendors/js/jsTambahan.js") ?>"></script>
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <script>
 // $('#kategori').editableSelect({

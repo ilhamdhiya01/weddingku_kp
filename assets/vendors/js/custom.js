@@ -280,11 +280,3 @@ $('#gambar-lain .owl-carousel').owlCarousel({
         }
     }
 })
-
-// baguetBox
-baguetteBox.run('.thumbnail', {
-    animation: 'fadeIn',
-    noScrollbars: false,
-    buttons: true,
-    overlayBackgroundColor: 'rgba(0,0,0,0.8)'
-});

@@ -189,3 +189,6 @@
     </div>
 </section>
 <!-- / -->
+<div class="chat-fixed">
+    <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
+</div>

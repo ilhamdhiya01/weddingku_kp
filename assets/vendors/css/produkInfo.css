@@ -1,9 +1,15 @@
 /* smooth slider */
 .smooth-slider{
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgb(185, 184, 184);
     padding: 20px 0;
     position: relative;
     top: -10px;
+    display: block;
+    position: fixed;
+    top: 91px;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
 }
 .smooth-slider a{
     font-size: 14px;
@@ -33,6 +39,9 @@
 }
 /* / */
 /* produk content */
+.produk-content {
+    margin-top: 100px;
+}
 .produk-content .logo-name-kategori {
     margin-top: 10px;
     border-bottom: 1px solid #c2bdbd;
@@ -95,6 +104,108 @@
     background-color: transparent;
 }
 /* / */
+/* detail produk */
+.produk-content .detail-produk {
+    padding-top: 30px;
+}
+.produk-content .detail-produk h4 {
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.produk-content .detail-produk p,span {
+    font-size: 14px;
+    color: #7c7c7c;
+}
+.produk-content .detail-produk .selengkapnya {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #c2bdbd;
+}
+.produk-content .detail-produk .selengkapnya span {
+    color: #EBA1A1;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.produk-content .detail-produk #selengkapnya {
+    display: none;
+}
+/* / */
+/* vendor */
+.produk-content .vendor {
+    padding: 40px 0;
+    border-bottom: 1px solid #c2bdbd;
+} 
+.produk-content .vendor div img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+.produk-content .vendor .col-10 h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+.produk-content .vendor .col-10 span {
+    position: relative;
+    top: -8px;
+}
+.produk-content .vendor .col-10 .rating-vendor i{
+    font-size: 14px;
+    position: relative;
+    top: -8px;
+    color: #EBA1A1;
+}
+.produk-content .vendor .btn-show-vendor a{
+    font-size: 12px;
+    background-color: #FFFFFF;
+    color: #555;
+    font-weight: bold;
+    border-color: #c2bdbd;
+} 
+/* / */
+/* lokasi */
+.produk-content .lokasi {
+    padding: 30px 0;
+    border-bottom: 1px solid #c2bdbd;
+
+}
+.produk-content .lokasi h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+/* / */
+/* syarat ketentuan */
+.produk-content .syarat-ketentuan {
+    padding: 30px 0;
+}
+.produk-content .syarat-ketentuan h4 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.produk-content .syarat-ketentuan p {
+    font-size: 14px;
+    color: #7c7c7c;
+}
+.produk-content .syarat-ketentuan .selengkapnya {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #c2bdbd;
+}
+.produk-content .syarat-ketentuan .selengkapnya span {
+    color: #EBA1A1;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.produk-content .syarat-ketentuan #selengkapnya-syarat {
+    display: none;
+}
+/* / */ 
 
 @media(max-width:600px) {
 }

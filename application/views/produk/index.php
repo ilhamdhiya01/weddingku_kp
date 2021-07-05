@@ -24,7 +24,7 @@
     <div class="produk-content">
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="logo-name-kategori">
                         <div class="card">
                             <div class="card-body">
@@ -40,6 +40,7 @@
                                             ?>
                                         </h4>
                                         <p>by <span>sedhahankenes</span> — Invitation Printing</p>
+                                        <span class="dikelola">Dikelola oleh Weddingku</span>
                                     </div>
                                 </div>
                             </div>
@@ -122,16 +123,69 @@
                             We can’t wait to be your partner !!
                             However, to secure our service and book us on preferred date, here are our terms and conditions:<span id="titikTiga-syarat">...</span>
                             <span id="selengkapnya-syarat">
-                            • The price includes government tax & service.
-                            • The price includes delivery, set up, and dismantle fee.
-                            • Payments made to Vowever Wedding Planner will be non-refundable. Deposit & balance payment schedules will be agreed in the Services Contract.
-                            • The client remains responsible for fee payment as well as costs of repairs or replacement of supplier services and/or products.
-                            • Third party contracts remain independent between supplier and client, and are in no way the responsibility of Vowever Wedding Planner.
-                            • Adjustments of detailed arrangement can be made not later than 45 days before the wedding date.
+                                • The price includes government tax & service.
+                                • The price includes delivery, set up, and dismantle fee.
+                                • Payments made to Vowever Wedding Planner will be non-refundable. Deposit & balance payment schedules will be agreed in the Services Contract.
+                                • The client remains responsible for fee payment as well as costs of repairs or replacement of supplier services and/or products.
+                                • Third party contracts remain independent between supplier and client, and are in no way the responsibility of Vowever Wedding Planner.
+                                • Adjustments of detailed arrangement can be made not later than 45 days before the wedding date.
                             </span>
                         </p>
                         <div class="selengkapnya">
                             <span id="btn-selengkapnya-syarat" onclick="selengkapnyaSyarat()">Lihat Selengkapnya</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mt-5">
+                    <div class="left-card-1">
+                        <div class="card">
+                            <span class="harga-title">Harga</span>
+                            <div class="body">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <div class="row">
+                                            <?php
+                                            $nilai = 1;
+                                            $kapasitas = 'ada';
+                                            if ($nilai == 1) :
+                                            ?>
+                                                <div class="col-3">
+                                                    <div class="promo-icon">
+                                                        <span class="span-1">Hemat</span><br>
+                                                        <span class="span-2">8%</span>
+                                                    </div>
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="col-9">
+                                                <div class="harga">
+                                                    <?php if ($nilai == 1) : ?>
+                                                        <span class="before-price">IDR 12.750</span><br>
+                                                    <?php endif; ?>
+                                                    <span class="after-price">IDR 11.793.000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php if($kapasitas != null): ?>
+                                    <div class="col-md-12">
+                                        <div class="kapasitas mt-2">
+                                            <span>Kapasitas</span>
+                                            <h4>100 Pax</h4>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-card-2 mt-3">
+                        <div class="card">
+                            <div class="body">
+                                <img src="<?= base_url(); ?>assets/vendors/img/news/new_flex_icon.png" class="vendor-flex" alt="">
+                                <p>
+                                    Anda dapat mengubah tanggal layanan (reschedule) menjadi tanggal lain yang tersedia di tahun 2020.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

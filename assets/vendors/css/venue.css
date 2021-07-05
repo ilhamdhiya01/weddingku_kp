@@ -125,6 +125,19 @@
     border-radius: 7px;
     font-weight: bold;
 }
+.jenis-venue a .btn-venue.active {
+    border: 1px solid #E77472;
+    width: 110px;
+    height: 40px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-weight: bold;
+    background: linear-gradient(to right, #e46d6b, #daa7a5); 
+    color: #FFFFFF !important;
+}
 .jenis-venue a {
     text-decoration: none;
 }

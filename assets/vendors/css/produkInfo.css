@@ -23,7 +23,7 @@
     width: 50%;
     margin: auto;
     position: relative;
-    top: 18px;
+    top: 19px;
     margin-bottom: -23px;
 }
 .smooth-slider .col-5 a:hover::after {
@@ -40,7 +40,7 @@
 /* / */
 /* produk content */
 .produk-content {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 .produk-content .logo-name-kategori {
     margin-top: 10px;
@@ -68,6 +68,13 @@
     color: #EBA1A1;
     font-size: 17px;
 }
+.produk-content .logo-name-kategori .col-10 .dikelola {
+    float:right;
+    color: #555555;
+    font-size: 14px;
+    position: relative;
+    left: 55px;
+}
 .produk-content .logo-name-kategori .col-10 p {
     font-size: 17px;
     color: #555555;
@@ -78,8 +85,13 @@
     margin-top: 30px;
 }
 .gambar-lain img {
-    height: 300px;
+    height: 350px;
     border-radius: 10px;
+    /* position: relative;
+    left: 65px; */
+}
+.gambar-lain .item {
+    /* width: 600px; */
 }
 .gambar-lain img:hover {
     opacity: 0.9;
@@ -206,6 +218,89 @@
     display: none;
 }
 /* / */ 
+/* card left 1*/
+.left-card-1 .card {
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(143, 143, 143, 0.5);
+    border: none;
+}
+.left-card-1 .card .harga-title {
+    color: #555;
+    padding-bottom: 7px;
+    font-size: 14px;
+}
+.left-card-1 .body .promo-icon {
+    border:1px solid #F35A50;
+    width: 65px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: #F35A50;
+}
+.left-card-1 .body .promo-icon .span-1 {
+    font-size: 12px;
+    color: #FFF;
+    position: relative;
+    left: 14px;
+}
+.left-card-1 .body .promo-icon .span-2 {
+    color: #FFF;
+    position: relative;
+    left: 18px;
+    top: -7px;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* .left-card-1 .body .harga {
+    position: relative;
+    right: 25px;
+} */
+.left-card-1 .body .harga .before-price {
+    text-decoration: line-through;
+}
+.left-card-1 .body .harga .after-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    top: -3px;
+}
+.left-card-1 .card .body .kapasitas {
+    border-top: 1px solid #c2bdbd;
+    
+}
+.left-card-1 .card .body .kapasitas span {
+    font-size: 14px;
+    color: #555;
+    position: relative;
+    top: 5px;
+}
+.left-card-1 .card .body .kapasitas h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    top: 10px;
+} 
+/* / */
+/* card left 2  */
+.left-card-2 .card .body {
+    padding: 10px 20px;
+}
+.left-card-2 .card  {
+    background-color: #FEF1EC;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(143, 143, 143, 0.5);
+    border: none;
+}
+.left-card-2 .card .body img {
+    position: relative;
+    right: 8px;
+}
+.left-card-2 .card .body p {
+    font-size: 12px;
+}
+/* / */
 
 @media(max-width:600px) {
 }

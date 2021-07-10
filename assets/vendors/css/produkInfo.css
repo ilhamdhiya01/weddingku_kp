@@ -300,6 +300,69 @@
 .left-card-2 .card .body p {
     font-size: 12px;
 }
+.produk-content .qty .card{
+    padding: 10px 10px;
+    box-shadow: 2px 2px 10px rgba(143, 143, 143, 0.5);
+}
+.produk-content .qty .qtyinput {
+    width: 50px;
+    border: none;
+    border-bottom: 1px solid #a1a1a1;
+    text-align: center;
+    color: #5c5b5b;
+}
+.produk-content .qty #dec {
+    background-color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 8px;
+    border-radius: 100%;
+    border-color: #EBA1A1;
+    color: #EBA1A1;
+}
+.produk-content .qty #inc {
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 100%;
+    border-color: #EBA1A1;
+    color: #EBA1A1;
+    background-color: #fff;
+}
+.produk-content .qty #dec:hover,.produk-content .qty #inc:hover {
+    background-color: #EBA1A1;
+    color: #fff;
+}
+.produk-content .tombol {
+    margin-top: 35px;
+}
+.produk-content .tombol .chat {
+    background-color: #fff;
+    color: #EBA1A1;
+    font-weight: bold;
+    border-color: #EBA1A1;
+    width: 175px;
+}
+.produk-content .tombol .chat:hover {
+    background-color: #EBA1A1;
+    color: #fff;
+}
+.produk-content .tombol .pesan {
+    background-color: #EBA1A1;
+    color: #fff;
+    font-weight: bold;
+    border-color: #EBA1A1;
+}
+.produk-content .tombol .pesan:hover {
+    opacity: 0.7;
+}
+.produk-content .tombol span {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
 /* / */
 
 @media(max-width:600px) {

@@ -39,4 +39,27 @@ function selengkapnyaSyarat(){
     }
 }
 
+// incremnt dexcrement
+let dec = document.querySelector('#dec');
+let inc = document.querySelector('#inc');
+let qtyinput = document.querySelector('.qtyinput');
+inc.addEventListener('click',function(e){
+    e.preventDefault();
+    qtyinput.value = parseInt(qtyinput.value) + 1;
+})
+dec.addEventListener('click',function(e){
+    e.preventDefault();
+    qtyinput.value = parseInt(qtyinput.value) - 1;
+    if(qtyinput.value <= 0){
+        qtyinput.value = 0
+    }
+})
+
+// smooth scroll
+$(function(){
+    var scroll = new SmoothScroll('a[href*="#section-"]', {
+        speed: 500,
+        speedAsDuration: true,
+    });
+})
 

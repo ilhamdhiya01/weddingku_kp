@@ -103,18 +103,8 @@
 <script src="<?= base_url("assets/vendors/js/baguetteBox.min.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/custom.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/jsTambahan.js") ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js" integrity="sha512-HYG9E+RmbXS7oy529Nk8byKFw5jqM3R1zzvoV2JnltsIGkK/AhZSzciYCNxDMOXEbYO9w6MJ6SpuYgm5PJPpeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Option 2: Separate Popper and Bootstrap JS -->
-<script>
-// $('#kategori').editableSelect({
-//     filter:true
-// });
-// $('#kota').editableSelect({
-//     filter:true
-// });
-// $('#harga').editableSelect({
-//     filter:true
-// });
-</script>
 <!--
     <link src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></link>
     <link src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></link>

@@ -3,18 +3,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <div class="row">
+                    <div class="row" id="navScroll">
                         <div class="col-2">
-                            <a href="">Overview</a>
+                            <a href="#section-overview">Overview</a>
                         </div>
                         <div class="col-2 text-center">
-                            <a href="">Detail</a>
+                            <a href="#section-detail">Detail</a>
                         </div>
                         <div class="col-2 text-center">
-                            <a href="">Lokasi</a>
+                            <a href="#section-lokasi">Lokasi</a>
                         </div>
                         <div class="col-5">
-                            <a href="">Syarat & Ketentuan</a>
+                            <a href="#section-syarat">Syarat & Ketentuan</a>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="logo-name-kategori">
+                    <div class="logo-name-kategori" id="section-overview">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -57,7 +57,7 @@
                             <?php endfor; ?>
                         </div>
                     </section>
-                    <div class="detail-produk">
+                    <div class="detail-produk" id="section-detail">
                         <h4>Detail</h4>
                         <p>
                             Everything we do, we believe in making a better life for the better future. One of our ways to make that possible is through weddings. Through Vowever, we serve people with a full heart, being transparent and loyal, and always giving our best service, we believe Vowever can be a helping hand to establish a better life for you and your partner. It begins with designing your dream wedding that we believe will carry your happiness to your new family<span id="titikTiga">...</span>
@@ -114,10 +114,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lokasi">
+                    <div class="lokasi" id="section-lokasi">
                         <h4>Lokasi : Bali, ID</h4>
                     </div>
-                    <div class="syarat-ketentuan">
+                    <div class="syarat-ketentuan" id="section-syarat">
                         <h4>Syarat & Ketentuan</h4>
                         <p>
                             We can’t wait to be your partner !!
@@ -147,6 +147,7 @@
                                             <?php
                                             $nilai = 1;
                                             $kapasitas = 'ada';
+                                            $jumlah = 100;
                                             if ($nilai == 1) :
                                             ?>
                                                 <div class="col-3">
@@ -166,28 +167,57 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <?php if($kapasitas != null): ?>
-                                    <div class="col-md-12">
-                                        <div class="kapasitas mt-2">
-                                            <span>Kapasitas</span>
-                                            <h4>100 Pax</h4>
+                                    <?php if ($kapasitas != null) : ?>
+                                        <div class="col-md-12">
+                                            <div class="kapasitas mt-2">
+                                                <span>Kapasitas</span>
+                                                <h4>100 Pax</h4>
+                                            </div>
                                         </div>
-                                    </div>
                                     <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="left-card-2 mt-3">
-                        <div class="card">
-                            <div class="body">
-                                <img src="<?= base_url(); ?>assets/vendors/img/news/new_flex_icon.png" class="vendor-flex" alt="">
-                                <p>
-                                    Anda dapat mengubah tanggal layanan (reschedule) menjadi tanggal lain yang tersedia di tahun 2020.
-                                </p>
+                    <?php if ($nilai == 1) : ?>
+                        <div class="left-card-2 mt-3">
+                            <div class="card">
+                                <div class="body">
+                                    <img src="<?= base_url(); ?>assets/vendors/img/news/new_flex_icon.png" class="vendor-flex" alt="">
+                                    <p>
+                                        Anda dapat mengubah tanggal layanan (reschedule) menjadi tanggal lain yang tersedia di tahun 2020.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
+                    <form action="" method="">
+                        <div class="qty mt-3">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <span>Jumlah</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <button id="dec">-</button>
+                                        <input type="text" class="qtyinput" value="<?= $jumlah; ?>" readonly>
+                                        <button id="inc">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tombol">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="" class="btn btn-block btn-primary chat"><i class="far fa-comment-dots"></i> Chat</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="" class="btn btn-block btn-primary pesan">Pesan Sekarang</a>
+                                </div>
+                            </div>
+                            <span>Chat untuk informasi lebih lanjut & kustomisasi produk</span>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

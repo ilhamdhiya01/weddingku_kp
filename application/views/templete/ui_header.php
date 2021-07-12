@@ -476,7 +476,7 @@
                 <a href="" class="btn-login">Login</a>
                 <a href="" class="btn-daftar ml-auto">Daftar</a>
                 <span class="desktop-v-span">join member ? <a href="">sign in </a></span>
-                <a href="" class="desktop-v-a">are you a vendor ?</a>
+                <a href="" class="desktop-v-a"> are you a vendor ?</a>
             </form>
         </div>
     </nav>

@@ -98,10 +98,9 @@
     height: 40px;
 }
 .store-all-produk .container .card span {
-    position: relative;
-    left: 10px;
     padding-top: 15px;
     text-align: center;
+    font-size: 13px;
 }
 .store-all-produk .container .card {
     display: flex;

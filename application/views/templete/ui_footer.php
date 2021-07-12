@@ -80,7 +80,7 @@
                 <a href="">Kebijakan Peivasi</a>
                 <a href="">Syarat & Ketentuan</a>
                 <a href="">Peta Situs</a>
-                <span>Hak Cipta © 2021 Weddingku. Hak Cipta Dilindungi Undang-undang.</span>
+                <span class="copy-right">Hak Cipta © 2021 Weddingku. Hak Cipta Dilindungi Undang-undang.</span>
             </div>
         </div>
     </div>

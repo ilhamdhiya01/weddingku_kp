@@ -223,3 +223,55 @@
         </div>
     </div>
 </section>
+
+<section class="produk-lain">
+    <div class="container">
+        <div class="produk-lain-title">
+            <h4>Produk Lain oleh Vendor Ini</h4>
+        </div>
+        <section id="produk-lain-vendor-ini" class="produk-lain-vendor-ini">
+            <div class="owl-carousel owl-theme">
+                <?php for ($i = 1; $i <= 10; $i++) : ?>
+                    <div class="item">
+                        <a href="<?= base_url(); ?>ui/produk">
+                            <div class="card">
+                                <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
+                                <?php
+                                $disc = 1;
+                                if ($disc == 1) :
+                                ?>
+                                    <div class="img-style">
+                                        <span class="span-disc-1">Hemat</span>
+                                        <span class="span-disc-2">8%</span>
+                                    </div>
+                                <?php
+                                endif;
+                                ?>
+                                <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
+                                <div class="info-promo">
+                                    <h4 class="desktop-v">
+                                        <?php
+                                        $namapromo = "promo Lengkap Pasadenia Sportc ilhm dhiya";
+                                        echo strlen($namapromo) > 27 ? substr($namapromo, 0, 27) . '...' : substr($namapromo, 0, 27);
+                                        ?>
+                                    </h4>
+                                    <span class="vendor vendor-d-v">
+                                        <?php
+                                        $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
+                                        echo strlen($vendor) > 43 ? substr($vendor, 0, 43) . '...' : substr($vendor, 0, 43);
+                                        ?>
+                                    </span>
+                                    <div class="promo-harga">
+                                        <small class="before-price">IDR 111,800,000</small>
+                                        <br>
+                                        <span class="after-price">IDR 106,210,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        </section>
+    </div>
+</section>

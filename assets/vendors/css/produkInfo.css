@@ -1,3 +1,8 @@
+/* section produk info */
+.produk-info {
+    border-bottom: 1px solid #c2bdbd;
+}
+/* / */
 /* smooth slider */
 .smooth-slider{
     border-bottom: 1px solid rgb(185, 184, 184);
@@ -206,7 +211,6 @@
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 50px;
-    border-bottom: 1px solid #c2bdbd;
 }
 .produk-content .syarat-ketentuan .selengkapnya span {
     color: #EBA1A1;
@@ -364,7 +368,131 @@
     top: 5px;
 }
 /* / */
-
+  /* slider promo profile vendor */
+.produk-lain {
+    padding-top: 30px;
+}
+.produk-lain  .produk-lain-title  {
+    padding:20px 0;
+}
+.produk-lain  .produk-lain-title h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #535151;
+}
+.produk-lain  .produk-lain-title a {
+    font-size: 13px;
+    float: right;
+    color: #535151;
+    font-weight: bold;
+} 
+.produk-lain .produk-lain-vendor-ini .card {
+    height: 290px;
+    border-radius: 8px;
+}
+.produk-lain .produk-lain-vendor-ini .col-md-3 {
+    padding-bottom: 30px;
+}
+.produk-lain .produk-lain-vendor-ini a {
+    text-decoration: none;
+}
+.produk-lain .produk-lain-vendor-ini .card img{
+    height: 170px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.produk-lain .produk-lain-vendor-ini .img-style {
+    border: 1px solid #f35a50;
+    background: #f35a50;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 65px;
+    height: 40px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 8px;
+}
+.produk-lain .produk-lain-vendor-ini .img-style .span-disc-1 {
+    font-size: 9px;
+    color: white;
+    font-size: 11px;
+    position: relative;
+    top:-8px;
+}
+.produk-lain .produk-lain-vendor-ini .img-style .span-disc-2 {
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top:-17px;
+} 
+.produk-lain .produk-lain-vendor-ini .kota {
+    position: absolute;
+    top: 145px;
+    /* top: -65px; */
+    left:1rem;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.produk-lain .produk-lain-vendor-ini .info-promo {
+    padding-left: 10px;
+    position: relative;
+    top: 10px;
+}
+.produk-lain .produk-lain-vendor-ini .info-promo h4 {
+    font-size: 16px;
+    color: #000000;
+}
+.produk-lain .produk-lain-vendor-ini .judul h4 {
+    font-size: 24px !important;
+    color: #000000;
+    font-weight: bold;
+}
+.produk-lain .produk-lain-vendor-ini .judul a {
+    font-size: 15px !important;
+    color: #000000;
+    font-weight: bold;
+}
+.produk-lain .produk-lain-vendor-ini .info-promo .vendor {
+    color: #737373;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+}
+.produk-lain .produk-lain-vendor-ini .info-promo .promo-harga .before-price {
+    color: #737373;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+.produk-lain .produk-lain-vendor-ini .info-promo .promo-harga .after-price{
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    /* top: -3px; */
+}
+#produk-lain-vendor-ini .owl-prev {
+    left:-40px;
+}
+#produk-lain-vendor-ini .owl-next {
+    right:-50px;
+}
+#produk-lain-vendor-ini .owl-prev, #produk-lain-vendor-ini .owl-next{
+    position: absolute;
+    bottom: 40%;
+} 
+#produk-lain-vendor-ini .owl-prev span, #produk-lain-vendor-ini .owl-next span {
+    font-size: 35px;
+    color: #737373;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+#produk-lain-vendor-ini .owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
+}
 @media(max-width:600px) {
 }
 @media(min-width:600px){

@@ -120,6 +120,20 @@
 #gambar-lain .owl-theme .owl-nav [class*="owl-"]:hover {
     background-color: transparent;
 }
+#gambar-lain .owl-theme .owl-dots .owl-dot.active span {
+    background-color: #EBA1A1 !important;
+}
+#gambar-lain .owl-theme .owl-dots .owl-dot span {
+    width: 7px;
+    height: 7px;
+    margin: 5px 2px;
+    background:  #e2dedd;
+    display: block;
+    position: relative;
+    top: -50px;
+    /* transition: opacity .8s ease; */
+    border-radius: 30px;
+}
 /* / */
 /* detail produk */
 .produk-content .detail-produk {
@@ -381,7 +395,9 @@
     color: #535151;
 }
 .produk-lain  .produk-lain-title a {
-    font-size: 13px;
+    font-size: 15px;
+    margin-top: -15px;
+    text-decoration: none;
     float: right;
     color: #535151;
     font-weight: bold;

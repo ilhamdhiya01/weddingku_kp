@@ -55,11 +55,13 @@ dec.addEventListener('click',function(e){
     }
 })
 
-// smooth scroll
-$(function(){
-    var scroll = new SmoothScroll('a[href*="#section-"]', {
-        speed: 500,
-        speedAsDuration: true,
+//smooth scroll
+$('.page-scroll').on('click',function(e){
+    let tujuan = $(this).attr('href');
+    let elementTujuan = $(tujuan);
+    $('body').animate({
+        scrollTop: elementTujuan.offset().top
     });
-})
+    e.preventDefault();
+});
 

@@ -3,18 +3,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <div class="row" id="navScroll">
+                    <div class="row">
                         <div class="col-2">
-                            <a href="#section-overview">Overview</a>
+                            <a href="#overview" class="page-scroll">Overview</a>
                         </div>
                         <div class="col-2 text-center">
-                            <a href="#section-detail">Detail</a>
+                            <a href="#detail" class="page-scroll">Detail</a>
                         </div>
                         <div class="col-2 text-center">
-                            <a href="#section-lokasi">Lokasi</a>
+                            <a href="#lokasi" class="page-scroll">Lokasi</a>
                         </div>
                         <div class="col-5">
-                            <a href="#section-syarat">Syarat & Ketentuan</a>
+                            <a href="#syarat" class="page-scroll">Syarat & Ketentuan</a>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="logo-name-kategori" id="section-overview">
+                    <div class="logo-name-kategori" id="overview">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -48,7 +48,7 @@
                     </div>
                     <section id="gambar-lain" class="gambar-lain">
                         <div class="owl-carousel owl-theme  thumbnail">
-                            <?php for ($i = 1; $i <= 10; $i++) : ?>
+                            <?php for ($i = 1; $i <= 3; $i++) : ?>
                                 <a class="lightbox" href="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" data-at-450="">
                                     <div class="item">
                                         <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" class="thumb img-fluid" alt="">
@@ -57,7 +57,7 @@
                             <?php endfor; ?>
                         </div>
                     </section>
-                    <div class="detail-produk" id="section-detail">
+                    <div class="detail-produk" id="detail">
                         <h4>Detail</h4>
                         <p>
                             Everything we do, we believe in making a better life for the better future. One of our ways to make that possible is through weddings. Through Vowever, we serve people with a full heart, being transparent and loyal, and always giving our best service, we believe Vowever can be a helping hand to establish a better life for you and your partner. It begins with designing your dream wedding that we believe will carry your happiness to your new family<span id="titikTiga">...</span>
@@ -114,10 +114,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lokasi" id="section-lokasi">
+                    <div class="lokasi" id="lokasi">
                         <h4>Lokasi : Bali, ID</h4>
                     </div>
-                    <div class="syarat-ketentuan" id="section-syarat">
+                    <div class="syarat-ketentuan" id="syarat">
                         <h4>Syarat & Ketentuan</h4>
                         <p>
                             We can’t wait to be your partner !!
@@ -228,6 +228,7 @@
     <div class="container">
         <div class="produk-lain-title">
             <h4>Produk Lain oleh Vendor Ini</h4>
+            <a href="">Lihat Semua</a>
         </div>
         <section id="produk-lain-vendor-ini" class="produk-lain-vendor-ini">
             <div class="owl-carousel owl-theme">

@@ -267,7 +267,7 @@ $('#gambar-lain .owl-carousel').owlCarousel({
     loop:false,
     margin:10,
     nav:true,
-    dots:false,
+    dots:true,
     responsive:{
         0:{
             items:1

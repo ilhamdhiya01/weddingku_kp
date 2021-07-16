@@ -8,10 +8,9 @@
     border-bottom: 1px solid rgb(185, 184, 184);
     padding: 20px 0;
     position: relative;
-    top: -10px;
+    top:35px;
     display: block;
     position: fixed;
-    top: 91px;
     width: 100%;
     z-index: 999;
     background-color: #fff;
@@ -57,31 +56,20 @@
     border: none;
 }
 .produk-content .logo-name-kategori img {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
 }
 .produk-content .logo-name-kategori .col-10 h4 {
     font-weight: bold;
-    font-size: 25px;
-}
-.produk-content .logo-name-kategori .col-10 {
-    position: relative;
-    top: 8px;
+    font-size: 18px;
 }
 .produk-content .logo-name-kategori .col-10 span {
     color: #EBA1A1;
-    font-size: 17px;
-}
-.produk-content .logo-name-kategori .col-10 .dikelola {
-    float:right;
-    color: #555555;
     font-size: 14px;
-    position: relative;
-    left: 55px;
 }
 .produk-content .logo-name-kategori .col-10 p {
-    font-size: 17px;
+    font-size: 14px;
     color: #555555;
 }
 /* / */
@@ -510,8 +498,550 @@
     background-color: transparent;
 }
 @media(max-width:600px) {
+    .produk-info .smooth-slider {
+        height: 60px;
+    }
+    .produk-info .smooth-slider .smooth-d-v {
+        display: none;
+    }
+    .produk-content .logo-name-kategori .col-10 .dikelola {
+        display: none;
+    }
+    .produk-info .smooth-slider .smooth-m-v .menu-link{
+        position: relative;
+        right: 15px;
+    }
+    .produk-info .smooth-slider .smooth-m-v .menu-link ul li {
+        display: inline;
+        padding: 0 5px;
+    }
+    .produk-info .smooth-slider .smooth-m-v .menu-link ul li a{
+        font-size: 13px;
+    }
+    .produk-content .logo-name-kategori .col-10 {
+        position: relative;
+        left: 10px;
+    }
+    .produk-content .logo-name-kategori .col-10 p {
+        position: relative;
+        top: -5px;
+    }
 }
 @media(min-width:600px){
+    .produk-info .smooth-slider .smooth-m-v {
+        display: none;
+    }
 }
 @media (min-width: 992px) {
+    /* section produk info */
+    .produk-info {
+        border-bottom: 1px solid #c2bdbd;
+    }
+    /* / */
+    /* smooth slider */
+    .smooth-slider{
+        border-bottom: 1px solid rgb(185, 184, 184);
+        padding: 20px 0;
+        position: relative;
+        top: -10px;
+        display: block;
+        position: fixed;
+        top: 91px;
+        width: 100%;
+        z-index: 999;
+        background-color: #fff;
+    }
+    .smooth-slider a{
+        font-size: 14px;
+        text-decoration: none;
+        color: #646363;
+    }
+    .smooth-slider .col-2 a:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid #EBA1A1;
+        width: 50%;
+        margin: auto;
+        position: relative;
+        top: 19px;
+        margin-bottom: -23px;
+    }
+    .smooth-slider .col-5 a:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid #EBA1A1;
+        width: 50%;
+        margin: auto;
+        position: relative;
+        top: 18px;
+        right: 43px;
+        margin-bottom: -23px;
+    }
+    /* / */
+    /* produk content */
+    .produk-content {
+        margin-top: 80px;
+    }
+    .produk-content .logo-name-kategori {
+        margin-top: 10px;
+        border-bottom: 1px solid #c2bdbd;
+    }
+    .produk-content .logo-name-kategori .card {
+        position: relative;
+        right: 20px;
+        border: none;
+    }
+    .produk-content .logo-name-kategori img {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+    }
+    .produk-content .logo-name-kategori .col-10 h4 {
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .produk-content .logo-name-kategori .col-10 {
+        position: relative;
+        top: 8px;
+    }
+    .produk-content .logo-name-kategori .col-10 span {
+        color: #EBA1A1;
+        font-size: 17px;
+    }
+    .produk-content .logo-name-kategori .col-10 .dikelola {
+        float:right;
+        color: #555555;
+        font-size: 14px;
+        position: relative;
+        left: 55px;
+    }
+    .produk-content .logo-name-kategori .col-10 p {
+        font-size: 17px;
+        color: #555555;
+    }
+    /* / */
+    /* section gambar lain */
+    .gambar-lain{
+        margin-top: 30px;
+    }
+    .gambar-lain img {
+        height: 350px;
+        border-radius: 10px;
+        /* position: relative;
+        left: 65px; */
+    }
+    .gambar-lain .item {
+        /* width: 600px; */
+    }
+    .gambar-lain img:hover {
+        opacity: 0.9;
+    }
+    #gambar-lain .owl-prev {
+        left:20px;
+    }
+    #gambar-lain .owl-next {
+        right:10px;
+    }
+    #gambar-lain .owl-prev, #gambar-lain .owl-next{
+        position: absolute;
+        bottom: 30%;
+    } 
+    #gambar-lain .owl-prev span, #gambar-lain .owl-next span {
+        font-size: 80px;
+        opacity: 0.8;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    }
+    #gambar-lain .owl-theme .owl-nav [class*="owl-"]:hover {
+        background-color: transparent;
+    }
+    #gambar-lain .owl-theme .owl-dots .owl-dot.active span {
+        background-color: #EBA1A1 !important;
+    }
+    #gambar-lain .owl-theme .owl-dots .owl-dot span {
+        width: 7px;
+        height: 7px;
+        margin: 5px 2px;
+        background:  #e2dedd;
+        display: block;
+        position: relative;
+        top: -50px;
+        /* transition: opacity .8s ease; */
+        border-radius: 30px;
+    }
+    /* / */
+    /* detail produk */
+    .produk-content .detail-produk {
+        padding-top: 30px;
+    }
+    .produk-content .detail-produk h4 {
+        font-size: 22px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    .produk-content .detail-produk p,span {
+        font-size: 14px;
+        color: #7c7c7c;
+    }
+    .produk-content .detail-produk .selengkapnya {
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+        border-bottom: 1px solid #c2bdbd;
+    }
+    .produk-content .detail-produk .selengkapnya span {
+        color: #EBA1A1;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .produk-content .detail-produk #selengkapnya {
+        display: none;
+    }
+    /* / */
+    /* vendor */
+    .produk-content .vendor {
+        padding: 40px 0;
+        border-bottom: 1px solid #c2bdbd;
+    } 
+    .produk-content .vendor div img {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+    }
+    .produk-content .vendor .col-10 h4 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .produk-content .vendor .col-10 span {
+        position: relative;
+        top: -8px;
+    }
+    .produk-content .vendor .col-10 .rating-vendor i{
+        font-size: 14px;
+        position: relative;
+        top: -8px;
+        color: #EBA1A1;
+    }
+    .produk-content .vendor .btn-show-vendor a{
+        font-size: 12px;
+        background-color: #FFFFFF;
+        color: #555;
+        font-weight: bold;
+        border-color: #c2bdbd;
+    } 
+    /* / */
+    /* lokasi */
+    .produk-content .lokasi {
+        padding: 30px 0;
+        border-bottom: 1px solid #c2bdbd;
+
+    }
+    .produk-content .lokasi h4 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /* / */
+    /* syarat ketentuan */
+    .produk-content .syarat-ketentuan {
+        padding: 30px 0;
+    }
+    .produk-content .syarat-ketentuan h4 {
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    .produk-content .syarat-ketentuan p {
+        font-size: 14px;
+        color: #7c7c7c;
+    }
+    .produk-content .syarat-ketentuan .selengkapnya {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+    .produk-content .syarat-ketentuan .selengkapnya span {
+        color: #EBA1A1;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .produk-content .syarat-ketentuan #selengkapnya-syarat {
+        display: none;
+    }
+    /* / */ 
+    /* card left 1*/
+    .left-card-1 .card {
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(143, 143, 143, 0.5);
+        border: none;
+    }
+    .left-card-1 .card .harga-title {
+        color: #555;
+        padding-bottom: 7px;
+        font-size: 14px;
+    }
+    .left-card-1 .body .promo-icon {
+        border:1px solid #F35A50;
+        width: 65px;
+        height: 44px;
+        border-radius: 8px;
+        background-color: #F35A50;
+    }
+    .left-card-1 .body .promo-icon .span-1 {
+        font-size: 12px;
+        color: #FFF;
+        position: relative;
+        left: 14px;
+    }
+    .left-card-1 .body .promo-icon .span-2 {
+        color: #FFF;
+        position: relative;
+        left: 18px;
+        top: -7px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    /* .left-card-1 .body .harga {
+        position: relative;
+        right: 25px;
+    } */
+    .left-card-1 .body .harga .before-price {
+        text-decoration: line-through;
+    }
+    .left-card-1 .body .harga .after-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        position: relative;
+        top: -3px;
+    }
+    .left-card-1 .card .body .kapasitas {
+        border-top: 1px solid #c2bdbd;
+        
+    }
+    .left-card-1 .card .body .kapasitas span {
+        font-size: 14px;
+        color: #555;
+        position: relative;
+        top: 5px;
+    }
+    .left-card-1 .card .body .kapasitas h4 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        position: relative;
+        top: 10px;
+    } 
+    /* / */
+    /* card left 2  */
+    .left-card-2 .card .body {
+        padding: 10px 20px;
+    }
+    .left-card-2 .card  {
+        background-color: #FEF1EC;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(143, 143, 143, 0.5);
+        border: none;
+    }
+    .left-card-2 .card .body img {
+        position: relative;
+        right: 8px;
+    }
+    .left-card-2 .card .body p {
+        font-size: 12px;
+    }
+    .produk-content .qty .card{
+        padding: 10px 10px;
+        box-shadow: 2px 2px 10px rgba(143, 143, 143, 0.5);
+    }
+    .produk-content .qty .qtyinput {
+        width: 50px;
+        border: none;
+        border-bottom: 1px solid #a1a1a1;
+        text-align: center;
+        color: #5c5b5b;
+    }
+    .produk-content .qty #dec {
+        background-color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 0 8px;
+        border-radius: 100%;
+        border-color: #EBA1A1;
+        color: #EBA1A1;
+    }
+    .produk-content .qty #inc {
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 100%;
+        border-color: #EBA1A1;
+        color: #EBA1A1;
+        background-color: #fff;
+    }
+    .produk-content .qty #dec:hover,.produk-content .qty #inc:hover {
+        background-color: #EBA1A1;
+        color: #fff;
+    }
+    .produk-content .tombol {
+        margin-top: 35px;
+    }
+    .produk-content .tombol .chat {
+        background-color: #fff;
+        color: #EBA1A1;
+        font-weight: bold;
+        border-color: #EBA1A1;
+        width: 175px;
+    }
+    .produk-content .tombol .chat:hover {
+        background-color: #EBA1A1;
+        color: #fff;
+    }
+    .produk-content .tombol .pesan {
+        background-color: #EBA1A1;
+        color: #fff;
+        font-weight: bold;
+        border-color: #EBA1A1;
+    }
+    .produk-content .tombol .pesan:hover {
+        opacity: 0.7;
+    }
+    .produk-content .tombol span {
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: 5px;
+        top: 5px;
+    }
+    /* / */
+    /* slider promo profile vendor */
+    .produk-lain {
+        padding-top: 30px;
+    }
+    .produk-lain  .produk-lain-title  {
+        padding:20px 0;
+    }
+    .produk-lain  .produk-lain-title h4 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #535151;
+    }
+    .produk-lain  .produk-lain-title a {
+        font-size: 15px;
+        margin-top: -15px;
+        text-decoration: none;
+        float: right;
+        color: #535151;
+        font-weight: bold;
+    } 
+    .produk-lain .produk-lain-vendor-ini .card {
+        height: 290px;
+        border-radius: 8px;
+    }
+    .produk-lain .produk-lain-vendor-ini .col-md-3 {
+        padding-bottom: 30px;
+    }
+    .produk-lain .produk-lain-vendor-ini a {
+        text-decoration: none;
+    }
+    .produk-lain .produk-lain-vendor-ini .card img{
+        height: 170px;
+        position: relative;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .produk-lain .produk-lain-vendor-ini .img-style {
+        border: 1px solid #f35a50;
+        background: #f35a50;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 65px;
+        height: 40px;
+        padding: 5px 5px;
+        position: absolute;
+        top: 8px;
+    }
+    .produk-lain .produk-lain-vendor-ini .img-style .span-disc-1 {
+        font-size: 9px;
+        color: white;
+        font-size: 11px;
+        position: relative;
+        top:-8px;
+    }
+    .produk-lain .produk-lain-vendor-ini .img-style .span-disc-2 {
+        color: white;
+        position: relative;
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+        top:-17px;
+    } 
+    .produk-lain .produk-lain-vendor-ini .kota {
+        position: absolute;
+        top: 145px;
+        /* top: -65px; */
+        left:1rem;
+        font-size: 12px;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    .produk-lain .produk-lain-vendor-ini .info-promo {
+        padding-left: 10px;
+        position: relative;
+        top: 10px;
+    }
+    .produk-lain .produk-lain-vendor-ini .info-promo h4 {
+        font-size: 16px;
+        color: #000000;
+    }
+    .produk-lain .produk-lain-vendor-ini .judul h4 {
+        font-size: 24px !important;
+        color: #000000;
+        font-weight: bold;
+    }
+    .produk-lain .produk-lain-vendor-ini .judul a {
+        font-size: 15px !important;
+        color: #000000;
+        font-weight: bold;
+    }
+    .produk-lain .produk-lain-vendor-ini .info-promo .vendor {
+        color: #737373;
+        font-size: 12px;
+        position: relative;
+        top: -10px;
+    }
+    .produk-lain .produk-lain-vendor-ini .info-promo .promo-harga .before-price {
+        color: #737373;
+        font-size: 10px;
+        text-decoration: line-through;
+    }
+    .produk-lain .produk-lain-vendor-ini .info-promo .promo-harga .after-price{
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        /* top: -3px; */
+    }
+    #produk-lain-vendor-ini .owl-prev {
+        left:-40px;
+    }
+    #produk-lain-vendor-ini .owl-next {
+        right:-50px;
+    }
+    #produk-lain-vendor-ini .owl-prev, #produk-lain-vendor-ini .owl-next{
+        position: absolute;
+        bottom: 40%;
+    } 
+    #produk-lain-vendor-ini .owl-prev span, #produk-lain-vendor-ini .owl-next span {
+        font-size: 35px;
+        color: #737373;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    }
+    #produk-lain-vendor-ini .owl-theme .owl-nav [class*="owl-"]:hover {
+        background-color: transparent;
+    }
 }

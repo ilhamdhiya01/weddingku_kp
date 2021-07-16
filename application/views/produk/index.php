@@ -2,7 +2,7 @@
     <div class="smooth-slider mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 smooth-d-v">
                     <div class="row">
                         <div class="col-2">
                             <a href="#overview" class="page-scroll">Overview</a>
@@ -16,6 +16,16 @@
                         <div class="col-5">
                             <a href="#syarat" class="page-scroll">Syarat & Ketentuan</a>
                         </div>
+                    </div>
+                </div>
+                <div class="col-12 smooth-m-v">
+                    <div class="menu-link">
+                        <ul>
+                            <li><a href="">Overview</a></li>
+                            <li><a href="">Detail</a></li>
+                            <li><a href="">Lokasi</a></li>
+                            <li><a href="">Syarat & Ketentuan</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

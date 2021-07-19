@@ -55,13 +55,22 @@ dec.addEventListener('click',function(e){
     }
 })
 
-//smooth scroll
+//smooth scroll desktop version
 $('.page-scroll').on('click',function(e){
     let tujuan = $(this).attr('href');
     let elementTujuan = $(tujuan);
     $('body').animate({
-        scrollTop: elementTujuan.offset().top
+        scrollTop: elementTujuan.offset().top - 300
     });
     e.preventDefault();
 });
 
+//smooth scroll mobile version
+$('.mobile-scroll').on('click',function(e){
+    let mobileTujuan = $(this).attr('href');
+    let mobileElementTujuan = $(mobileTujuan);
+    $('body').animate({
+        scrollTop: mobileElementTujuan.offset().top - 150
+    });
+    e.preventDefault();
+});

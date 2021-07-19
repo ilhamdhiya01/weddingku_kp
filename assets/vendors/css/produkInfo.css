@@ -78,13 +78,8 @@
     margin-top: 30px;
 }
 .gambar-lain img {
-    height: 350px;
-    border-radius: 10px;
-    /* position: relative;
-    left: 65px; */
-}
-.gambar-lain .item {
-    /* width: 600px; */
+    height: 200px;
+    border-radius: 8px;
 }
 .gambar-lain img:hover {
     opacity: 0.9;
@@ -93,7 +88,7 @@
     left:20px;
 }
 #gambar-lain .owl-next {
-    right:10px;
+    right:20px;
 }
 #gambar-lain .owl-prev, #gambar-lain .owl-next{
     position: absolute;
@@ -124,22 +119,18 @@
 }
 /* / */
 /* detail produk */
-.produk-content .detail-produk {
-    padding-top: 30px;
-}
 .produk-content .detail-produk h4 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     padding-bottom: 10px;
 }
 .produk-content .detail-produk p,span {
-    font-size: 14px;
+    font-size: 12px;
     color: #7c7c7c;
 }
 .produk-content .detail-produk .selengkapnya {
     display: flex;
     justify-content: center;
-    padding: 40px 0;
     border-bottom: 1px solid #c2bdbd;
 }
 .produk-content .detail-produk .selengkapnya span {
@@ -158,12 +149,12 @@
     border-bottom: 1px solid #c2bdbd;
 } 
 .produk-content .vendor div img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
 }
 .produk-content .vendor .col-10 h4 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 .produk-content .vendor .col-10 span {
@@ -171,7 +162,7 @@
     top: -8px;
 }
 .produk-content .vendor .col-10 .rating-vendor i{
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
     top: -8px;
     color: #EBA1A1;
@@ -186,26 +177,26 @@
 /* / */
 /* lokasi */
 .produk-content .lokasi {
-    padding: 30px 0;
+    padding: 20px 0;
     border-bottom: 1px solid #c2bdbd;
 
 }
 .produk-content .lokasi h4 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 /* / */
 /* syarat ketentuan */
 .produk-content .syarat-ketentuan {
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .produk-content .syarat-ketentuan h4 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     padding-bottom: 10px;
 }
 .produk-content .syarat-ketentuan p {
-    font-size: 14px;
+    font-size: 12px;
     color: #7c7c7c;
 }
 .produk-content .syarat-ketentuan .selengkapnya {
@@ -372,19 +363,27 @@
 /* / */
   /* slider promo profile vendor */
 .produk-lain {
-    padding-top: 30px;
+    padding-top: 10px;
 }
 .produk-lain  .produk-lain-title  {
     padding:20px 0;
 }
 .produk-lain  .produk-lain-title h4 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #535151;
 }
-.produk-lain  .produk-lain-title a {
+/* .produk-lain  .produk-lain-title .d-v {
     font-size: 15px;
     margin-top: -15px;
+    text-decoration: none;
+    float: right;
+    color: #535151;
+    font-weight: bold;
+}  */
+.produk-lain  .produk-lain-title .m-v {
+    font-size: 14px;
+    margin-top: -20px;
     text-decoration: none;
     float: right;
     color: #535151;
@@ -479,7 +478,7 @@
     position: relative;
     /* top: -3px; */
 }
-#produk-lain-vendor-ini .owl-prev {
+/* #produk-lain-vendor-ini .owl-prev {
     left:-40px;
 }
 #produk-lain-vendor-ini .owl-next {
@@ -492,6 +491,26 @@
 #produk-lain-vendor-ini .owl-prev span, #produk-lain-vendor-ini .owl-next span {
     font-size: 35px;
     color: #737373;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+#produk-lain-vendor-ini .owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
+} */
+
+#produk-lain-vendor-ini .owl-prev {
+    left:20px;
+}
+#produk-lain-vendor-ini .owl-next {
+    right:20px;
+}
+#produk-lain-vendor-ini .owl-prev, #produk-lain-vendor-ini .owl-next{
+    position: absolute;
+    bottom: 45%;
+} 
+#produk-lain-vendor-ini .owl-prev span, #produk-lain-vendor-ini .owl-next span {
+    font-size: 80px;
+    opacity: 0.8;
+    color: #FFFFFF;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 #produk-lain-vendor-ini .owl-theme .owl-nav [class*="owl-"]:hover {
@@ -526,9 +545,31 @@
         position: relative;
         top: -5px;
     }
+    .produk-content .detail-produk .selengkapnya {
+        padding-bottom: 30px;
+    }
+    .produk-content .vendor .btn-d-v {
+        display: none;
+    }
+    .produk-content .vendor div .col-10{
+        position: relative;
+        left: 20px;
+    }
+    .produk-info {
+        padding-bottom: 30px;
+    }
+    .produk-lain  .produk-lain-title .d-v {
+        display: none;
+    }
 }
 @media(min-width:600px){
     .produk-info .smooth-slider .smooth-m-v {
+        display: none;
+    }
+    .produk-content .vendor .btn-m-v {
+        display: none;
+    }
+    .produk-lain  .produk-lain-title .m-v {
         display: none;
     }
 }
@@ -640,7 +681,7 @@
         left:20px;
     }
     #gambar-lain .owl-next {
-        right:10px;
+        right:20px;
     }
     #gambar-lain .owl-prev, #gambar-lain .owl-next{
         position: absolute;
@@ -671,6 +712,9 @@
     }
     /* / */
     /* detail produk */
+    .produk-content .col-md-4 {
+        margin-top: 47px;
+    }
     .produk-content .detail-produk {
         padding-top: 30px;
     }
@@ -1027,7 +1071,7 @@
         /* top: -3px; */
     }
     #produk-lain-vendor-ini .owl-prev {
-        left:-40px;
+        left:-50px;
     }
     #produk-lain-vendor-ini .owl-next {
         right:-50px;

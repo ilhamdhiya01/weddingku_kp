@@ -21,10 +21,10 @@
                 <div class="col-12 smooth-m-v">
                     <div class="menu-link">
                         <ul>
-                            <li><a href="">Overview</a></li>
-                            <li><a href="">Detail</a></li>
-                            <li><a href="">Lokasi</a></li>
-                            <li><a href="">Syarat & Ketentuan</a></li>
+                            <li><a href="#overview" class="mobile-scroll">Overview</a></li>
+                            <li><a href="#detail" class="mobile-scroll">Detail</a></li>
+                            <li><a href="#lokasi" class="mobile-scroll">Lokasi</a></li>
+                            <li><a href="#syarat" class="mobile-scroll">Syarat & Ketentuan</a></li>
                         </ul>
                     </div>
                 </div>
@@ -67,8 +67,8 @@
                             <?php endfor; ?>
                         </div>
                     </section>
-                    <div class="detail-produk" id="detail">
-                        <h4>Detail</h4>
+                    <div class="detail-produk">
+                        <h4 id="detail">Detail</h4>
                         <p>
                             Everything we do, we believe in making a better life for the better future. One of our ways to make that possible is through weddings. Through Vowever, we serve people with a full heart, being transparent and loyal, and always giving our best service, we believe Vowever can be a helping hand to establish a better life for you and your partner. It begins with designing your dream wedding that we believe will carry your happiness to your new family<span id="titikTiga">...</span>
                             <span id="selengkapnya">
@@ -94,7 +94,7 @@
                             <span id="btn-selengkapnya" onclick="selengkapnya()">Lihat Selengkapnya</span>
                         </div>
                     </div>
-                    <div class="vendor">
+                    <div class="vendor" id="lokasi">
                         <div class="row">
                             <div class="col-8">
                                 <div>
@@ -117,14 +117,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 btn-d-v">
+                                <div class="btn-show-vendor">
+                                    <a href="" class="btn btn-block btn-primary">Kunjungi Profil Vendor</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12 btn-m-v">
                                 <div class="btn-show-vendor">
                                     <a href="" class="btn btn-block btn-primary">Kunjungi Profil Vendor</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lokasi" id="lokasi">
+                    <div class="lokasi">
                         <h4>Lokasi : Bali, ID</h4>
                     </div>
                     <div class="syarat-ketentuan" id="syarat">
@@ -146,7 +151,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mt-5">
+                <div class="col-md-4">
                     <div class="left-card-1">
                         <div class="card">
                             <span class="harga-title">Harga</span>
@@ -238,7 +243,8 @@
     <div class="container">
         <div class="produk-lain-title">
             <h4>Produk Lain oleh Vendor Ini</h4>
-            <a href="">Lihat Semua</a>
+            <a href="" class="d-v">Lihat Semua</a>
+            <a href="" class="m-v"><i class="fas fa-ellipsis-h"></i></a>
         </div>
         <section id="produk-lain-vendor-ini" class="produk-lain-vendor-ini">
             <div class="owl-carousel owl-theme">

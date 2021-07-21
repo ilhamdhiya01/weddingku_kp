@@ -24,4 +24,11 @@ class Vendors extends CI_Controller
         $this->load->view('vendors/profile_vendor');
         $this->load->view('templete/ui_footer');
     }
+
+    public function harga() {
+        $data = [
+            "text" => "Fungsi ini akan dipanggil pada event klik button raed. Fungsi Ini menggunakan getJSON jQuery untuk membaca data JSON yang dikembalikan dari halaman PHP. Iterates objek JSON array dan menambahkan hasil ke HTML,"
+        ];
+        echo json_encode($data);
+    }
 }

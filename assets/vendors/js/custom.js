@@ -297,4 +297,4 @@ $('#produk-lain-vendor-ini .owl-carousel').owlCarousel({
             items:4
         }
     }
-})
+});

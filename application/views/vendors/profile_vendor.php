@@ -241,7 +241,7 @@
                                                 <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href=""><i class="fas fa-tags"></i> Harga</a>
+                                                <a href="" id="menu-harga-m-v"><i class="fas fa-tags"></i> Harga</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href=""><i class="fas fa-address-card"></i> Tentang Kami</a>
@@ -261,7 +261,7 @@
                                                 <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href=""><i class="fas fa-tags"></i> Harga</a>
+                                                <a href="" id="menu-harga"><i class="fas fa-tags"></i> Harga</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href=""><i class="fas fa-address-card"></i> Tentang Kami</a>
@@ -274,7 +274,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" id="show-data">
                             <section class="produk-profile-vendor">
                                 <div class="title-promo">
                                     <div class="row">
@@ -430,3 +430,34 @@
         </section>
     </div>
 </section>
+<script>
+$('#menu-harga').on('click',function(e){
+    $.ajax({
+        type : 'GET',
+        url : '<?php echo base_url(); ?>ui/vendors/harga',
+        dataType : 'JSON',
+        success : function(data){
+            let p = '';
+            p += '<p>'+ data.text + '</p>';
+            $('#show-data').html(p);
+        }
+        
+    });
+    e.preventDefault();
+});
+
+$('#menu-harga-m-v').on('click',function(e){
+    $.ajax({
+        type : 'GET',
+        url : '<?php echo base_url(); ?>ui/vendors/harga',
+        dataType : 'JSON',
+        success : function(data){
+            let p = '';
+            p += '<p>'+ data.text + '</p>';
+            $('#show-data').html(p);
+        }
+        
+    });
+    e.preventDefault();
+});
+</script>

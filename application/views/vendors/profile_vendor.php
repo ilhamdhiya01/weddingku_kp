@@ -238,13 +238,13 @@
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col-3">
-                                                <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
+                                                <a href=""><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href="" id="menu-harga-m-v"><i class="fas fa-tags"></i> Harga</a>
+                                                <a href="" id="menu-harga-d-v"><i class="fas fa-tags"></i> Harga</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href=""><i class="fas fa-address-card"></i> Tentang Kami</a>
+                                                <a href="" id="about-me-d-v"><i class="fas fa-address-card"></i> Tentang Kami</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href=""><i class="fas fa-percent"></i> Promo</a>
@@ -258,7 +258,7 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-3">
-                                                <a href="" class="active"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
+                                                <a href=""><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href="" id="menu-harga"><i class="fas fa-tags"></i> Harga</a>
@@ -431,32 +431,67 @@
     </div>
 </section>
 <script>
+// ajax show harga mobile version
 $('#menu-harga').on('click',function(e){
     $.ajax({
         type : 'GET',
-        url : '<?php echo base_url(); ?>ui/vendors/harga',
+        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
         dataType : 'JSON',
         success : function(data){
             let p = '';
-            p += '<p>'+ data.text + '</p>';
+            p += '<p>'+ data.harga + '</p>';
             $('#show-data').html(p);
         }
         
     });
     e.preventDefault();
 });
-
-$('#menu-harga-m-v').on('click',function(e){
+// ajax show harga desktop version
+$('#menu-harga-d-v').on('click',function(e){
     $.ajax({
         type : 'GET',
-        url : '<?php echo base_url(); ?>ui/vendors/harga',
+        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
         dataType : 'JSON',
         success : function(data){
             let p = '';
-            p += '<p>'+ data.text + '</p>';
+            p += 
+            '<div class="row justify-content-center">'+
+                '<div class="col-8">'+
+                    '<div class="row">'+
+                        '<div class="col-md-12">'+
+                            '<p class="harga">' + data.harga + '</p>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'
+            ;
             $('#show-data').html(p);
         }
         
+    });
+    e.preventDefault();
+});
+// about me desktop v
+$('#about-me-d-v').on('click',function(e){
+    $.ajax({
+        type : 'GET',
+        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
+        dataType : 'JSON',
+        success : function(data){
+            let p = '';
+            p += 
+            '<div class="row justify-content-center">'+
+                '<div class="col-8">'+
+                    '<div class="row">'+
+                        '<div class="col-md-12">'+
+                            '<p class="harga">' + data.about + '</p>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'
+            ;
+            $('#show-data').html(p);
+        }
     });
     e.preventDefault();
 });

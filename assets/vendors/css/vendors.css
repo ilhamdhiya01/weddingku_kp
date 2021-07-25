@@ -354,6 +354,10 @@
     position: relative;
     left: 40px;
 }
+.section-profile-vendor #show-data .harga{
+    text-align: center;
+    font-size: 13px;
+}
 /* / */
 /* section vendor serupa */
 .vendor-serupa {

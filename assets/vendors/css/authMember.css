@@ -1,0 +1,98 @@
+/* Registrasi */
+.registrasi {
+    background-color: #FFF;
+    margin-top: -330px;
+    padding-bottom: 200px;
+}
+.registrasi .judul {
+    margin-top: 40px;
+}
+.registrasi .judul h4 {
+    font-weight: bold;
+}
+.registrasi .judul p {
+    font-size: 16px;
+    color: #606061;
+    position: relative;
+    top: 2px;
+}
+.registrasi .judul .icon-info {
+    margin-top: 40px;
+}
+.style-bg {
+    position: relative;
+    top: 370px;
+    right: 80px;
+    width: 350px;
+    height: 350px;
+    background-color: #FDF1F0;
+    border-radius: 100%;
+}
+.registrasi .judul .icon-info .icon {
+    position: relative;
+    right: 7px;
+}
+.registrasi .judul .icon-info .info .h5-p {
+    padding-top: 10px;
+}
+.registrasi .judul .icon-info .info .h5-p h5{
+    font-size: 17px;
+    font-weight: bold;
+}
+.registrasi .judul .icon-info .info .h5-p p {
+    font-size: 13px;
+}
+/* form register */
+.form-register .form-header h5{
+    font-weight: bold;
+}
+.form-register .form-header a {
+    font-weight: bold;
+    color: #EBA1A1;
+    float: right;
+}
+.form-register .form-input {
+    margin-top: 20px;
+}
+.form-register .form-input input {
+    border: none;
+    border-bottom: 1px solid #d0d0d1;
+}
+.form-register .form-input button {
+    background-color: #EBA1A1;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 7px;
+}
+.form-register .form-input .p1 {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+.form-register .form-input .p2 {
+    font-size: 14px;
+    text-align: center;
+}
+.form-register .form-input .p2 a {
+    color: #EBA1A1;
+    text-decoration: none;
+    font-weight: bold;
+}
+.form-register .card-footer span{
+    font-size: 12px;
+}
+.form-register .card-footer {
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #EDF4FE;
+}
+.registrasi .form-register {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+@media(min-width:600px){
+}
+@media (min-width: 992px) {
+
+}

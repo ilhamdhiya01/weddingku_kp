@@ -8,7 +8,7 @@
                     </div>
                     <p>10.000+ calon pengantin merencanakan pernikahan-nya bersama kami setiap hari! </p>
                     <p>Baca wedding ideas, temukan direktori wedding vendor terlengkap, nikmati cerita real wedding kami, lihat inspiration board serta temukan best deal paket di weddingku store & honeymoon sekarang juga!</p>
-                    <a href="" class="btn-signup">sign up</a>
+                    <a href="<?= base_url(); ?>ui/AuthMember/registrasi" class="btn-signup">sign up</a>
                 </div>
             </div>
         </div>

@@ -264,7 +264,7 @@
                                                 <a href="" id="menu-harga"><i class="fas fa-tags"></i> Harga</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href=""><i class="fas fa-address-card"></i> Tentang Kami</a>
+                                                <a href="" id="menu-tentang-kami"><i class="fas fa-address-card"></i> Tentang Kami</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href=""><i class="fas fa-percent"></i> Promo</a>
@@ -439,7 +439,17 @@ $('#menu-harga').on('click',function(e){
         dataType : 'JSON',
         success : function(data){
             let p = '';
-            p += '<p>'+ data.harga + '</p>';
+            p += 
+            '<div class="row justify-content-center">'+
+                '<div class="col-8">'+
+                    '<div class="row">'+
+                        '<div class="col-md-12">'+
+                            '<p class="harga">' + data.harga + '</p>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'
+            ;
             $('#show-data').html(p);
         }
         
@@ -473,6 +483,31 @@ $('#menu-harga-d-v').on('click',function(e){
 });
 // about me desktop v
 $('#about-me-d-v').on('click',function(e){
+    $.ajax({
+        type : 'GET',
+        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
+        dataType : 'JSON',
+        success : function(data){
+            let p = '';
+            p += 
+            '<div class="row justify-content-center">'+
+                '<div class="col-8">'+
+                    '<div class="row">'+
+                        '<div class="col-md-12">'+
+                            '<p class="harga">' + data.about + '</p>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'
+            ;
+            $('#show-data').html(p);
+        }
+    });
+    e.preventDefault();
+});
+
+// about me mobile v
+$('#menu-tentang-kami').on('click',function(e){
     $.ajax({
         type : 'GET',
         url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/store.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/allproduk.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/produkInfo.css") ?>">
+    <link rel="stylesheet" href="<?= base_url("assets/vendors/css/authMember.css") ?>">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="<?= base_url("assets/vendors/vendor/fontawesome-free/css/all.min.css") ?>">
 

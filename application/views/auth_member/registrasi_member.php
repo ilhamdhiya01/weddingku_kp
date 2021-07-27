@@ -73,9 +73,7 @@
                                         <input type="password" class="form-control" id="pass" aria-describedby="emailHelp" placeholder="Kata Sandi">
                                     </div>
                                     <div class="col-1">
-                                        <span id="show-password" onclick="show()">
-                                            <i class="fas fa-eye"></i>
-                                        </span>
+                                        <i class="fas fa-eye" id="show-password-1"></i>
                                     </div>
                                 </div>
                             </div>
@@ -85,9 +83,7 @@
                                         <input type="password" class="form-control" id="konfirmasi-pass" aria-describedby="emailHelp" placeholder="Konfirmasi Kata Sandi">
                                     </div>
                                     <div class="col-1">
-
-                                        <i class="fas fa-eye fa-eye-2" id="show-password-2"></i>
-
+                                        <i class="fas fa-eye" id="show-password-2"></i>
                                     </div>
                                 </div>
                             </div>
@@ -109,25 +105,27 @@
 </div>
 <!-- show password -->
 <script>
-    function show() {
-        let x = document.getElementById('pass').type;
-        if (x == 'password') {
-            document.getElementById('pass').type = 'text';
-            document.getElementById('show-password').innerHTML = `<i class="fas fa-eye-slash"></i>`;
+    // show password
+    $('#show-password-1').click(function(){
+        let x = $('#pass').attr('type');
+        if(x == 'password'){
+            $('#pass').attr('type','text');
+            $('#show-password-1').removeClass('fas fa-eye').addClass('fas fa-eye-slash');
         } else {
-            document.getElementById('pass').type = 'password';
-            document.getElementById('show-password').innerHTML = `<i class="fas fa-eye"></i>`;
+            $('#pass').attr('type','password');
+            $('#show-password-1').removeClass('fas fa-eye-slash').addClass('fas fa-eye');
         }
-    }
+    });
 
+    // show konfirmasi password
     $('#show-password-2').click(function() {
-        let x = $('#konfirmasi-pass').attr('type');
-        let icon2 = '<i class="fas fa-eye-slash"></i>';
-        if (x == 'password') {
+        let y = $('#konfirmasi-pass').attr('type');
+        if (y == 'password') {
             $('#konfirmasi-pass').attr('type', 'text');
-            $('#show-password-2 i').addClass('fas fa-eye-slash');
+            $('#show-password-2').removeClass('fas fa-eye').addClass('fas fa-eye-slash');
         } else {
             $('#konfirmasi-pass').attr('type', 'password');
+            $('#show-password-2').removeClass('fas fa-eye-slash').addClass('fas fa-eye');
         }
     });
 </script>

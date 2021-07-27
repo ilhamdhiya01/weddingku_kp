@@ -78,7 +78,7 @@
     text-decoration: none;
     font-weight: bold;
 }
-.form-register .form-input #show-password,  .form-register .form-input #show-password-2{
+.form-register .form-input #show-password-1,  .form-register .form-input #show-password-2{
     position: relative;
     top: 20px;
     right: 17px;

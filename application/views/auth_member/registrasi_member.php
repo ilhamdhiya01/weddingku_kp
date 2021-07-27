@@ -46,7 +46,7 @@
                                 <h5>Daftar</h5>
                             </div>
                             <div class="col-6">
-                                <a href="">Masuk</a>
+                                <a href="" data-toggle="modal" data-target="#login-member">Masuk</a>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                             </div>
                             <button type="submit" class="btn btn-block">Lanjutkan</button>
                             <p class="p1">Dengan mendaftar, saya menyetujui Syarat<br> dan Ketentuan Bridestory</p>
-                            <p class="p2">Sudah punya akun ? <a href="">Masuk</a></p>
+                            <p class="p2">Sudah punya akun ? <a href="" data-toggle="modal" data-target="#login-member">Masuk</a></p>
                         </form>
                     </div>
                 </div>
@@ -110,10 +110,10 @@
         let x = $('#pass').attr('type');
         if(x == 'password'){
             $('#pass').attr('type','text');
-            $('#show-password-1').removeClass('fas fa-eye').addClass('fas fa-eye-slash');
+            $('#show-password-1').css('color','#EBA1A1');
         } else {
             $('#pass').attr('type','password');
-            $('#show-password-1').removeClass('fas fa-eye-slash').addClass('fas fa-eye');
+            $('#show-password-1').css('color','#b6b4b4');
         }
     });
 
@@ -122,10 +122,10 @@
         let y = $('#konfirmasi-pass').attr('type');
         if (y == 'password') {
             $('#konfirmasi-pass').attr('type', 'text');
-            $('#show-password-2').removeClass('fas fa-eye').addClass('fas fa-eye-slash');
+            $('#show-password-2').css('color','#EBA1A1');
         } else {
             $('#konfirmasi-pass').attr('type', 'password');
-            $('#show-password-2').removeClass('fas fa-eye-slash').addClass('fas fa-eye');
+            $('#show-password-2').css('color','#b6b4b4');
         }
     });
 </script>

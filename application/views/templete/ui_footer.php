@@ -85,6 +85,53 @@
         </div>
     </div>
 </section>
+<!-- modal login member -->
+<div class="modal fade" id="login-member" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="header-login">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5>Login</h5>
+                            </div>
+                            <div class="col-6">
+                                <a href="<?= base_url(); ?>ui/AuthMember/registrasi">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-login">
+                        <form action="" method="">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Alamat Email">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-11">
+                                        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
+                                    </div>
+                                    <div class="col-1">
+                                        <i class="fas fa-eye" id="show-password-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 </main>
 <!-- Optional JavaScript; choose one of the two! -->
 

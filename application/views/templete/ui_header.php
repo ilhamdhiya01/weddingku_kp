@@ -475,9 +475,9 @@
             </ul>
             <form class="form-inline my-2 my-lg-0 ml-auto">
                 <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
-                <a href="" class="btn-login">Login</a>
+                <a href="" class="btn-login" data-toggle="modal" data-target="#login-member">Login</a>
                 <a href="" class="btn-daftar ml-auto">Daftar</a>
-                <span class="desktop-v-span">join member ? <a href="">sign in </a></span>
+                <span class="desktop-v-span">join member ? <a href="" data-toggle="modal" data-target="#login-member">sign in </a></span>
                 <a href="" class="desktop-v-a"> are you a vendor ?</a>
             </form>
         </div>

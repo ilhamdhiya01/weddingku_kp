@@ -55,8 +55,9 @@
     margin-top: 20px;
 }
 .form-register .form-input input {
+    font-size: 15px;
     border: none;
-    border-bottom: 1px solid #d0d0d1;
+    border-bottom: 1px solid #979799;
 }
 .form-register .form-input button {
     background-color: #EBA1A1;
@@ -80,8 +81,8 @@
 }
 .form-register .form-input #show-password-1,  .form-register .form-input #show-password-2{
     position: relative;
-    top: 20px;
-    right: 17px;
+    top: 27px;
+    float: right;
     color: #b6b4b4;
     /* font-size: 16px; */
     cursor: pointer;
@@ -105,6 +106,56 @@
     color: #EBA1A1;
     float: right;
     text-decoration: none;
+}
+.modal-body .form-login input {
+    border: none;
+    border-bottom: 1px solid #d0d0d1;
+    font-size: 14px;
+}
+.modal-body .form-login{
+    padding-top: 20px;
+} 
+.modal-body .form-login .pw i {
+    position: relative;
+    top: 28px;
+    font-size: 17px;
+    color: #b6b4b4;
+    cursor: pointer;
+    float:right;
+}
+.modal-body .form-login .pw {
+    padding-bottom: 25px;
+}
+.modal-body .form-login button {
+    background-color: #EBA1A1;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    border-color: #EBA1A1;
+    padding:8px 0;
+}
+.modal-body .form-login p {
+    padding-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+.modal-body .form-login p a {
+    color: #EBA1A1;
+    text-decoration: none;
+}
+#login-member .modal-footer p {
+    font-size: 12px;
+    position: relative;
+    right: 30px;
+}
+#login-member .modal-footer p a {
+    text-decoration: none;
+}
+#login-member .modal-footer {
+    background-color: #EDF4FE;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 @media(max-width:600px){
     .registrasi .col-md-7 {

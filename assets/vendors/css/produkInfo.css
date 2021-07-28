@@ -668,11 +668,9 @@
     .gambar-lain img {
         height: 350px;
         border-radius: 10px;
+        object-fit: cover;
         /* position: relative;
         left: 65px; */
-    }
-    .gambar-lain .item {
-        /* width: 600px; */
     }
     .gambar-lain img:hover {
         opacity: 0.9;
@@ -685,7 +683,7 @@
     }
     #gambar-lain .owl-prev, #gambar-lain .owl-next{
         position: absolute;
-        bottom: 30%;
+        bottom: 40%;
     } 
     #gambar-lain .owl-prev span, #gambar-lain .owl-next span {
         font-size: 80px;

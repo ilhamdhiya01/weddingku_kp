@@ -55,37 +55,30 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan">
+                                        <label for="exampleFormControlInput1" id="label-nama-depan">Nama Depan</label>
+                                        <input type="email" class="form-control" id="input-nama-depan" aria-describedby="emailHelp" placeholder="Nama Depan">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Belakang">
+                                        <label for="exampleFormControlInput1" id="label-nama-belakang">Nama Belakang</label>
+                                        <input type="email" class="form-control" id="input-nama-belakang" aria-describedby="emailHelp" placeholder="Nama Belakang">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alamat Email">
+                                <label for="exampleFormControlInput1" id="label-email">Alamat Email</label>
+                                <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Alamat Email">
                             </div>
                             <div class="form-group">
-                                <div class="row">
-                                    <div class="col-11">
-                                        <input type="password" class="form-control" id="pass" aria-describedby="emailHelp" placeholder="Kata Sandi">
-                                    </div>
-                                    <div class="col-1">
-                                        <i class="fas fa-eye" id="show-password-1"></i>
-                                    </div>
-                                </div>
+                                <label for="exampleFormControlInput1" id="label-pass">Kata Sandi</label>
+                                <i class="fas fa-eye" id="show-password-1"></i>
+                                <input type="password" class="form-control" id="pass" aria-describedby="emailHelp" placeholder="Kata Sandi">
                             </div>
                             <div class="form-group">
-                                <div class="row">
-                                    <div class="col-11">
-                                        <input type="password" class="form-control" id="konfirmasi-pass" aria-describedby="emailHelp" placeholder="Konfirmasi Kata Sandi">
-                                    </div>
-                                    <div class="col-1">
-                                        <i class="fas fa-eye" id="show-password-2"></i>
-                                    </div>
-                                </div>
+                                <label for="exampleFormControlInput1" id="label-konfirmasi-pass">Konfirmasi Kata Sandi</label>
+                                <i class="fas fa-eye" id="show-password-2"></i>
+                                <input type="password" class="form-control" id="konfirmasi-pass" aria-describedby="emailHelp" placeholder="Konfirmasi Kata Sandi">
                             </div>
                             <button type="submit" class="btn btn-block">Lanjutkan</button>
                             <p class="p1">Dengan mendaftar, saya menyetujui Syarat<br> dan Ketentuan Bridestory</p>
@@ -103,17 +96,67 @@
 <div class="chat-fixed">
     <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
 </div>
-<!-- show password -->
 <script>
+    $(document).ready(function() {
+        // nama depan
+        $('#label-nama-depan').css('color', '#979799');
+        $('#label-nama-depan').css('display', 'none');
+        $('#label-nama-depan').css('font-size', '12px');
+        // nama belakang
+        $('#label-nama-belakang').css('color', '#979799');
+        $('#label-nama-belakang').css('display', 'none');
+        $('#label-nama-belakang').css('font-size', '12px');
+        // email
+        $('#label-email').css('color', '#979799');
+        $('#label-email').css('display', 'none');
+        $('#label-email').css('font-size', '12px');
+        // password
+        $('#label-pass').css('color', '#979799');
+        $('#label-pass').css('display', 'none');
+        $('#label-pass').css('font-size', '12px');
+        $('#label-pass').css('position', 'relative');
+        $('#label-pass').css('top', '15px');
+        // konfirmasi password
+        $('#label-konfirmasi-pass').css('color', '#979799');
+        $('#label-konfirmasi-pass').css('display', 'none');
+        $('#label-konfirmasi-pass').css('font-size', '12px');
+        $('#label-konfirmasi-pass').css('position', 'relative');
+        $('#label-konfirmasi-pass').css('top', '15px');
+    })
+    // nama depan
+    $('#input-nama-depan').focus(function() {
+        $('#label-nama-depan').css('display', 'flex');
+        $(this).attr('placeholder', '');
+    })
+    // nama belakang
+    $('#input-nama-belakang').focus(function() {
+        $('#label-nama-belakang').css('display', 'flex');
+        $(this).attr('placeholder', '');
+    })
+    // email
+    $('#input-email').focus(function() {
+        $('#label-email').css('display', 'flex');
+        $(this).attr('placeholder', '');
+    })
+    // password
+    $('#pass').focus(function() {
+        $('#label-pass').css('display', 'flex');
+        $(this).attr('placeholder', '');
+    })
+    // konfirmasi password
+    $('#konfirmasi-pass').focus(function() {
+        $('#label-konfirmasi-pass').css('display', 'flex');
+        $(this).attr('placeholder', '');
+    })
     // show password
-    $('#show-password-1').click(function(){
+    $('#show-password-1').click(function() {
         let x = $('#pass').attr('type');
-        if(x == 'password'){
-            $('#pass').attr('type','text');
-            $('#show-password-1').css('color','#EBA1A1');
+        if (x == 'password') {
+            $('#pass').attr('type', 'text');
+            $('#show-password-1').css('color', '#EBA1A1');
         } else {
-            $('#pass').attr('type','password');
-            $('#show-password-1').css('color','#b6b4b4');
+            $('#pass').attr('type', 'password');
+            $('#show-password-1').css('color', '#b6b4b4');
         }
     });
 
@@ -122,10 +165,10 @@
         let y = $('#konfirmasi-pass').attr('type');
         if (y == 'password') {
             $('#konfirmasi-pass').attr('type', 'text');
-            $('#show-password-2').css('color','#EBA1A1');
+            $('#show-password-2').css('color', '#EBA1A1');
         } else {
             $('#konfirmasi-pass').attr('type', 'password');
-            $('#show-password-2').css('color','#b6b4b4');
+            $('#show-password-2').css('color', '#b6b4b4');
         }
     });
 </script>

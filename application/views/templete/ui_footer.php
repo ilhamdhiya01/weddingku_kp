@@ -88,14 +88,14 @@
 <!-- modal login member -->
 <div class="modal fade" id="login-member" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius:20px; width:420px;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="container">
+            <div class="container">
+                <div class="modal-body">
                     <div class="header-login">
                         <div class="row">
                             <div class="col-6">
@@ -109,30 +109,51 @@
                     <div class="form-login">
                         <form action="" method="">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Alamat Email">
+                                <label for="exampleFormControlInput1" id="label-email-login">Alamat Email</label>
+                                <input type="email" class="form-control" id="input-email-login" placeholder="Alamat Email">
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-11">
-                                        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
-                                    </div>
-                                    <div class="col-1">
-                                        <i class="fas fa-eye" id="show-password-1"></i>
-                                    </div>
-                                </div>
+                            <div class="form-group pw">
+                                <label for="exampleFormControlInput1" id="label-pass-login">Kata Sandi</label>
+                                <i class="fas fa-eye" id="show-password-1"></i>
+                                <input type="password" class="form-control" id="input-kata-sandi" placeholder="Kata Sandi">
                             </div>
+                            <button type="submit" class="btn btn-block btn-secondary">Lanjutkan</button>
+                            <p>Belum punya akun? <a href="">Daftar</a></p>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <p>Punya bisnis terkait pernikahan? <a href="">Bergabung sebagai vendor</a></p>
             </div>
         </div>
     </div>
 </div>
 </main>
+<!-- modal script -->
+<script>
+    $(document).ready(function(){
+        // email
+        $('#label-email-login').css('color', '#979799');
+        $('#label-email-login').css('display','none');
+        $('#label-email-login').css('font-size', '12px');
+        // password 
+        $('#label-pass-login').css('color', '#979799');
+        $('#label-pass-login').css('display','none');
+        $('#label-pass-login').css('font-size', '12px');
+        $('#label-pass-login').css('position', 'relative');
+        $('#label-pass-login').css('top', '15px');
+    });
+    $('#input-email-login').focus(function(){
+        $('#label-email-login').css('display','flex');
+        $(this).attr('placeholder','');
+    });
+    $('#input-kata-sandi').focus(function(){
+        $('#label-pass-login').css('display','flex');
+        $(this).attr('placeholder','');
+    });
+</script>
+<!-- / -->
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

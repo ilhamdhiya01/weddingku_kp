@@ -45,11 +45,13 @@
         .banner .jumbotron {
             background-image: url('<?= base_url(); ?>assets/vendors/img/news/banner.jpg');
             background-size: 100% 100%;
+            object-fit: cover;
         }
 
         @media(max-width:600px) {
             .banner .jumbotron {
                 background-image: url('<?= base_url(); ?>assets/vendors/img/news/mobile-banner.jpg');
+                object-fit: cover;
             }
 
             .banner .mobile-v {

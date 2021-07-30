@@ -1001,6 +1001,7 @@
     .rating-star-vendor{
         display: flex;
         justify-content: center;
+        margin-left: 10px;
         margin-top: 8px;
     }
     .rating-star-vendor i{

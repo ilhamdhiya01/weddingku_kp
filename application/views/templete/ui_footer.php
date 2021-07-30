@@ -85,10 +85,109 @@
         </div>
     </div>
 </section>
+<!-- modal paket -->
+<div class="modal fade venue-modal" id="paket" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!-- <div class="modal-header"> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <!-- </div> -->
+            <div class="modal-body">
+                <div class="modal-title text-center">
+                    <h3>Pilih Kategori</h3>
+                </div>
+                <div class="modal-icon">
+                    <div class="row justify-content-center modal-d-v">
+                        <div class="col-9">
+                            <div class="row">
+                                <?php
+                                $subkategori = [
+                                    'Aksesoris Pernikahan',
+                                    'Souvenir & Seserahan',
+                                    'Gaun & Pakaian Wanita',
+                                    'Bridal',
+                                    'Jas & Pakaian Pria',
+                                    'Wedding Palnning',
+                                    'Rias Rambut & Makeup',
+                                    'Fotografi',
+                                    'Dekorasi & Pencahayaan',
+                                    'Hiburan / Entertainment',
+                                    'Videografi',
+                                    'Makanan & Minuman',
+                                    'Undangan',
+                                    'Venue',
+                                    'Aksesoris Pria',
+                                    'Perhiasan',
+                                    'Bulan Madu',
+                                    'Perawatan & Kecantikan',
+                                    'Jasa Pernikahan',
+                                    'Paket Lengkap'
+                                ];
+                                for ($i = 0; $i < count($subkategori); $i++) :
+                                ?>
+                                    <div class="col-md-2">
+                                        <a href="">
+                                            <div class="card">
+                                                <img src="<?= base_url(); ?>assets/vendors/img/news/subkategori<?= $i; ?>.png" alt="">
+                                                <span class="text-dark"><?= $subkategori[$i]; ?></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php endfor; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row modal-m-v justify-content-center">
+                        <div class="col-12">
+                            <div class="row">
+                                <?php
+                                $subkategori = [
+                                    'Aksesoris Pernikahan',
+                                    'Souvenir & Seserahan',
+                                    'Gaun & Pakaian Wanita',
+                                    'Bridal',
+                                    'Jas & Pakaian Pria',
+                                    'Wedding Palnning',
+                                    'Rias Rambut & Makeup',
+                                    'Fotografi',
+                                    'Dekorasi & Pencahayaan',
+                                    'Hiburan / Entertainment',
+                                    'Videografi',
+                                    'Makanan & Minuman',
+                                    'Undangan',
+                                    'Venue',
+                                    'Aksesoris Pria',
+                                    'Perhiasan',
+                                    'Bulan Madu',
+                                    'Perawatan & Kecantikan',
+                                    'Jasa Pernikahan',
+                                    'Paket Lengkap'
+                                ];
+                                for ($i = 0; $i < count($subkategori); $i++) :
+                                ?>
+                                    <div class="col-3">
+                                        <a href="">
+                                            <div class="card">
+                                                <img src="<?= base_url(); ?>assets/vendors/img/news/subkategori<?= $i; ?>.png" alt="">
+                                                <span class="text-dark"><?= $subkategori[$i]; ?></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php endfor; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- modal login member -->
 <div class="modal fade" id="login-member" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="border-radius:20px; width:420px;">
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -114,7 +213,7 @@
                             </div>
                             <div class="form-group pw">
                                 <label for="exampleFormControlInput1" id="label-pass-login">Kata Sandi</label>
-                                <i class="fas fa-eye" id="show-password-1"></i>
+                                <i class="fas fa-eye" id="show-password-login"></i>
                                 <input type="password" class="form-control" id="input-kata-sandi" placeholder="Kata Sandi">
                             </div>
                             <button type="submit" class="btn btn-block btn-secondary">Lanjutkan</button>
@@ -130,7 +229,20 @@
     </div>
 </div>
 </main>
-<!-- modal script -->
+<!-- modal store -->
+<script>
+    // store venue
+    $('#store-venue').click(function(e){
+        $('#paket').attr('id','venue');
+        e.preventDefault();
+    })
+    // store all kategori
+    $('#all').click(function(e){
+        $('#paket').attr('id','all-kategori');
+        e.preventDefault();
+    });
+</script>
+<!-- modal login-->
 <script>
     $(document).ready(function(){
         // email
@@ -151,6 +263,17 @@
     $('#input-kata-sandi').focus(function(){
         $('#label-pass-login').css('display','flex');
         $(this).attr('placeholder','');
+    });
+    // show password
+    $('#show-password-login').click(function(){
+        let x = $('#input-kata-sandi').attr('type');
+        if(x == 'password'){
+            $('#input-kata-sandi').attr('type','text');
+            $('#show-password-login').css('color','#EBA1A1')
+        }else {
+            $('#input-kata-sandi').attr('type','password');
+            $('#show-password-login').css('color','#b6b4b4')
+        }
     });
 </script>
 <!-- / -->

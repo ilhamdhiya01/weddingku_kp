@@ -9,7 +9,7 @@
 </div>
 <section class="venue">
     <div class="venue-title">
-        <h2>Venue <a href="" data-toggle="modal" data-target="#venue"><i class="fas fa-pencil-alt"></i></a></h2>
+        <h2>Venue <a href="" data-toggle="modal" id="store-venue" data-target="#venue"><i class="fas fa-pencil-alt"></i></a></h2>
     </div>
     <section id="jenis-venue" class="jenis-venue">
         <div class="owl-carousel owl-theme">
@@ -108,106 +108,6 @@
         </div>
     </div>
 </section>
-
-<!-- Modal -->
-<div class="modal fade venue-modal" id="venue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <!-- <div class="modal-header"> -->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"><i class="fas fa-times"></i></span>
-            </button>
-            <!-- </div> -->
-            <div class="modal-body">
-                <div class="modal-title text-center">
-                    <h3>Pilih Kategori</h3>
-                </div>
-                <div class="modal-icon">
-                    <div class="row justify-content-center modal-d-v">
-                        <div class="col-9">
-                            <div class="row">
-                                <?php
-                                $subkategori = [
-                                    'Aksesoris Pernikahan',
-                                    'Souvenir & Seserahan',
-                                    'Gaun & Pakaian Wanita',
-                                    'Bridal',
-                                    'Jas & Pakaian Pria',
-                                    'Wedding Palnning',
-                                    'Rias Rambut & Makeup',
-                                    'Fotografi',
-                                    'Dekorasi & Pencahayaan',
-                                    'Hiburan / Entertainment',
-                                    'Videografi',
-                                    'Makanan & Minuman',
-                                    'Undangan',
-                                    'Venue',
-                                    'Aksesoris Pria',
-                                    'Perhiasan',
-                                    'Bulan Madu',
-                                    'Perawatan & Kecantikan',
-                                    'Jasa Pernikahan',
-                                    'Paket Lengkap'
-                                ];
-                                for ($i = 0; $i < count($subkategori); $i++) :
-                                ?>
-                                    <div class="col-md-2">
-                                        <a href="">
-                                            <div class="card">
-                                                <img src="<?= base_url(); ?>assets/vendors/img/news/subkategori<?= $i; ?>.png" alt="">
-                                                <span class="text-dark"><?= $subkategori[$i]; ?></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                <?php endfor; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row modal-m-v justify-content-center">
-                        <div class="col-12">
-                            <div class="row">
-                                <?php
-                                $subkategori = [
-                                    'Aksesoris Pernikahan',
-                                    'Souvenir & Seserahan',
-                                    'Gaun & Pakaian Wanita',
-                                    'Bridal',
-                                    'Jas & Pakaian Pria',
-                                    'Wedding Palnning',
-                                    'Rias Rambut & Makeup',
-                                    'Fotografi',
-                                    'Dekorasi & Pencahayaan',
-                                    'Hiburan / Entertainment',
-                                    'Videografi',
-                                    'Makanan & Minuman',
-                                    'Undangan',
-                                    'Venue',
-                                    'Aksesoris Pria',
-                                    'Perhiasan',
-                                    'Bulan Madu',
-                                    'Perawatan & Kecantikan',
-                                    'Jasa Pernikahan',
-                                    'Paket Lengkap'
-                                ];
-                                for ($i = 0; $i < count($subkategori); $i++) :
-                                ?>
-                                    <div class="col-3">
-                                        <a href="">
-                                            <div class="card">
-                                                <img src="<?= base_url(); ?>assets/vendors/img/news/subkategori<?= $i; ?>.png" alt="">
-                                                <span class="text-dark"><?= $subkategori[$i]; ?></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                <?php endfor; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="chat-fixed">
     <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
 </div>

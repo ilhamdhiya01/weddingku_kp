@@ -10,6 +10,14 @@
 <section id="store-all-produk" class="store-all-produk">
     <div class="container">
         <div class="owl-carousel owl-theme">
+            <div class="item">
+                <a href="" id="all" data-toggle="modal" data-target="#all-kategori">
+                    <div class="card">
+                        <img src="<?= base_url(); ?>assets/vendors/img/news/all.webp" alt="">
+                        <span class="text-dark">Semua Kategori</span>
+                    </div>
+                </a>
+            </div>
             <?php
             $subkategori = [
                 'Aksesoris Pernikahan',
@@ -33,6 +41,7 @@
                 'Jasa Pernikahan',
                 'Paket Lengkap'
             ];
+
             for ($j = 0; $j < count($subkategori); $j++) :
             ?>
                 <div class="item">

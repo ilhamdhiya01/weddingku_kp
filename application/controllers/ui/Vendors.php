@@ -31,5 +31,16 @@ class Vendors extends CI_Controller
             "about" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has"
         ];
         echo json_encode($data);
-    }                   
+    } 
+    
+    public function promo(){
+        $data = [
+            "judul" => "Promo"
+        ];
+        $this->load->view('templete/ui_header',$data);
+        $this->load->view('vendors/promo');
+        $this->load->view('templete/ui_footer');
+    }
+    
+    
 }

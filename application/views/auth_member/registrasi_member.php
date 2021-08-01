@@ -72,12 +72,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-pass">Kata Sandi</label>
-                                <i class="fas fa-eye" id="show-password-1"></i>
+                                <i class="fas fa-eye-slash" id="show-password-1"></i>
+                                <!-- <i class="fas fa-eye" ></i> -->
                                 <input type="password" class="form-control" id="pass" aria-describedby="emailHelp" placeholder="Kata Sandi">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-konfirmasi-pass">Konfirmasi Kata Sandi</label>
-                                <i class="fas fa-eye" id="show-password-2"></i>
+                                <i class="fas fa-eye-slash" id="show-password-2"></i>
                                 <input type="password" class="form-control" id="konfirmasi-pass" aria-describedby="emailHelp" placeholder="Konfirmasi Kata Sandi">
                             </div>
                             <button type="submit" class="btn btn-block">Lanjutkan</button>
@@ -154,9 +155,11 @@
         if (x == 'password') {
             $('#pass').attr('type', 'text');
             $('#show-password-1').css('color', '#EBA1A1');
+            $('#show-password-1').attr('class', 'fas fa-eye');
         } else {
             $('#pass').attr('type', 'password');
             $('#show-password-1').css('color', '#b6b4b4');
+            $('#show-password-1').attr('class', 'fas fa-eye-slash');
         }
     });
 
@@ -166,9 +169,11 @@
         if (y == 'password') {
             $('#konfirmasi-pass').attr('type', 'text');
             $('#show-password-2').css('color', '#EBA1A1');
+            $('#show-password-2').attr('class', 'fas fa-eye');
         } else {
             $('#konfirmasi-pass').attr('type', 'password');
             $('#show-password-2').css('color', '#b6b4b4');
+            $('#show-password-2').attr('class', 'fas fa-eye-slash');
         }
     });
 </script>

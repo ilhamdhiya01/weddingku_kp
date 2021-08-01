@@ -206,15 +206,17 @@
                         </div>
                     </div>
                     <div class="form-login">
-                        <form action="" method="">
+                        <form action="<?= base_url(); ?>ui/AuthMember/test" method="post">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-email-login">Alamat Email</label>
-                                <input type="email" class="form-control" id="input-email-login" placeholder="Alamat Email">
+                                <input type="text" name="email" class="form-control" id="input-email-login" placeholder="Alamat Email">
+                                <small class="text-danger"><?= form_error('email'); ?></small>
                             </div>
                             <div class="form-group pw">
                                 <label for="exampleFormControlInput1" id="label-pass-login">Kata Sandi</label>
-                                <i class="fas fa-eye" id="show-password-login"></i>
-                                <input type="password" class="form-control" id="input-kata-sandi" placeholder="Kata Sandi">
+                                <i class="fas fa-eye-slash" id="show-password-login"></i>
+                                <input type="password" name="password" class="form-control" id="input-kata-sandi" placeholder="Kata Sandi">
+                                <small class="text-danger"><?= form_error('password'); ?></small>
                             </div>
                             <button type="submit" class="btn btn-block btn-secondary">Lanjutkan</button>
                             <p>Belum punya akun? <a href="">Daftar</a></p>
@@ -270,9 +272,11 @@
         if(x == 'password'){
             $('#input-kata-sandi').attr('type','text');
             $('#show-password-login').css('color','#EBA1A1')
+            $('#show-password-login').attr('class', 'fas fa-eye');
         }else {
             $('#input-kata-sandi').attr('type','password');
             $('#show-password-login').css('color','#b6b4b4')
+            $('#show-password-login').attr('class', 'fas fa-eye-slash');
         }
     });
 </script>

@@ -108,7 +108,7 @@
                             </div>
                             <div class="price">
                                 <a href="">
-                                    <div class="price-list">
+                                    <div class="price-list" id="menu-harga">
                                         <i class="fas fa-tags"></i> <span>Pricelist</span>
                                     </div>
                                 </a>
@@ -258,7 +258,7 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-3">
-                                                <a href="<?= base_url(); ?>ui/vendors/profile_vendor"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
+                                                <a href=""><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href="" id="menu-harga"><i class="fas fa-tags"></i> Harga</a>
@@ -267,7 +267,7 @@
                                                 <a href="" id="menu-tentang-kami"><i class="fas fa-address-card"></i> Tentang Kami</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href="<?= base_url(); ?>ui/vendors/promo"><i class="fas fa-percent"></i> Promo</a>
+                                                <a href=""><i class="fas fa-percent"></i> Promo</a>
                                             </div>
                                         </div>
                                     </div>
@@ -275,49 +275,64 @@
                             </div>
                         </div>
                         <div class="card-body" id="show-data">
-                            <section id="promo-profile-vendor" class="promo-profile-vendor">
-                                <div class="owl-carousel owl-theme">
-                                    <?php for ($i = 1; $i <= 10; $i++) : ?>
-                                        <div class="item">
-                                            <a href="<?= base_url(); ?>ui/produk">
-                                                <div class="card">
-                                                    <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
-                                                    <?php
-                                                    $disc = 1;
-                                                    if ($disc == 1) :
-                                                    ?>
-                                                        <div class="img-style">
-                                                            <span class="span-disc-1">Hemat</span>
-                                                            <span class="span-disc-2">8%</span>
-                                                        </div>
-                                                    <?php
-                                                    endif;
-                                                    ?>
-                                                    <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                                                    <div class="info-promo">
-                                                        <h4 class="desktop-v">
-                                                            <?php
-                                                            $namapromo = "promo Lengkap Pasadenia Sportc ilhm dhiya";
-                                                            echo strlen($namapromo) > 27 ? substr($namapromo, 0, 27) . '...' : substr($namapromo, 0, 27);
-                                                            ?>
-                                                        </h4>
-                                                        <span class="vendor vendor-d-v">
-                                                            <?php
-                                                            $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
-                                                            echo strlen($vendor) > 43 ? substr($vendor, 0, 43) . '...' : substr($vendor, 0, 43);
-                                                            ?>
-                                                        </span>
-                                                        <div class="promo-harga">
-                                                            <small class="before-price">IDR 111,800,000</small>
-                                                            <br>
-                                                            <span class="after-price">IDR 106,210,000</span>
+                            <section class="produk-profile-vendor">
+                                <div class="title-promo">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h4>Promo Produk</h4>
+                                        </div>
+                                        <div class="col-3 desktop-v">
+                                            <a href="">Lihat Semua (15)</a>
+                                        </div>
+                                        <div class="col-3 mobile-v">
+                                            <a href=""><i class="fas fa-ellipsis-h"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <section id="promo-profile-vendor" class="promo-profile-vendor">
+                                    <div class="owl-carousel owl-theme">
+                                        <?php for ($i = 1; $i <= 10; $i++) : ?>
+                                            <div class="item">
+                                                <a href="<?= base_url(); ?>ui/produk">
+                                                    <div class="card">
+                                                        <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
+                                                        <?php
+                                                        $disc = 1;
+                                                        if ($disc == 1) :
+                                                        ?>
+                                                            <div class="img-style">
+                                                                <span class="span-disc-1">Hemat</span>
+                                                                <span class="span-disc-2">8%</span>
+                                                            </div>
+                                                        <?php
+                                                        endif;
+                                                        ?>
+                                                        <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
+                                                        <div class="info-promo">
+                                                            <h4 class="desktop-v">
+                                                                <?php
+                                                                $namapromo = "promo Lengkap Pasadenia Sportc ilhm dhiya";
+                                                                echo strlen($namapromo) > 27 ? substr($namapromo, 0, 27) . '...' : substr($namapromo, 0, 27);
+                                                                ?>
+                                                            </h4>
+                                                            <span class="vendor vendor-d-v">
+                                                                <?php
+                                                                $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
+                                                                echo strlen($vendor) > 43 ? substr($vendor, 0, 43) . '...' : substr($vendor, 0, 43);
+                                                                ?>
+                                                            </span>
+                                                            <div class="promo-harga">
+                                                                <small class="before-price">IDR 111,800,000</small>
+                                                                <br>
+                                                                <span class="after-price">IDR 106,210,000</span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    <?php endfor; ?>
-                                </div>
+                                                </a>
+                                            </div>
+                                        <?php endfor; ?>
+                                    </div>
+                                </section>
                             </section>
                         </div>
                     </div>

@@ -476,7 +476,11 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0 ml-auto">
-                <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
+                <!-- <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search"> -->
+                <div class="search-box">
+                    <img src="<?= base_url(); ?>assets/vendors/img/news/search.png">
+                    <input type="text" placeholder="Search">
+                </div>
                 <a href="" class="btn-login" data-toggle="modal" data-target="#login-member">Login</a>
                 <a href="" class="btn-daftar ml-auto">Daftar</a>
                 <span class="desktop-v-span">join member ? <a href="" data-toggle="modal" data-target="#login-member">sign in </a></span>

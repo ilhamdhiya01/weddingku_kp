@@ -128,18 +128,27 @@
     font-size: 12px;
     color: #7c7c7c;
 }
-.produk-content .detail-produk .selengkapnya {
+.produk-content .detail-produk {
+    padding-top: 30px;
+    overflow: hidden;
+    max-height: 140px;
+    transition: max-height 0.5s;
+}
+.produk-content .detail-produk-height {
+    max-height: 1000px;
+}
+.produk-content  .selengkapnya {
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #c2bdbd;
 }
-.produk-content .detail-produk .selengkapnya span {
+.produk-content  .selengkapnya span {
     color: #EBA1A1;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
 }
-.produk-content .detail-produk #selengkapnya {
+.produk-content  #selengkapnya {
     display: none;
 }
 /* / */
@@ -199,19 +208,28 @@
     font-size: 12px;
     color: #7c7c7c;
 }
-.produk-content .syarat-ketentuan .selengkapnya {
+.produk-content .syarat-ketentuan {
+    padding: 30px 0;
+    overflow: hidden;
+    max-height: 140px;
+    transition: max-height 0.5s;
+}
+.produk-content .syarat-ketentuan-height {
+    max-height: 1000px;
+}
+.produk-content  .selengkapnya {
     display: flex;
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 50px;
 }
-.produk-content .syarat-ketentuan .selengkapnya span {
+.produk-content  .selengkapnya span {
     color: #EBA1A1;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
 }
-.produk-content .syarat-ketentuan #selengkapnya-syarat {
+.produk-content  #selengkapnya-syarat {
     display: none;
 }
 /* / */ 
@@ -715,6 +733,12 @@
     }
     .produk-content .detail-produk {
         padding-top: 30px;
+        overflow: hidden;
+        max-height: 160px;
+        transition: max-height 0.5s;
+    }
+    .produk-content .detail-produk-height {
+        max-height: 1000px;
     }
     .produk-content .detail-produk h4 {
         font-size: 22px;
@@ -725,13 +749,13 @@
         font-size: 14px;
         color: #7c7c7c;
     }
-    .produk-content .detail-produk .selengkapnya {
+    .produk-content .selengkapnya {
         display: flex;
         justify-content: center;
         padding: 40px 0;
         border-bottom: 1px solid #c2bdbd;
     }
-    .produk-content .detail-produk .selengkapnya span {
+    .produk-content .selengkapnya span {
         color: #EBA1A1;
         font-weight: bold;
         font-size: 14px;
@@ -787,6 +811,12 @@
     /* syarat ketentuan */
     .produk-content .syarat-ketentuan {
         padding: 30px 0;
+        overflow: hidden;
+        max-height: 160px;
+        transition: max-height 0.5s;
+    }
+    .produk-content .syarat-ketentuan-height {
+        max-height: 1000px;
     }
     .produk-content .syarat-ketentuan h4 {
         font-size: 20px;
@@ -797,19 +827,19 @@
         font-size: 14px;
         color: #7c7c7c;
     }
-    .produk-content .syarat-ketentuan .selengkapnya {
+    .produk-content  .selengkapnya {
         display: flex;
         justify-content: center;
         padding-top: 20px;
         padding-bottom: 50px;
     }
-    .produk-content .syarat-ketentuan .selengkapnya span {
+    .produk-content  .selengkapnya span {
         color: #EBA1A1;
         font-weight: bold;
         font-size: 14px;
         cursor: pointer;
     }
-    .produk-content .syarat-ketentuan #selengkapnya-syarat {
+    .produk-content  #selengkapnya-syarat {
         display: none;
     }
     /* / */ 

@@ -68,10 +68,11 @@
                         </div>
                     </section>
                     <div class="detail-produk">
-                        <h4 id="detail">Detail</h4>
-                        <p>
-                            Everything we do, we believe in making a better life for the better future. One of our ways to make that possible is through weddings. Through Vowever, we serve people with a full heart, being transparent and loyal, and always giving our best service, we believe Vowever can be a helping hand to establish a better life for you and your partner. It begins with designing your dream wedding that we believe will carry your happiness to your new family<span id="titikTiga">...</span>
-                            <span id="selengkapnya">
+                        <div class="detail-produk-inner">
+                            <h4 id="detail">Detail</h4>
+                            <p>
+                                Everything we do, we believe in making a better life for the better future. One of our ways to make that possible is through weddings. Through Vowever, we serve people with a full heart, being transparent and loyal, and always giving our best service, we believe Vowever can be a helping hand to establish a better life for you and your partner. It begins with designing your dream wedding that we believe will carry your happiness to your new family<span id="titikTiga">...</span>
+
                                 Inclusion
                                 ___
 
@@ -88,11 +89,12 @@
                                 - MC
                                 - 3 Tier Cake
                                 - Sound system, Lighting, and many more.
-                            </span>
-                        </p>
-                        <div class="selengkapnya">
-                            <span id="btn-selengkapnya" onclick="selengkapnya()">Lihat Selengkapnya</span>
+
+                            </p>
                         </div>
+                    </div>
+                    <div class="selengkapnya">
+                        <span id="btn-selengkapnya">Lihat Selengkapnya</span>
                     </div>
                     <div class="vendor" id="lokasi">
                         <div class="row">
@@ -133,22 +135,23 @@
                         <h4>Lokasi : Bali, ID</h4>
                     </div>
                     <div class="syarat-ketentuan" id="syarat">
-                        <h4>Syarat & Ketentuan</h4>
-                        <p>
-                            We can’t wait to be your partner !!
-                            However, to secure our service and book us on preferred date, here are our terms and conditions:<span id="titikTiga-syarat">...</span>
-                            <span id="selengkapnya-syarat">
+                        <div class="syarat-ketentuan-inner">
+                            <h4>Syarat & Ketentuan</h4>
+                            <p>
+                                We can’t wait to be your partner !!
+                                However, to secure our service and book us on preferred date, here are our terms and conditions:<span id="titikTiga-syarat">...</span>
+
                                 • The price includes government tax & service.
                                 • The price includes delivery, set up, and dismantle fee.
                                 • Payments made to Vowever Wedding Planner will be non-refundable. Deposit & balance payment schedules will be agreed in the Services Contract.
                                 • The client remains responsible for fee payment as well as costs of repairs or replacement of supplier services and/or products.
                                 • Third party contracts remain independent between supplier and client, and are in no way the responsibility of Vowever Wedding Planner.
                                 • Adjustments of detailed arrangement can be made not later than 45 days before the wedding date.
-                            </span>
-                        </p>
-                        <div class="selengkapnya">
-                            <span id="btn-selengkapnya-syarat" onclick="selengkapnyaSyarat()">Lihat Selengkapnya</span>
+                            </p>
                         </div>
+                    </div>
+                    <div class="selengkapnya">
+                        <span id="btn-selengkapnya-syarat">Lihat Selengkapnya</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -292,3 +295,17 @@
         </section>
     </div>
 </section>
+<script>
+    // detail
+    let detailProduk = $('.detail-produk');
+    $('#btn-selengkapnya').click(function() {
+        detailProduk.toggleClass('detail-produk-height');
+        // alert('ok');
+    });
+    // syarat dan ketentuan
+    let syaratKetentuan = $('.syarat-ketentuan');
+    $('#btn-selengkapnya-syarat').click(function(){
+        syaratKetentuan.toggleClass('syarat-ketentuan-height');
+        // alert('ok');
+    });
+</script>

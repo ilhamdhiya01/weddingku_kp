@@ -500,6 +500,18 @@
                             </div>
                         </div>
                         <hr>
+                        <div class="settings-links">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/setting.png" class="setting-icon">
+                            <a href="">Pengaturan User</a>
+                        </div>
+                        <div class="settings-links">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/user.png" class="setting-icon">
+                            <a href="">Pengaturan User</a>
+                        </div>
+                        <div class="settings-links">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/logout.png" class="setting-icon">
+                            <a href="">Logout</a>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -519,3 +531,9 @@
         </nav>
     </div>
     <main role="main">
+    <script>
+        let settingMenu = $('.setting-menu');
+        $('.nav-user-icon').click(function(){
+            settingMenu.toggleClass('setting-menu-height');
+        });
+    </script>

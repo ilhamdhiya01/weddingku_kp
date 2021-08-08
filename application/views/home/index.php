@@ -248,7 +248,7 @@
                                     <div class="row">
                                         <div class="col-2 grid-card-calender">
                                             <div class="bulan">
-                                                <small>Mei</small>
+                                                <small>September</small>
                                             </div>
                                             <div class="calender">
                                                 <span>29</span><br>

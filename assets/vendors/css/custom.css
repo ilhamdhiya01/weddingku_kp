@@ -751,13 +751,17 @@ body {
         position: absolute;
         width: 90%;
         max-width: 300px;
-        height: 400px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         border-radius: 5px;
         overflow: hidden;
         top: 103%;
         right: 12%;
+        max-height: 0;
+        transition: max-height 0.3s;
+    }
+    .setting-menu-height {
+        max-height: 400px;
     }
     .setting-menu-inner {
         padding: 20px;
@@ -780,6 +784,27 @@ body {
     .user-profile div span {
         font-size: 15px;
         color: #000;
+    }
+    .settings-links {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        cursor: pointer;
+    }
+    .settings-links .setting-icon {
+        width: 30px;
+        margin-left: 10px;
+        border-radius: 50%;
+    }
+    .settings-links a {
+        /* display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between; */
+        text-decoration: none;
+        color: #626262;
+        margin-left: 8px;
+        font-size: 13px;
     }
     /* Banner */
     .jumbotron {

@@ -79,6 +79,15 @@
     text-decoration: none;
     font-weight: bold;
 }
+.form-register .form-input p {
+    padding-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+.form-register .form-input p a {
+    color: #EBA1A1;
+    text-decoration: none;
+}
 .form-register .form-input #show-password-1,  .form-register .form-input #show-password-2{
     position: relative;
     top: 27px;
@@ -96,69 +105,6 @@
 .form-register .card-footer {
     text-align: center;
     background-color: #EDF4FE;
-}
-/* login */
-.modal-body .header-login h5{
-    font-weight: bold;
-}
-.modal-body .header-login a {
-    font-weight: bold;
-    color: #EBA1A1;
-    float: right;
-    text-decoration: none;
-}
-.modal-body .form-login input {
-    border: none;
-    border-bottom: 1px solid #d0d0d1;
-    font-size: 14px;
-}
-.modal-body .form-login{
-    padding-top: 20px;
-} 
-.modal-body .form-login .pw i {
-    position: relative;
-    top: 28px;
-    font-size: 17px;
-    color: #b6b4b4;
-    cursor: pointer;
-    float:right;
-}
-.modal-body .form-login .pw {
-    padding-bottom: 25px;
-}
-.modal-body .form-login button {
-    background-color: #EBA1A1;
-    color: #FFF;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 5px;
-    border-color: #EBA1A1;
-    padding:8px 0;
-}
-.modal-body .form-login p {
-    padding-top: 20px;
-    font-size: 14px;
-    text-align: center;
-}
-.modal-body .form-login p a {
-    color: #EBA1A1;
-    text-decoration: none;
-}
-#login-member .modal-footer p {
-    font-size: 11px;
-    position: relative;
-    right: 10px;
-}
-#login-member .modal-footer p a {
-    text-decoration: none;
-}
-#login-member .modal-footer {
-    background-color: #EDF4FE;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-#login-member .modal-content {
-
 }
 @media(max-width:600px){
     .registrasi .col-md-7 {
@@ -190,14 +136,5 @@
     .form-register .card-footer {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-    }
-    #login-member .modal-footer p {
-        font-size: 12px;
-        position: relative;
-        right: 30px;
-    }
-    #login-member .modal-content {
-        border-radius: 20px;
-        width:420px;
     }
 }

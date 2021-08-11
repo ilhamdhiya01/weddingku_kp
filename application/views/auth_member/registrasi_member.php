@@ -51,35 +51,39 @@
                         </div>
                     </div>
                     <div class="form-input">
-                        <form action="">
+                        <form action="<?= base_url(); ?>ui/AuthMember/registrasi" method="post">
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1" id="label-nama-depan">Nama Depan</label>
-                                        <input type="email" class="form-control" id="input-nama-depan" aria-describedby="emailHelp" placeholder="Nama Depan">
+                                        <input type="text" name="nama_depan" value="<?= set_value('nama_depan'); ?>" class="form-control" id="input-nama-depan" placeholder="Nama Depan">
+                                        <small class="text-danger" style="color:red;"><?= form_error('nama_depan'); ?></small>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1" id="label-nama-belakang">Nama Belakang</label>
-                                        <input type="email" class="form-control" id="input-nama-belakang" aria-describedby="emailHelp" placeholder="Nama Belakang">
+                                        <input type="text" name="nama_belakang" value="<?= set_value('nama_belakang'); ?>" class="form-control" id="input-nama-belakang" placeholder="Nama Belakang">
+                                        <small class="text-danger" style="color:red;"><?= form_error('nama_belakang'); ?></small>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-email">Alamat Email</label>
-                                <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Alamat Email">
+                                <input type="text" name="email" value="<?= set_value('email'); ?>" class="form-control" id="input-email" placeholder="Alamat Email">
+                                <small class="text-danger" style="color:red;"><?= form_error('email'); ?></small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-pass">Kata Sandi</label>
                                 <i class="fas fa-eye-slash" id="show-password-1"></i>
-                                <!-- <i class="fas fa-eye" ></i> -->
-                                <input type="password" class="form-control" id="pass" aria-describedby="emailHelp" placeholder="Kata Sandi">
+                                <input type="password" name="password" class="form-control" id="pass" placeholder="Kata Sandi">
+                                <small class="text-danger" style="color:red;"><?= form_error('password'); ?></small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-konfirmasi-pass">Konfirmasi Kata Sandi</label>
                                 <i class="fas fa-eye-slash" id="show-password-2"></i>
-                                <input type="password" class="form-control" id="konfirmasi-pass" aria-describedby="emailHelp" placeholder="Konfirmasi Kata Sandi">
+                                <input type="password" name="konfirmasi_password" class="form-control" id="konfirmasi-pass" placeholder="Konfirmasi Kata Sandi">
+                                <small class="text-danger" style="color:red;"><?= form_error('konfirmasi_password'); ?></small>
                             </div>
                             <button type="submit" class="btn btn-block">Lanjutkan</button>
                             <p class="p1">Dengan mendaftar, saya menyetujui Syarat<br> dan Ketentuan Bridestory</p>
@@ -98,6 +102,7 @@
     <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
 </div>
 <script>
+    $('#form-error').css('color','#ff0000');
     $(document).ready(function() {
         // nama depan
         $('#label-nama-depan').css('color', '#979799');

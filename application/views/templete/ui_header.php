@@ -481,9 +481,9 @@
                     <img src="<?= base_url(); ?>assets/vendors/img/news/search.png">
                     <input type="text" placeholder="Search">
                 </div>
-                <a href="" class="btn-login" data-toggle="modal" data-target="#login-member">Login</a>
+                <a href="<?= base_url(); ?>ui/AuthMember" class="btn-login">Login</a>
                 <a href="" class="btn-daftar ml-auto">Daftar</a>
-                <span class="desktop-v-span">join member ? <a href="" data-toggle="modal" data-target="#login-member">sign in </a></span>
+                <span class="desktop-v-span">join member ? <a href="<?= base_url(); ?>ui/AuthMember">sign in </a></span>
                 <a href="" class="desktop-v-a"> are you a vendor ?</a>
             </form>
         </div>

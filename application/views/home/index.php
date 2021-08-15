@@ -59,13 +59,13 @@
                                 <h4>
                                     <?php
                                     $namaPromo = "Paket Antara Softcover Lipat ilham";
-                                    echo strlen($namaPromo) >27 ? substr($namaPromo, 0,27) . '...' : substr($namaPromo, 0,27);
+                                    echo strlen($namaPromo) > 27 ? substr($namaPromo, 0, 27) . '...' : substr($namaPromo, 0, 27);
                                     ?>
                                 </h4>
                                 <span class="span-1">
                                     <?php
                                     $span1 = "by <b>sedhahankenes</b> —  Invitation Printing";
-                                    echo strlen($span1) >45 ? substr($span1, 0,45) . '...' : substr($span1, 0,45);
+                                    echo strlen($span1) > 45 ? substr($span1, 0, 45) . '...' : substr($span1, 0, 45);
                                     ?>
                                 </span><br>
                                 <div class="harga">
@@ -77,13 +77,13 @@
                                 <h4>
                                     <?php
                                     $namaPromo = "Paket Antara Softcover Lipat";
-                                    echo strlen($namaPromo) >22 ? substr($namaPromo, 0,22) . '...' : substr($namaPromo, 0,22);
+                                    echo strlen($namaPromo) > 22 ? substr($namaPromo, 0, 22) . '...' : substr($namaPromo, 0, 22);
                                     ?>
                                 </h4>
                                 <span class="span-1">
                                     <?php
                                     $span1 = "by <b>sedhahankenes</b> —  Invitation Printing";
-                                    echo strlen($span1) >35 ? substr($span1, 0,35) . '...' : substr($span1, 0,35);
+                                    echo strlen($span1) > 35 ? substr($span1, 0, 35) . '...' : substr($span1, 0, 35);
                                     ?>
                                 </span><br>
                                 <div class="harga">
@@ -132,7 +132,7 @@
                                     <h4>
                                         <?php
                                         $namaVendorFlex = "Hardpaper Double ilham dhiya ulhaq";
-                                        echo strlen($namaVendorFlex) > 26 ? substr($namaVendorFlex, 0,26) . '...' : substr($namaVendorFlex, 0,26);
+                                        echo strlen($namaVendorFlex) > 26 ? substr($namaVendorFlex, 0, 26) . '...' : substr($namaVendorFlex, 0, 26);
                                         ?>
                                     </h4>
                                 </div>
@@ -140,7 +140,7 @@
                                     <h4>
                                         <?php
                                         $namaVendorFlex = "Hardpaper Double ilham dhiya";
-                                        echo strlen($namaVendorFlex) > 20 ? substr($namaVendorFlex, 0,20) . '...' : substr($namaVendorFlex, 0,20);
+                                        echo strlen($namaVendorFlex) > 20 ? substr($namaVendorFlex, 0, 20) . '...' : substr($namaVendorFlex, 0, 20);
                                         ?>
                                     </h4>
                                 </div>
@@ -201,7 +201,7 @@
                                         <h4>
                                             <?php
                                             $namaVendor = "Hardpaper Double Indonesia ilham";
-                                            echo strlen($namaVendor) > 24 ? substr($namaVendor, 0,24) .'...' : substr($namaVendor, 0,24);
+                                            echo strlen($namaVendor) > 24 ? substr($namaVendor, 0, 24) . '...' : substr($namaVendor, 0, 24);
                                             ?>
                                         </h4>
                                     </div>
@@ -209,7 +209,7 @@
                                         <h4>
                                             <?php
                                             $namaVendor = "Hardpaper Double Indonesia";
-                                            echo strlen($namaVendor) > 16 ? substr($namaVendor, 0,16) .'...' : substr($namaVendor, 0,16);
+                                            echo strlen($namaVendor) > 16 ? substr($namaVendor, 0, 16) . '...' : substr($namaVendor, 0, 16);
                                             ?>
                                         </h4>
                                     </div>
@@ -259,14 +259,14 @@
                                             <span class="event-nama-event">
                                                 <?php
                                                 $namaEvent = "Financial Hall Ballroom Tour";
-                                                echo strlen($namaEvent) > 20 ? substr($namaEvent, 0,20) .'...' : substr($namaEvent, 0,20);
+                                                echo strlen($namaEvent) > 20 ? substr($namaEvent, 0, 20) . '...' : substr($namaEvent, 0, 20);
                                                 ?>
                                             </span><br>
                                             <span class="event-jl">
                                                 <i class="fas fa-map-marker-alt"></i>
                                                 <?php
                                                 $eventJl = "Jl. Karang Jangkang Bukit cemara permai indah";
-                                                echo strlen($eventJl) > 30 ? substr($eventJl, 0,30) .'...' : substr($eventJl, 0,30);
+                                                echo strlen($eventJl) > 30 ? substr($eventJl, 0, 30) . '...' : substr($eventJl, 0, 30);
                                                 ?>
                                             </span>
                                         </div>
@@ -274,14 +274,14 @@
                                             <span class="event-nama-event">
                                                 <?php
                                                 $namaEvent = "Financial Hall Ballroom Tour ilham dhiya ulhaq";
-                                                echo strlen($namaEvent) > 30 ? substr($namaEvent, 0,30) .'...' : substr($namaEvent, 0,30);
+                                                echo strlen($namaEvent) > 30 ? substr($namaEvent, 0, 30) . '...' : substr($namaEvent, 0, 30);
                                                 ?>
                                             </span><br>
                                             <span class="event-jl">
                                                 <i class="fas fa-map-marker-alt"></i>
                                                 <?php
                                                 $eventJl = "Jl. Karang Jangkang Bukit cemara permai indah ilham dhiya ulhaq";
-                                                echo strlen($eventJl) > 40 ? substr($eventJl, 0,40) .'...' : substr($eventJl, 0,40);
+                                                echo strlen($eventJl) > 40 ? substr($eventJl, 0, 40) . '...' : substr($eventJl, 0, 40);
                                                 ?>
                                             </span>
                                         </div>

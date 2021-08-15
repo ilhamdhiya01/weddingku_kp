@@ -10,9 +10,46 @@ class AuthMember extends CI_Controller
         $data = [
             "judul" => "Login Member"
         ];
-        $this->load->view('templete/ui_header', $data);
-        $this->load->view('auth_member/index');
-        $this->load->view('templete/ui_footer');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templete/ui_header', $data);
+            $this->load->view('auth_member/index');
+            $this->load->view('templete/ui_footer');
+        } else {
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $member = $this->db->get_where('member', ['email' => $email])->row_array();
+            if (is_null($member)) {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Email belum terdaftar
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+                redirect('ui/AuthMember');
+            } else {
+                if (password_verify($password, $member['password'])) {
+                    $data = [
+                        'id' => $member['id'],
+                        'email' => $member['email'],
+                        'is_login' => $member['is_login']
+                    ];
+                    $this->session->set_userdata($data);
+                    if ($member['is_login'] == 1) {
+                        redirect('login_member/Home');
+                    }
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Password yang anda masukan salah
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>');
+                    redirect('ui/AuthMember');
+                }
+            }
+        }
     }
     public function registrasi()
     {
@@ -37,9 +74,16 @@ class AuthMember extends CI_Controller
                 'no_tlp' => '',
                 'email' => $this->input->post('email'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'is_login' => 1,
                 'date_create' => time()
             ];
             $this->db->insert('member', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            Registrasi berhasil, silahkan login
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>');
             redirect('ui/AuthMember');
         }
     }

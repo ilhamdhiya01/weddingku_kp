@@ -50,21 +50,22 @@
                             </div>
                         </div>
                     </div>
+                    <?= $this->session->flashdata('message'); ?>
                     <div class="form-input">
                         <form action="<?= base_url(); ?>ui/AuthMember" method="post">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-email">Alamat Email</label>
                                 <input type="text" name="email" value="<?= set_value('email'); ?>" class="form-control" id="input-email" placeholder="Alamat Email">
-                                <small class="text-danger" style="color:red;"><?= form_error('email'); ?></small>
+                                <?= form_error('email','<small class="text-danger">','</small>'); ?>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-pass">Kata Sandi</label>
                                 <i class="fas fa-eye-slash" id="show-password-1"></i>
                                 <input type="password" name="password" class="form-control" id="pass" placeholder="Kata Sandi">
-                                <small class="text-danger" style="color:red;"><?= form_error('password'); ?></small>
+                                <?= form_error('password','<small class="text-danger">','</small>'); ?>
                             </div>
                             <button type="submit" class="btn btn-block">Lanjutkan</button>
-                            <p>Belum punya akun? <a href="">Daftar</a></p>
+                            <p>Belum punya akun? <a href="<?= base_url(); ?>ui/AuthMember/registrasi">Daftar</a></p>
                         </form>
                     </div>
                 </div>

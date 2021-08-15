@@ -485,7 +485,7 @@
                     <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png">
                     <span>
                         <?php
-                        $nama = "Ilham Dhiya Ulhaq ";
+                        $nama = $member_session['nama_depan'].$member_session['nama_belakang'];
                         echo strlen($nama) > 14 ? substr($nama, 0, 14) . '...' : substr($nama, 0, 14);
                         ?>
                         <i class="fas fa-sort-down ml-1"></i>
@@ -496,7 +496,7 @@
                         <div class="user-profile">
                             <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png" alt="">
                             <div>
-                                <span>Ilham Dhiya Ulhaq</span>
+                                <span><?= $member_session['nama_depan'].$member_session['nama_belakang']; ?></span>
                             </div>
                         </div>
                         <hr>
@@ -531,9 +531,9 @@
         </nav>
     </div>
     <main role="main">
-    <script>
-        let settingMenu = $('.setting-menu');
-        $('.nav-user-icon').click(function(){
-            settingMenu.toggleClass('setting-menu-height');
-        });
-    </script>
+        <script>
+            let settingMenu = $('.setting-menu');
+            $('.nav-user-icon').click(function() {
+                settingMenu.toggleClass('setting-menu-height');
+            });
+        </script>

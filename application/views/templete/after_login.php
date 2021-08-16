@@ -454,25 +454,25 @@
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?= base_url('ui/home'); ?>">Home</a>
+                    <a class="nav-link" href="<?= base_url('login/home'); ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('ui/store'); ?>">Store</a>
+                    <a class="nav-link" href="<?= base_url('login/store'); ?>">Store</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Inspirations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('ui/vendors'); ?>">Vendors</a>
+                    <a class="nav-link" href="<?= base_url('login/vendors'); ?>">Vendors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('ui/events'); ?>">Events</a>
+                    <a class="nav-link" href="<?= base_url('login/events'); ?>">Events</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('ui/promo'); ?>">Promo</a>
+                    <a class="nav-link" href="<?= base_url('login/promo'); ?>">Promo</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0 ml-auto">
@@ -521,13 +521,13 @@
 
     <div class="nav-scroller bg-white shadow-sm">
         <nav class="nav nav-underline">
-            <a class="nav-link" href="<?= base_url('ui/home'); ?>">Home</a>
-            <a class="nav-link" href="<?= base_url('ui/store'); ?>">Store <span class="badge badge-pill badge-danger"><small>New</small></span></a>
+            <a class="nav-link" href="<?= base_url('login/home'); ?>">Home</a>
+            <a class="nav-link" href="<?= base_url('login/store'); ?>">Store <span class="badge badge-pill badge-danger"><small>New</small></span></a>
             <a class="nav-link" href="#">Inspirations</a>
-            <a class="nav-link" href="<?= base_url('ui/vendors'); ?>">Vendors</a>
-            <a class="nav-link" href="<?= base_url('ui/events'); ?>">Events</a>
+            <a class="nav-link" href="<?= base_url('login/vendors'); ?>">Vendors</a>
+            <a class="nav-link" href="<?= base_url('login/events'); ?>">Events</a>
             <a class="nav-link" href="#">Blog</a>
-            <a class="nav-link" href="<?= base_url('ui/promo'); ?>">Promo <span class="badge badge-pill badge-danger"><small>New</small></span></a>
+            <a class="nav-link" href="<?= base_url('login/promo'); ?>">Promo <span class="badge badge-pill badge-danger"><small>New</small></span></a>
         </nav>
     </div>
     <main role="main">

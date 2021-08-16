@@ -37,7 +37,7 @@ class AuthMember extends CI_Controller
                     ];
                     $this->session->set_userdata($data);
                     if ($member['is_login'] == 1) {
-                        redirect('login_member/Home');
+                        redirect('login/Home');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">

@@ -241,7 +241,7 @@
                                                 <a href="<?= base_url(); ?>ui/vendors/profile_vendor"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href="" id="menu-harga-d-v"><i class="fas fa-tags"></i> Harga</a>
+                                                <a href="" id="menu-harga-d-v" class="disabled"><i class="fas fa-tags"></i> Harga</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href="" id="about-me-d-v"><i class="fas fa-address-card"></i> Tentang Kami</a>
@@ -261,7 +261,7 @@
                                                 <a href=""><i class="fas fa-shopping-bag"></i> Produk (21)</a>
                                             </div>
                                             <div class="col-3">
-                                                <a href="" id="menu-harga"><i class="fas fa-tags"></i> Harga</a>
+                                                <a href="" id="menu-harga" class="disabled"><i class="fas fa-tags"></i> Harga</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href="" id="menu-tentang-kami"><i class="fas fa-address-card"></i> Tentang Kami</a>
@@ -431,103 +431,73 @@
     </div>
 </section>
 <script>
-// ajax show harga mobile version
-$('#menu-harga').on('click',function(e){
-    $.ajax({
-        type : 'GET',
-        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
-        dataType : 'JSON',
-        success : function(data){
-            let p = '';
-            p += 
-            '<div class="row justify-content-center">'+
-                '<div class="col-8">'+
-                    '<div class="row">'+
-                        '<div class="col-md-12">'+
-                            '<p class="harga">' + data.harga + '</p>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'
-            ;
-            $('#show-data').html(p);
-        }
-        
+    // ajax show harga mobile version
+    $('#menu-harga').on('click', function(e) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            showConfirmButton: false,
+            text: 'Silahkan login terlebih dahulu !',
+            footer: '<a href="<?= base_url(); ?>ui/AuthMember" class="btn btn-primary">Login</a>'
+        })
+        e.preventDefault();
     });
-    e.preventDefault();
-});
-// ajax show harga desktop version
-$('#menu-harga-d-v').on('click',function(e){
-    $.ajax({
-        type : 'GET',
-        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
-        dataType : 'JSON',
-        success : function(data){
-            let p = '';
-            p += 
-            '<div class="row justify-content-center">'+
-                '<div class="col-8">'+
-                    '<div class="row">'+
-                        '<div class="col-md-12">'+
-                            '<p class="harga">' + data.harga + '</p>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'
-            ;
-            $('#show-data').html(p);
-        }
-        
+    // ajax show harga desktop version
+    $('#menu-harga-d-v').on('click', function(e) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            showConfirmButton: false,
+            text: 'Silahkan login terlebih dahulu !',
+            footer: '<a href="<?= base_url(); ?>ui/AuthMember" class="btn btn-primary">Login</a>'
+        })
+        e.preventDefault();
     });
-    e.preventDefault();
-});
-// about me desktop v
-$('#about-me-d-v').on('click',function(e){
-    $.ajax({
-        type : 'GET',
-        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
-        dataType : 'JSON',
-        success : function(data){
-            let p = '';
-            p += 
-            '<div class="row justify-content-center">'+
-                '<div class="col-8">'+
-                    '<div class="row">'+
-                        '<div class="col-md-12">'+
-                            '<p class="harga">' + data.about + '</p>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'
-            ;
-            $('#show-data').html(p);
-        }
+    // about me desktop v
+    $('#about-me-d-v').on('click', function(e) {
+        $.ajax({
+            type: 'GET',
+            url: '<?php echo base_url(); ?>ui/vendors/menu_ajax',
+            dataType: 'JSON',
+            success: function(data) {
+                let p = '';
+                p +=
+                    '<div class="row justify-content-center">' +
+                    '<div class="col-8">' +
+                    '<div class="row">' +
+                    '<div class="col-md-12">' +
+                    '<p class="harga">' + data.about + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+                $('#show-data').html(p);
+            }
+        });
+        e.preventDefault();
     });
-    e.preventDefault();
-});
 
-// about me mobile v
-$('#menu-tentang-kami').on('click',function(e){
-    $.ajax({
-        type : 'GET',
-        url : '<?php echo base_url(); ?>ui/vendors/menu_ajax',
-        dataType : 'JSON',
-        success : function(data){
-            let p = '';
-            p += 
-            '<div class="row justify-content-center">'+
-                '<div class="col-8">'+
-                    '<div class="row">'+
-                        '<div class="col-md-12">'+
-                            '<p class="harga">' + data.about + '</p>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'
-            ;
-            $('#show-data').html(p);
-        }
+    // about me mobile v
+    $('#menu-tentang-kami').on('click', function(e) {
+        $.ajax({
+            type: 'GET',
+            url: '<?php echo base_url(); ?>ui/vendors/menu_ajax',
+            dataType: 'JSON',
+            success: function(data) {
+                let p = '';
+                p +=
+                    '<div class="row justify-content-center">' +
+                    '<div class="col-8">' +
+                    '<div class="row">' +
+                    '<div class="col-md-12">' +
+                    '<p class="harga">' + data.about + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+                $('#show-data').html(p);
+            }
+        });
+        e.preventDefault();
     });
-    e.preventDefault();
-});
 </script>

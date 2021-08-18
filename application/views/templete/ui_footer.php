@@ -213,6 +213,7 @@
 <script src="<?= base_url("assets/vendors/js/baguetteBox.min.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/custom.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/jsTambahan.js") ?>"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--
     <link src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></link>

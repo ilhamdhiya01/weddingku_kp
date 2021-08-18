@@ -87,4 +87,16 @@ class AuthMember extends CI_Controller
             redirect('ui/AuthMember');
         }
     }
+
+    public function logout_member()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('id');
+        $this->session->unset_userdata('is_login');
+        $this->session->set_flashdata('message','<div class="alert alert-success alert-dismissible fade show" role="alert">Logout berhasil
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button></div>');
+        redirect('ui/AuthMember');
+    }
 }

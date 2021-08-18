@@ -510,7 +510,7 @@
                         </div>
                         <div class="settings-links">
                             <img src="<?= base_url(); ?>assets/vendors/img/news/logout.png" class="setting-icon">
-                            <a href="">Logout</a>
+                            <a href="<?= base_url(); ?>ui/AuthMember/logout_member">Logout</a>
                         </div>
                     </div>
                 </div>

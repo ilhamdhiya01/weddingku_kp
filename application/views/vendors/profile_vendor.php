@@ -390,6 +390,7 @@
                     $this->db->where('id_kategori_service', $data_vendor['id_kategori_service']);
                     $result = $this->db->get('tb_data_lengkap_vendor')->result_array();
                     foreach ($result as $vendor_serupa) :
+                        
                     ?>
                         <div class="item">
                             <div class="card">

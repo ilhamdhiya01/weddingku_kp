@@ -8,7 +8,10 @@
                     </div>
                     <p>10.000+ calon pengantin merencanakan pernikahan-nya bersama kami setiap hari! </p>
                     <p>Baca wedding ideas, temukan direktori wedding vendor terlengkap, nikmati cerita real wedding kami, lihat inspiration board serta temukan best deal paket di weddingku store & honeymoon sekarang juga!</p>
-                    <a href="<?= base_url(); ?>ui/AuthMember/registrasi" class="btn-signup">sign up</a>
+                    <?php if (!$this->session->userdata('email')) : ?>
+                        <a href="<?= base_url(); ?>ui/auth/registrasi" class="btn-signup">sign up</a>
+                    <?php else : ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -174,61 +177,18 @@
     </div>
 </section>
 <section id="vendor-indonesia" class="section-vendor-indonesia container">
-    <?php for ($i = 1; $i < 4; $i++) : ?>
-        <div class="content-vendors">
-            <div class="vendor-title">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h2>Bridal & Salon di Indonesia</h2>
-                        <span>Lihat Rekomendasi dengan semua budget</span><a href="" class="mobile-v float-right"><i class="fas fa-ellipsis-h"></i></a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="" class="lihat-semua float-right">Lihat semua Bridal & Salon di Indonesia</a>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel owl-theme vendor-indonesia-slider">
-                <?php for ($j = 1; $j <= 7; $j++) : ?>
-                    <div class="item">
-                        <a href="">
-                            <div class="card">
-                                <img src="<?= base_url(); ?>assets/vendors/img/news/produk<?= $j; ?>.webp" class="img-vendor" alt="">
-                                <div class="img-style">
-                                    <span><i class="fas fa-check-circle"></i> Weddingku</span>
-                                </div>
-                                <div class="card-body">
-                                    <div class="nama-vendor nama-vendor-d-v">
-                                        <h4>
-                                            <?php
-                                            $namaVendor = "Hardpaper Double Indonesia ilham";
-                                            echo strlen($namaVendor) > 24 ? substr($namaVendor, 0, 24) . '...' : substr($namaVendor, 0, 24);
-                                            ?>
-                                        </h4>
-                                    </div>
-                                    <div class="nama-vendor nama-vendor-m-v">
-                                        <h4>
-                                            <?php
-                                            $namaVendor = "Hardpaper Double Indonesia";
-                                            echo strlen($namaVendor) > 16 ? substr($namaVendor, 0, 16) . '...' : substr($namaVendor, 0, 16);
-                                            ?>
-                                        </h4>
-                                    </div>
-                                    <div class="rating-star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                <?php endfor; ?>
-            </div>
-        </div>
-    <?php endfor; ?>
 </section>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "<?= base_url(); ?>ui/home/load_tumbnail_produk_vendor",
+            type: "get",
+            success: function(data) {
+                $("#vendor-indonesia").html(data);
+            }
+        });
+    });
+</script>
 <br>
 <section id="event" class="section-event" style="background-image:url('<?= base_url(); ?>assets/vendors/img/news/bg-event.jpg'); background-size:100% 100%;">
     <div class="event container">

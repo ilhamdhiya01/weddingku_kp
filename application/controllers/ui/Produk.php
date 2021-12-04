@@ -8,10 +8,11 @@ class Produk extends CI_Controller
     public function index()
     {
         $data = [
-            "judul" => "Produk"
+            "judul" => "Produk",
+            'member' => $this->db->get_where('tb_member',['email' => $this->session->userdata('email')])->row_array()
         ];
         $this->load->view('templete/ui_header',$data);
-        $this->load->view('produk/index');
+        $this->load->view('produk/index', $data);
         $this->load->view('templete/ui_footer');
     }
 }

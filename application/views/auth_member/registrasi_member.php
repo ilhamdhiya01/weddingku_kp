@@ -46,48 +46,53 @@
                                 <h5>Daftar</h5>
                             </div>
                             <div class="col-6">
-                                <a href="<?= base_url(); ?>ui/AuthMember">Masuk</a>
+                                <a href="">Masuk</a>
                             </div>
                         </div>
                     </div>
                     <div class="form-input">
-                        <form action="<?= base_url(); ?>ui/AuthMember/registrasi" method="post">
+                        <form action="" id="form-registrasi-member">
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="exampleFormControlInput1" id="label-nama-depan">Nama Depan</label>
-                                        <input type="text" name="nama_depan" value="<?= set_value('nama_depan'); ?>" class="form-control" id="input-nama-depan" placeholder="Nama Depan">
-                                        <?= form_error('nama_depan','<small class="text-danger">','</small>'); ?>
+                                        <label for="exampleFormControlInput1" id="label-nama-depan">Nama</label>
+                                        <input type="text" name="nama_member" value="" class="form-control" id="input-nama-depan" placeholder="Nama">
+                                        <div class="invalid-feedback nama_member_error text-sm" style="margin-top: -13px; color:red;">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="exampleFormControlInput1" id="label-nama-belakang">Nama Belakang</label>
-                                        <input type="text" name="nama_belakang" value="<?= set_value('nama_belakang'); ?>" class="form-control" id="input-nama-belakang" placeholder="Nama Belakang">
-                                        <?= form_error('nama_belakang','<small class="text-danger">','</small>'); ?>
+                                        <label for="exampleFormControlInput1" id="label-nama-belakang">Nomor Tlp</label>
+                                        <input type="text" name="no_tlp" value="" class="form-control" id="input-nama-belakang" placeholder="Nomor Tlp">
+                                        <div class="invalid-feedback no_tlp_error text-sm" style="margin-top: -13px; color:red;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-email">Alamat Email</label>
-                                <input type="text" name="email" value="<?= set_value('email'); ?>" class="form-control" id="input-email" placeholder="Alamat Email">
-                                <?= form_error('email','<small class="text-danger">','</small>'); ?>
+                                <input type="text" name="email" value="" class="form-control" id="input-email" placeholder="Alamat Email">
+                                <div class="invalid-feedback email_error text-sm" style="margin-top: -13px; color:red;">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-pass">Kata Sandi</label>
                                 <i class="fas fa-eye-slash" id="show-password-1"></i>
-                                <input type="password" name="password" class="form-control" id="pass" placeholder="Kata Sandi">
-                                <?= form_error('password','<small class="text-danger">','</small>'); ?>
+                                <input type="password" name="kata_sandi" class="form-control" id="kata_sandi" placeholder="Kata Sandi">
+                                <div class="invalid-feedback kata_sandi_error text-sm" style="margin-top: -13px; color:red;">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-konfirmasi-pass">Konfirmasi Kata Sandi</label>
                                 <i class="fas fa-eye-slash" id="show-password-2"></i>
-                                <input type="password" name="konfirmasi_password" class="form-control" id="konfirmasi-pass" placeholder="Konfirmasi Kata Sandi">
-                                <?= form_error('konfirmasi_password','<small class="text-danger">','</small>'); ?>
+                                <input type="password" name="konfirmasi_sandi" class="form-control" id="konfirmasi-pass" placeholder="Konfirmasi Kata Sandi">
+                                <div class="invalid-feedback konfirmasi_sandi_error text-sm" style="margin-top: -13px; color:red;">
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-block">Lanjutkan</button>
+                            <button type="submit" class="btn btn-block" id="btn-registrasi">Lanjutkan</button>
                             <p class="p1">Dengan mendaftar, saya menyetujui Syarat<br> dan Ketentuan Bridestory</p>
-                            <p class="p2">Sudah punya akun ? <a href="" data-toggle="modal" data-target="#login-member">Masuk</a></p>
+                            <p class="p2">Sudah punya akun ? <a href="<?= base_url(); ?>ui/auth">Masuk</a></p>
                         </form>
                     </div>
                 </div>
@@ -102,6 +107,85 @@
     <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
 </div>
 <script>
+    $("#form-registrasi-member").submit(function(e) {
+        // console.log($(this).serialize());
+        $.ajax({
+            url: "<?= base_url(); ?>ui/auth/proses_registrasi_member",
+            type: "post",
+            data: $(this).serialize(),
+            dataType: "json",
+            success: function(data) {
+                if (data.error) {
+                    if (data.error.nama_member) {
+                        $("[name='nama_member']").addClass("is-invalid");
+                        $(".nama_member_error").html(data.error.nama_member)
+                    } else {
+                        $("[name='nama_member']").removeClass("is-invalid");
+                        $(".nama_member_error").html("");
+                    }
+
+                    if (data.error.no_tlp) {
+                        $("[name='no_tlp']").addClass("is-invalid");
+                        $(".no_tlp_error").html(data.error.no_tlp)
+                    } else {
+                        $("[name='no_tlp']").removeClass("is-invalid");
+                        $(".no_tlp_error").html("");
+                    }
+
+                    if (data.error.email) {
+                        $("[name='email']").addClass("is-invalid");
+                        $(".email_error").html(data.error.email)
+                    } else {
+                        $("[name='email']").removeClass("is-invalid");
+                        $(".email_error").html("");
+                    }
+
+                    if (data.error.kata_sandi) {
+                        $("[name='kata_sandi']").addClass("is-invalid");
+                        $(".kata_sandi_error").html(data.error.kata_sandi)
+                    } else {
+                        $("[name='kata_sandi']").removeClass("is-invalid");
+                        $(".kata_sandi_error").html("");
+                    }
+
+                    if (data.error.konfirmasi_sandi) {
+                        $("[name='konfirmasi_sandi']").addClass("is-invalid");
+                        $(".konfirmasi_sandi_error").html(data.error.konfirmasi_sandi)
+                    } else {
+                        $("[name='konfirmasi_sandi']").removeClass("is-invalid");
+                        $(".konfirmasi_sandi_error").html("");
+                    }
+                } else {
+                    $("[name='nama_member']").removeClass("is-invalid");
+                    $("[name='nama_member']").val("");
+                    $(".nama_member_error").html("");
+                    $("[name='no_tlp']").removeClass("is-invalid");
+                    $("[name='no_tlp']").val("");
+                    $(".no_tlp_error").html("");
+                    $("[name='email']").removeClass("is-invalid");
+                    $("[name='email']").val("");
+                    $(".email_error").html("");
+                    $("[name='kata_sandi']").removeClass("is-invalid");
+                    $("[name='kata_sandi']").val("");
+                    $(".kata_sandi_error").html("");
+                    $("[name='konfirmasi_sandi']").removeClass("is-invalid");
+                    $("[name='konfirmasi_sandi']").val("");
+                    $(".konfirmasi_sandi_error").html("");
+                    iziToast.success({
+                        title: 'Registrasi success',
+                        timeout: 3000,
+                        message: 'Silahkan login',
+                        position: 'topRight',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                    });
+                }
+                // console.log(data);
+            }
+        });
+        e.preventDefault();
+    });
+
     $('#form-error').css('color', '#ff0000');
     $(document).ready(function() {
         // nama depan
@@ -145,7 +229,7 @@
         $(this).attr('placeholder', '');
     })
     // password
-    $('#pass').focus(function() {
+    $('#kata_sandi').focus(function() {
         $('#label-pass').css('display', 'flex');
         $(this).attr('placeholder', '');
     })
@@ -156,13 +240,13 @@
     })
     // show password
     $('#show-password-1').click(function() {
-        let x = $('#pass').attr('type');
+        let x = $('#kata_sandi').attr('type');
         if (x == 'password') {
-            $('#pass').attr('type', 'text');
+            $('#kata_sandi').attr('type', 'text');
             $('#show-password-1').css('color', '#EBA1A1');
             $('#show-password-1').attr('class', 'fas fa-eye');
         } else {
-            $('#pass').attr('type', 'password');
+            $('#kata_sandi').attr('type', 'password');
             $('#show-password-1').css('color', '#b6b4b4');
             $('#show-password-1').attr('class', 'fas fa-eye-slash');
         }

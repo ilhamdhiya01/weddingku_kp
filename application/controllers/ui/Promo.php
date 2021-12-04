@@ -8,10 +8,11 @@ class Promo extends CI_Controller
     public function index()
     {
         $data = [
-            "judul" => "Promo"
+            "judul" => "Promo",
+            'member' => $this->db->get_where('tb_member',['email' => $this->session->userdata('email')])->row_array()
         ];
         $this->load->view('templete/ui_header',$data);
-        $this->load->view('promo/index');
+        $this->load->view('promo/index', $data);
         $this->load->view('templete/ui_footer');
     }
 }

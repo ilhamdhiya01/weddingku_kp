@@ -5,40 +5,16 @@
                 <div class="col-3">
                     <select class="option-cari">
                         <option>Semua Kategori</option>
-                        <option>Audi</option>
-                        <option>BMW</option>
-                        <option>Citroen</option>
-                        <option>Fiat</option>
-                        <option>Ford</option>
-                        <option>Jaguar</option>
-                        <option>Jeep</option>
-                        <option>Lancia</option>
                     </select>
                 </div>
                 <div class="col-3">
                     <select class="option-cari">
                         <option>Semua Kota</option>
-                        <option>Audi</option>
-                        <option>BMW</option>
-                        <option>Citroen</option>
-                        <option>Fiat</option>
-                        <option>Ford</option>
-                        <option>Jaguar</option>
-                        <option>Jeep</option>
-                        <option>Lancia</option>
                     </select>
                 </div>
                 <div class="col-3">
                     <select class="option-cari">
                         <option>Semua Harga</option>
-                        <option>Audi</option>
-                        <option>BMW</option>
-                        <option>Citroen</option>
-                        <option>Fiat</option>
-                        <option>Ford</option>
-                        <option>Jaguar</option>
-                        <option>Jeep</option>
-                        <option>Lancia</option>
                     </select>
                 </div>
                 <div class="col-3">
@@ -68,22 +44,22 @@
                     <div class="card">
                         <div class="card-right-1">
                             <!-- img dan name vendor -->
-                            <div class="row .img-nama">
+                            <div class="row">
                                 <div class="col-3">
-                                    <img src="<?= base_url(); ?>assets/vendors/img/news/vendor4.webp" class="img-vendor" alt="...">
+                                    <img src="<?= base_url(); ?>assets/vendors/img/profile_vendor/<?= $data_vendor['foto_profile']; ?>" class="img-vendor" alt="...">
                                 </div>
-                                <div class="col-9">
-                                    <span class="nama-vendor">Lumiere Bridal Shoes</span>
+                                <div class="col-9 mt-2">
+                                    <span class="nama-vendor"><?= $data_vendor['nama_bisnis']; ?></span>
                                 </div>
                             </div>
                             <!-- / -->
                             <!-- kategori dan kota -->
                             <div class="row kategori-kota">
                                 <div class="col-sm-12">
-                                    <span class="kategori-vendor">Sepati Pengantin</span>
+                                    <span class="kategori-vendor"><?= $data_vendor['nama_kategori']; ?></span>
                                 </div>
                                 <div class="col-sm-12">
-                                    <span class="kota">Jakarta - ID</span>
+                                    <span class="kota"><?= $data_vendor['kota']; ?> - ID</span>
                                 </div>
                             </div>
                             <!-- / -->
@@ -100,7 +76,7 @@
                         </div>
                         <div class="card-right-2">
                             <div class="chat">
-                                <a href="">
+                                <a href="<?= 'https://wa.me/' . '62' . substr($data_vendor['no_wa_bisnis'], 1); ?>" class="chat-vendor">
                                     <div class="chat-vendor">
                                         <i class="fab fa-whatsapp"></i> <span>Chat Vendor</span>
                                     </div>
@@ -121,10 +97,9 @@
                                         <i class="fas fa-desktop"></i>
                                     </div>
                                     <div class="col-10">
-                                        <a href="" class="desktop-v">
+                                        <a href="" class="desktop-v situs-web-vendor">
                                             <?php
-                                            $website = "http://www.facebook.com/ilhamDhiyaUlhaq";
-                                            echo strlen($website) > 28 ? substr($website, 0, 28) . '...' : substr($website, 0, 28);
+                                            echo strlen($data_vendor['situs_website']) > 26 ? substr($data_vendor['situs_website'], 0, 26) . '...' : substr($data_vendor['situs_website'], 0, 28);
                                             ?>
                                         </a>
                                         <a href="" class="mobile-v">
@@ -142,7 +117,11 @@
                                         <i class="far fa-envelope"></i>
                                     </div>
                                     <div class="col-10">
-                                        <span>ulhaqilhamdhiya@gmail.com</span>
+                                        <span>
+                                            <?php
+                                            echo strlen($data_vendor['email']) > 26 ? substr($data_vendor['email'], 0, 26) . '...' : substr($data_vendor['email'], 0, 26);
+                                            ?>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +131,7 @@
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
                                     <div class="col-10">
-                                        <span>081239438228</span>
+                                        <span><?= $data_vendor['no_tlp_bisnis']; ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -170,9 +149,9 @@
                                     </div>
                                 </div>
                                 <div class="icon">
-                                    <a href=""><i class="fab fa-facebook-square"></i></a>
-                                    <a href=""><i class="fab fa-twitter-square"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href="<?= $data_vendor['facebook']; ?>" class="facebook-vendor"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="<?= $data_vendor['twitter']; ?>" class="twitter-vendor"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="<?= $data_vendor['instagram']; ?>" class="instagram-vendor"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -189,8 +168,7 @@
                 <div class="col-md-9">
                     <!-- flex card -->
                     <?php
-                    $ada = 1;
-                    if ($ada == 1) :
+                    if ($data_vendor['flexible_vendor'] == 1) :
                     ?>
                         <div class="card card-left mb-3">
                             <div class="card-left-1">
@@ -198,6 +176,7 @@
                                 <p>Vendor ini menyediakan fitur Flexi Reschedule. Hubungi sekarang untuk informasi lebih lanjut!</p>
                             </div>
                         </div>
+                    <?php else : ?>
                     <?php endif; ?>
                     <!-- / -->
                     <!-- pembayaran -->
@@ -404,53 +383,59 @@
             </div>
             <section id="vendor-serupa">
                 <div class="owl-carousel owl-theme">
-                    <?php for ($i = 1; $i <= 5; $i++) : ?>
+                    <?php
+                    $this->db->select('foto_profile, nama_kategori, kota, nama_bisnis');
+                    $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+                    $this->db->where('id_vendor !=', $data_vendor['id_vendor']);
+                    $this->db->where('id_kategori_service', $data_vendor['id_kategori_service']);
+                    $result = $this->db->get('tb_data_lengkap_vendor')->result_array();
+                    foreach ($result as $vendor_serupa) :
+                    ?>
                         <div class="item">
                             <div class="card">
                                 <div class="row">
                                     <div class="col-2">
-                                        <img src="<?= base_url(); ?>assets/vendors/img/news/vendor<?= $i; ?>.webp" class="img-vendor-serupa" alt="...">
+                                        <img src="<?= base_url(); ?>assets/vendors/img/profile_vendor/<?= $vendor_serupa['foto_profile']; ?>" class="img-vendor-serupa" alt="...">
                                     </div>
                                     <div class="col-10">
                                         <div class="info-vendor">
                                             <div class="nama-vendor">
-                                                <h5>Sky Wedding Entertaintemnt</h5>
+                                                <h5><?= $vendor_serupa['nama_bisnis']; ?></h5>
                                             </div>
                                             <div class="kategori">
-                                                <span>Entertaiment - Jakarta.ID</span>
+                                                <span><?= $vendor_serupa['nama_kategori']; ?> - <?= $vendor_serupa['kota']; ?>.ID</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php endfor; ?>
+                    <?php endforeach; ?>
                 </div>
             </section>
         </section>
     </div>
 </section>
 <script>
-    // ajax show harga mobile version
-    $('#menu-harga').on('click', function(e) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Oops...',
-            showConfirmButton: false,
-            text: 'Silahkan login terlebih dahulu !',
-            footer: '<a href="<?= base_url(); ?>ui/AuthMember" class="btn btn-primary">Login</a>'
-        })
+    $("#title").html("<?= $data_vendor['nama_bisnis']; ?>")
+    $(".situs-web-vendor").click(function(e) {
+        window.open("<?= $data_vendor['situs_website']; ?>");
         e.preventDefault();
     });
-    // ajax show harga desktop version
-    $('#menu-harga-d-v').on('click', function(e) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Oops...',
-            showConfirmButton: false,
-            text: 'Silahkan login terlebih dahulu !',
-            footer: '<a href="<?= base_url(); ?>ui/AuthMember" class="btn btn-primary">Login</a>'
-        })
+    $(".facebook-vendor").click(function(e) {
+        window.open("<?= $data_vendor['facebook']; ?>");
+        e.preventDefault();
+    });
+    $(".twitter-vendor").click(function(e) {
+        window.open("<?= $data_vendor['twitter']; ?>");
+        e.preventDefault();
+    });
+    $(".instagram-vendor").click(function(e) {
+        window.open("<?= $data_vendor['instagram']; ?>");
+        e.preventDefault();
+    });
+    $(".chat-vendor").click(function(e) {
+        window.open("<?= 'https://wa.me/' . '62' . substr($data_vendor['no_wa_bisnis'], 1); ?>");
         e.preventDefault();
     });
     // about me desktop v

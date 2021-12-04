@@ -8,11 +8,12 @@ class Store extends CI_Controller
     public function index()
     {
         $data = [
-            'judul' => 'Store'
+            'judul' => 'Store',
+            'member' => $this->db->get_where('tb_member',['email' => $this->session->userdata('email')])->row_array()
         ];
 
         $this->load->view('templete/ui_header', $data);
-        $this->load->view('store/index');
+        $this->load->view('store/index', $data);
         $this->load->view('templete/ui_footer');
     }
 }

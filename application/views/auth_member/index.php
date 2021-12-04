@@ -50,22 +50,23 @@
                             </div>
                         </div>
                     </div>
-                    <?= $this->session->flashdata('message'); ?>
                     <div class="form-input">
-                        <form action="<?= base_url(); ?>ui/AuthMember" method="post">
+                        <form action="" id="form-login-member">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-email">Alamat Email</label>
                                 <input type="text" name="email" value="<?= set_value('email'); ?>" class="form-control" id="input-email" placeholder="Alamat Email">
-                                <?= form_error('email','<small class="text-danger">','</small>'); ?>
+                                <div class="invalid-feedback email_error text-sm" style="margin-top: -13px; color:red;">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1" id="label-pass">Kata Sandi</label>
                                 <i class="fas fa-eye-slash" id="show-password-1"></i>
-                                <input type="password" name="password" class="form-control" id="pass" placeholder="Kata Sandi">
-                                <?= form_error('password','<small class="text-danger">','</small>'); ?>
+                                <input type="password" name="kata_sandi" class="form-control" id="pass" placeholder="Kata Sandi">
+                                <div class="invalid-feedback kata_sandi_error text-sm" style="margin-top: -13px; color:red;">
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-block">Lanjutkan</button>
-                            <p>Belum punya akun? <a href="<?= base_url(); ?>ui/AuthMember/registrasi">Daftar</a></p>
+                            <button type="submit" class="btn btn-block" id="login">Lanjutkan</button>
+                            <p>Belum punya akun? <a href="<?= base_url(); ?>ui/auth/registrasi">Daftar</a></p>
                         </form>
                     </div>
                 </div>
@@ -80,6 +81,70 @@
     <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
 </div>
 <script>
+    $("#login").click(function(e) {
+        $.ajax({
+            url: "<?= base_url(); ?>ui/auth/proses_login_member",
+            type: "post",
+            data: {
+                email: $("[name='email']").val(),
+                kata_sandi: $("[name='kata_sandi']").val()
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data.error) {
+                    if (data.error.email) {
+                        $("[name='email']").addClass("is-invalid");
+                        $(".email_error").html(data.error.email)
+                    } else {
+                        $("[name='email']").removeClass("is-invalid");
+                        $(".email_error").html("");
+                    }
+
+                    if (data.error.kata_sandi) {
+                        $("[name='kata_sandi']").addClass("is-invalid");
+                        $(".kata_sandi_error").html(data.error.kata_sandi)
+                    } else {
+                        $("[name='kata_sandi']").removeClass("is-invalid");
+                        $(".kata_sandi_error").html("");
+                    }
+                } else {
+                    if (data.status == 'null_email') {
+                        iziToast.error({
+                            title: 'Error',
+                            timeout: 3000,
+                            message: data.message,
+                            position: 'topRight',
+                            transitionIn: 'flipInX',
+                            transitionOut: 'flipOutX'
+                        });
+                    } else {
+                        if (data.cek_kata_sandi != false) {
+                            iziToast.success({
+                                title: 'Success',
+                                timeout: 3000,
+                                message: 'Login success',
+                                position: 'topRight',
+                                transitionIn: 'flipInX',
+                                transitionOut: 'flipOutX'
+                            });
+                            window.location.href = "<?= base_url(); ?>ui/home"
+                        } else {
+                            iziToast.error({
+                                title: 'Error',
+                                timeout: 3000,
+                                message: 'Kata sandi yang anda masukan salah',
+                                position: 'topRight',
+                                transitionIn: 'flipInX',
+                                transitionOut: 'flipOutX'
+                            });
+                        }
+                    }
+                }
+            }
+        });
+        e.preventDefault();
+    });
+
     $('#form-error').css('color', '#ff0000');
     $(document).ready(function() {
         // nama depan

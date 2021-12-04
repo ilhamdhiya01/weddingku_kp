@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
     <!-- Plugins -->
-    
+
     <link rel="stylesheet" href="<?= base_url("assets/vendors/plugins/select-plugins/dist/jquery-editable-select.min.css"); ?>">
     <!-- Bootstrap core CSS -->
     <link href="<?= base_url("assets/vendors/vendor/bootstrap/dist/css/bootstrap.min.css") ?>" rel="stylesheet">
@@ -29,9 +29,10 @@
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/allproduk.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/produkInfo.css") ?>">
     <link rel="stylesheet" href="<?= base_url("assets/vendors/css/authMember.css") ?>">
+    <link rel="stylesheet" href="<?= base_url("assets/vendors/plugins/iziToast-master/dist/css/iziToast.min.css") ?>">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="<?= base_url("assets/vendors/vendor/fontawesome-free/css/all.min.css") ?>">
-
+    <script src="<?= base_url("assets/vendors/vendor/jquery/dist/jquery.min.js") ?>"></script>
 
     <style>
         .bd-placeholder-img {
@@ -442,7 +443,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<?= base_url("assets/vendors/css/offcanvas.css"); ?>" rel="stylesheet">
-    <title>Weddingku | <?= $judul; ?></title>
+    <title id="title">Weddingku | <?= $judul; ?></title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
@@ -482,13 +483,51 @@
                     <img src="<?= base_url(); ?>assets/vendors/img/news/search.png">
                     <input type="text" placeholder="Search">
                 </div>
-                <a href="<?= base_url(); ?>ui/AuthMember" class="btn-login">Login</a>
-                <a href="" class="btn-daftar ml-auto">Daftar</a>
-                <span class="desktop-v-span">join member ? <a href="<?= base_url(); ?>ui/AuthMember">sign in </a></span>
-                <a href="" class="desktop-v-a"> are you a vendor ?</a>
+                <?php if (!$this->session->userdata('email')) : ?>
+                    <a href="<?= base_url(); ?>ui/AuthMember" class="btn-login">Login</a>
+                    <a href="" class="btn-daftar ml-auto">Daftar</a>
+                    <span class="desktop-v-span">join member ? <a href="<?= base_url(); ?>ui/AuthMember">sign in </a></span>
+                    <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#exampleModal"> are you a vendor ?</a>
+                <?php else : ?>
+                    <div class="user-profile online">
+                        <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png" alt="" class="user-img-profile">
+                        <span><?= $member['nama_member']; ?></span>
+                    </div>
+                    <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#exampleModal"> are you a vendor ?</a>
+                <?php endif; ?>
             </form>
         </div>
     </nav>
+    <style>
+        .user-profile {
+            border-right: 1px solid #ccc;
+            padding: 0 13px;
+            cursor: pointer;
+        }
+
+        .user-img-profile {
+            /* position: absolute; */
+            border: 1px solid #ccc;
+            width: 40px;
+            height: 40px;
+        }
+
+        .online {
+            position: relative;
+        }
+
+        .online::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            left: 15px;
+        }
+    </style>
 
     <div class="nav-scroller bg-white shadow-sm">
         <nav class="nav nav-underline">
@@ -502,3 +541,61 @@
         </nav>
     </div>
     <main role="main">
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body auth-vendor">
+
+                    </div>
+                    <div class="modal-footer">
+                        <span style="cursor:pointer;" id="registrasi-vendor">Registrasi Vendor</span>
+                        <span style="cursor:pointer;" id="login-vendor">Login Vendor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .modal-footer {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+        <script>
+            $(".desktop-v-a").click(function() {
+                $.ajax({
+                    url: "<?= base_url(); ?>ui/auth/registrasi_vendor",
+                    type: "get",
+                    success: function(data) {
+                        $(".auth-vendor").html(data);
+                    }
+                });
+            });
+
+            $("#registrasi-vendor").click(function() {
+                $.ajax({
+                    url: "<?= base_url(); ?>ui/auth/registrasi_vendor",
+                    type: "get",
+                    success: function(data) {
+                        $(".auth-vendor").html(data);
+                    }
+                });
+            })
+
+            $("#login-vendor").click(function() {
+                $.ajax({
+                    url: "<?= base_url(); ?>ui/auth/login_vendor",
+                    type: "get",
+                    success: function(data) {
+                        $(".auth-vendor").html(data);
+                    }
+                });
+            });
+        </script>

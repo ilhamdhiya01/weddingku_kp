@@ -202,12 +202,10 @@
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-    window.jQuery || document.write('<script src="<?= base_url("assets/vendors/vendor/jquery/dist/jquery.min.js") ?>"><\/script>')
-</script>
 <!-- plugin -->
 <script src="<?= base_url("assets/vendors/plugins/select-plugins/dist/jquery-editable-select.min.js"); ?>"></script>
 <!-- / -->
+<script src="<?= base_url("assets/vendors/plugins/iziToast-master/dist/js/iziToast.min.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/vendor/bootstrap/dist/js/bootstrap.bundle.min.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/offcanvas.js") ?>"></script>
 <script src="<?= base_url("assets/vendors/js/baguetteBox.min.js") ?>"></script>

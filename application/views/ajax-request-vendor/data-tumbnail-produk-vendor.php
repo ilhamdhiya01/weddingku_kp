@@ -20,7 +20,7 @@
             foreach ($data_tumbnail_vendor as $tumbnail_vendor) :
             ?>
                 <div class="item">
-                    <a href="">
+                    <a href="#" class="tumbnail-vendor" data-idvendor="<?= $tumbnail_vendor['id_vendor']; ?>">
                         <div class="card">
                             <img src="<?= base_url(); ?>assets/vendors/img/produk/<?= $tumbnail_vendor['tumbnail_vendor']; ?>" style="object-fit:cover;" class="img-vendor" alt="">
                             <div class="img-style">
@@ -58,6 +58,11 @@
 <?php endforeach; ?>
 
 <script>
+    $(".tumbnail-vendor").click(function() {
+        window.open("<?= base_url(); ?>ui/vendors/profile_vendor/" + $(this).data("idvendor"));
+    });
+
+    // owl carousel
     $('#vendor-indonesia .owl-carousel').owlCarousel({
         loop: false,
         margin: 10,

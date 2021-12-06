@@ -7,10 +7,16 @@ function function_helper()
 {
     $ci = get_instance();
     if (!$ci->session->userdata('email')) {
-        $ci->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible fade show" role="alert">Silahkan login terlebih dahulu
+        $ci->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Silahkan login terlebih dahulu
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button></div>');
         redirect('ui/AuthMember');
     }
+}
+
+function format_idr($harga)
+{
+    $format = "IDR " . number_format($harga, 0, ',', ',');
+    return $format;
 }

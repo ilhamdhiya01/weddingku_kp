@@ -217,7 +217,7 @@
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col-3">
-                                                <a href="<?= base_url(); ?>ui/vendors/profile_vendor"><i class="fas fa-shopping-bag"></i> Produk (21)</a>
+                                                <a href="<?= base_url(); ?>ui/vendors/profile_vendor"><i class="fas fa-shopping-bag"></i> Produk (<?= count($total_produk); ?>)</a>
                                             </div>
                                             <div class="col-3">
                                                 <a href="" id="menu-harga-d-v" class="disabled"><i class="fas fa-tags"></i> Harga</a>
@@ -319,7 +319,7 @@
                                             <h4>Semua Produk</h4>
                                         </div>
                                         <div class="col-3 desktop-v">
-                                            <a href="">Lihat Semua (15)</a>
+                                            <a href="">Lihat Semua (<?= count($total_produk); ?>)</a>
                                         </div>
                                         <div class="col-3 mobile-v">
                                             <a href=""><i class="fas fa-ellipsis-h"></i></a>
@@ -327,49 +327,23 @@
                                     </div>
                                 </div>
                                 <section id="all-produk-profile">
-                                    <div class="owl-carousel owl-theme">
-                                        <?php for ($i = 1; $i <= 10; $i++) : ?>
-                                            <div class="item">
-                                                <a href="<?= base_url(); ?>ui/produk">
-                                                    <div class="card">
-                                                        <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
-                                                        <?php
-                                                        $disc = 0;
-                                                        if ($disc == 1) :
-                                                        ?>
-                                                            <div class="img-style">
-                                                                <span class="span-disc-1">Hemat</span>
-                                                                <span class="span-disc-2">8%</span>
-                                                            </div>
-                                                        <?php
-                                                        endif;
-                                                        ?>
-                                                        <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                                                        <div class="info-allProduk">
-                                                            <h4 class="desktop-v">
-                                                                <?php
-                                                                $allProduk = "allProduk Lengkap Pasadenia Sportc ilhm dhiya";
-                                                                echo strlen($allProduk) > 27 ? substr($allProduk, 0, 27) . '...' : substr($allProduk, 0, 27);
-                                                                ?>
-                                                            </h4>
-                                                            <span class="vendor vendor-d-v">
-                                                                <?php
-                                                                $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
-                                                                echo strlen($vendor) > 43 ? substr($vendor, 0, 43) . '...' : substr($vendor, 0, 43);
-                                                                ?>
-                                                            </span>
-                                                            <div class="allProduk-harga">
-                                                                <small class="before-price">IDR 111,800,000</small>
-                                                                <br>
-                                                                <span class="after-price">IDR 106,210,000</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        <?php endfor; ?>
-                                    </div>
                                 </section>
+                                <script>
+                                    $(document).ready(function() {
+                                        const id_vendor = "<?= $data_vendor['id_vendor']; ?>"
+                                        $.ajax({
+                                            url: "<?= base_url(); ?>ui/produk/semua_produk_vendor",
+                                            type: "get",
+                                            data: {
+                                                id_vendor: id_vendor
+                                            },
+                                            success: function(data) {
+                                                $("#all-produk-profile").html(data)
+                                            }
+                                        });
+                                    });
+                                </script>
+
                             </section>
                         </div>
                     </div>
@@ -390,7 +364,7 @@
                     $this->db->where('id_kategori_service', $data_vendor['id_kategori_service']);
                     $result = $this->db->get('tb_data_lengkap_vendor')->result_array();
                     foreach ($result as $vendor_serupa) :
-                        
+
                     ?>
                         <div class="item">
                             <div class="card">

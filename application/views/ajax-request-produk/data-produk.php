@@ -1,8 +1,19 @@
+<style>
+    .card-all-produk:hover,
+    .promo-profile-vendor .card:hover {
+        box-shadow: 5px 5px 5px rgba(102, 68, 0, 0.3);
+    }
+
+    .card-all-produk,
+    .promo-profile-vendor .card {
+        box-shadow: 5px 5px 5px rgba(102, 68, 0, 0.1);
+    }
+</style>
 <div class="owl-carousel owl-theme">
     <?php foreach ($semua_produk as $produk) : ?>
         <div class="item">
             <a href="<?= base_url(); ?>ui/produk">
-                <div class="card">
+                <div class="card card-all-produk">
                     <img src="<?= base_url(); ?>assets/vendors/img/gambar_produk/bridal/<?= $produk['gambar_tumbnail']; ?>" alt="">
                     <?php
                     $diskon = $this->db->get_where('tb_diskon_produk', ['id_produk' => $produk['id_produk']])->row_array();

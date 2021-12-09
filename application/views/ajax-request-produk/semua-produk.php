@@ -39,8 +39,13 @@
                 <h4>Semua Produk</h4>
             </div>
             <div class="col-3 desktop-v">
-                <a href="">Lihat Semua (<?= count($total_produk); ?>)</a>
+                <a href="#" class="show-semua-produk" data-idvendor="<?= $id_vendor; ?>">Lihat Semua (<?= count($total_produk); ?>)</a>
             </div>
+            <script>
+                $(".show-semua-produk").click(function() {
+                    window.open("<?= base_url(); ?>ui/produk/semua_produk/<?= $id_vendor ?>");
+                });
+            </script>
             <div class="col-3 mobile-v">
                 <a href=""><i class="fas fa-ellipsis-h"></i></a>
             </div>

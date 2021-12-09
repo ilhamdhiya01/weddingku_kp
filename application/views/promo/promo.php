@@ -53,13 +53,13 @@
                                     <h4>
                                         <?php
                                         $namaPromo = "Paket Lengkap Pasadenia location";
-                                        echo strlen($namaPromo) >30 ? substr($namaPromo, 0,30) . '...' : substr($namaPromo, 0,30);
+                                        echo strlen($namaPromo) > 30 ? substr($namaPromo, 0, 30) . '...' : substr($namaPromo, 0, 30);
                                         ?>
                                     </h4>
                                     <span class="vendor">
                                         <?php
                                         $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package milah";
-                                        echo strlen($vendor) > 45 ? substr($vendor, 0,45) . '...' : substr($vendor, 0,45);
+                                        echo strlen($vendor) > 45 ? substr($vendor, 0, 45) . '...' : substr($vendor, 0, 45);
                                         ?>
                                     </span>
                                     <div class="promo-harga">

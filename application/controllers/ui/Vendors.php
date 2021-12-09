@@ -29,7 +29,7 @@ class Vendors extends CI_Controller
             "judul" => "Profile Vendor",
             'data_vendor' => $this->db->get('tb_data_lengkap_vendor')->row_array(),
             'total_produk' => $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor])->result_array(),
-            'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email')])->row_array()
+            'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array()
         ];
         $this->load->view('templete/ui_header', $data);
         $this->load->view('vendors/profile_vendor', $data);

@@ -1,3 +1,18 @@
+<style>
+    .promo-desktop-v .flex-icon {
+        background-color: #ffffff;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 5px;
+        border-radius: 6px;
+    }
+
+    .promo-desktop-v .flex-icon img {
+        width: 90px;
+        height: 23px;
+    }
+</style>
 <section class="section-promo">
     <section id="promo-paket">
         <div class="owl-carousel owl-theme promo-paket">
@@ -48,18 +63,21 @@
                                     <span class="span-disc-1">Hemat</span>
                                     <span class="span-disc-2">8%</span>
                                 </div>
+                                <div class="flex-icon">
+                                    <img src="<?= base_url(); ?>assets/vendors/img/news/flex-icon.webp" alt="">
+                                </div>
                                 <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
                                 <div class="info-promo">
                                     <h4>
                                         <?php
                                         $namaPromo = "Paket Lengkap Pasadenia location";
-                                        echo strlen($namaPromo) >30 ? substr($namaPromo, 0,30) . '...' : substr($namaPromo, 0,30);
+                                        echo strlen($namaPromo) > 30 ? substr($namaPromo, 0, 30) . '...' : substr($namaPromo, 0, 30);
                                         ?>
                                     </h4>
                                     <span class="vendor">
                                         <?php
                                         $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package milah";
-                                        echo strlen($vendor) > 45 ? substr($vendor, 0,45) . '...' : substr($vendor, 0,45);
+                                        echo strlen($vendor) > 45 ? substr($vendor, 0, 45) . '...' : substr($vendor, 0, 45);
                                         ?>
                                     </span>
                                     <div class="promo-harga">

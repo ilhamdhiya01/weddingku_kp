@@ -1,0 +1,90 @@
+<div class="row" class="">
+    <?php foreach ($semua_produk as $produk) : ?>
+        <div class="col-md-3 promo-desktop-v">
+            <a href="">
+                <div class="card">
+                    <img src="<?= base_url(); ?>assets/vendors/img/gambar_produk/bridal/<?= $produk['gambar_tumbnail']; ?>" alt="">
+                    <?php
+                    $diskon = $this->db->get_where('tb_diskon_produk', ['id_produk' => $produk['id_produk']])->row_array();
+                    if ($produk['id_diskon'] != null) :
+                    ?>
+                        <div class="img-style">
+                            <span class="span-disc-1">Hemat</span>
+                            <span class="span-disc-2"><?= $diskon['persentase_diskon']; ?>%</span>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($produk['flexible_vendor'] == 1) : ?>
+                        <div class="flex-icon">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/flex-icon.webp" alt="">
+                        </div>
+                    <?php endif; ?>
+                    <span class="kota"><i class="fas fa-map-marker-alt"></i> <?= $produk['kota']; ?>. ID</span>
+                    <div class="info-promo">
+                        <h4>
+                            <?php
+                            echo strlen($produk['nama_produk']) > 25 ? substr($produk['nama_produk'], 0, 25) . '...' : substr($produk['nama_produk'], 0, 25);
+                            ?>
+                        </h4>
+                        <span class="vendor">
+                            <?php
+                            $vendor = "by <b>" . $produk['nama_bisnis'] . "</b> — " . $produk['nama_kategori'];
+                            echo strlen($vendor) > 45 ? substr($vendor, 0, 45) . '...' : substr($vendor, 0, 45);
+                            ?>
+                        </span>
+                        <div class="promo-harga">
+                            <?php if ($produk['id_diskon'] != null) : ?>
+                                <small class="before-price"><?= format_idr($produk['harga']); ?></small><br>
+                                <span class="after-price"><?= format_idr($diskon['harga_setelah_diskon']); ?></span>
+                            <?php else : ?>
+                                <span class="after-price"><?= format_idr($produk['harga']); ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <?php endforeach; ?>
+    <?php foreach ($semua_produk as $produk) : ?>
+        <div class="col-6 promo-mobile-v">
+            <a href="">
+                <div class="card">
+                    <img src="<?= base_url(); ?>assets/vendors/img/gambar_produk/bridal/<?= $produk['gambar_tumbnail']; ?>" alt="">
+                    <?php
+                    $diskon = $this->db->get_where('tb_diskon_produk', ['id_produk' => $produk['id_produk']])->row_array();
+                    if ($produk['id_diskon'] != null) :
+                    ?>
+                        <div class="img-style">
+                            <span class="span-disc-1">Hemat</span>
+                            <span class="span-disc-2"><?= $diskon['persentase_diskon']; ?>%</span>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($produk['flexible_vendor'] == 1) : ?>
+                        <div class="flex-icon">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/flex-icon.webp" alt="">
+                        </div>
+                    <?php endif; ?>
+                    <span class="kota"><i class="fas fa-map-marker-alt"></i> <?= $produk['kota']; ?>. ID</span>
+                    <div class="info-promo">
+                        <h4>
+                            <?php
+                            echo strlen($produk['nama_produk']) > 20 ? substr($produk['nama_produk'], 0, 20) . '...' : substr($produk['nama_produk'], 0, 20);
+                            ?>
+                        </h4>
+                        <span class="vendor">
+                            <?php
+                            $vendor = "by <b>" . $produk['nama_bisnis'] . "</b> — " . $produk['nama_kategori'];
+                            echo strlen($vendor) > 33 ? substr($vendor, 0, 33) . '...' :  substr($vendor, 0, 33);
+                            ?>
+                        </span>
+                        <?php if ($produk['id_diskon'] != null) : ?>
+                            <small class="before-price"><?= format_idr($produk['harga']); ?></small><br>
+                            <span class="after-price"><?= format_idr($diskon['harga_setelah_diskon']); ?></span>
+                        <?php else : ?>
+                            <span class="after-price"><?= format_idr($produk['harga']); ?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <?php endforeach; ?>
+</div>

@@ -9,7 +9,7 @@ class Store extends CI_Controller
     {
         $data = [
             'judul' => 'Store',
-            'member' => $this->db->get_where('tb_member',['email' => $this->session->userdata('email')])->row_array()
+            'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array()
         ];
 
         $this->load->view('templete/ui_header', $data);

@@ -71,4 +71,42 @@ class Vendors extends CI_Controller
             echo json_encode('Request failed');
         }
     }
+
+    public function tentang_kami()
+    {
+        $id_vendor = $_GET['id_vendor'];
+        if ($this->input->is_ajax_request()) {
+            $this->db->select('tentang_bisnis,alamat_kantor,kota,tb_kategori_service.nama_kategori,id_kategori_service');
+            $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('id_vendor', $id_vendor);
+            $data = [
+                'tentang_kami' => $this->db->get('tb_data_lengkap_vendor')->row_array()
+            ];
+            echo json_encode($this->load->view('ajax-request-vendor/tentang-vendor', $data));
+        } else {
+            echo json_encode("Request failed");
+        }
+    }
+
+    public function cek_harga_produk()
+    {
+        if ($this->input->is_ajax_request()) {
+            if (!$this->session->userdata('email_member')) {
+                echo json_encode($this->load->view('ajax-request-vendor/belum_login'));
+            } else {
+                $id_vendor = $_GET['id_vendor'];
+                $nama_kategori = $_GET['nama_kategori'];
+                $this->db->select('nama_produk,nama_kategori,detail_produk,harga');
+                $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+                $this->db->where('id_vendor', $id_vendor);
+                $data = [
+                    'nama_kategori' => $nama_kategori,
+                    'detail_harga' => $this->db->get('tb_produk')->result_array()
+                ];
+                echo json_encode($this->load->view('ajax-request-vendor/detail_harga_produk', $data));
+            }
+        } else {
+            echo json_encode("Request failed");
+        }
+    }
 }

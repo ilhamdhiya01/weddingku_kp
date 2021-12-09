@@ -9,7 +9,7 @@ class Home extends CI_Controller
     {
         $data = [
             "judul" => "Home",
-            'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email')])->row_array()
+            'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array()
         ];
         $this->load->view('templete/ui_header', $data);
         $this->load->view('home/index', $data);
@@ -20,14 +20,14 @@ class Home extends CI_Controller
     {
         if ($this->input->is_ajax_request()) {
             $this->db->select('tb_kategori_service.*');
-            $this->db->join('tb_kategori_service','tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+            $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
             $this->db->group_by('tb_data_lengkap_vendor.id_kategori_service');
-            $this->db->order_by('id_vendor','DESC');
+            $this->db->order_by('id_vendor', 'DESC');
             $data = [
                 'data_tumbnail_vendor' => $this->db->get('tb_data_lengkap_vendor')->result_array(),
                 'kategori_service' => $this->db->get('tb_kategori_service')->result_array()
             ];
-            echo json_encode($this->load->view('ajax-request-vendor/data-tumbnail-produk-vendor',$data));
+            echo json_encode($this->load->view('ajax-request-vendor/data-tumbnail-produk-vendor', $data));
         } else {
             echo json_encode('Request failed');
         }

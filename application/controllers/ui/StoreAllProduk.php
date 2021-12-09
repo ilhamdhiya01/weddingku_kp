@@ -9,10 +9,10 @@ class StoreAllProduk extends CI_Controller
     {
         $data = [
             'judul' => 'Semua Produk',
-            'member' => $this->db->get_where('tb_member',['email' => $this->session->userdata('email')])->row_array()
+            'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array()
         ];
 
-        $this->load->view('templete/ui_header',$data);
+        $this->load->view('templete/ui_header', $data);
         $this->load->view('semuaproduk/index', $data);
         $this->load->view('templete/ui_footer');
     }

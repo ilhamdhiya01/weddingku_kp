@@ -83,11 +83,32 @@
                                 </a>
                             </div>
                             <div class="price">
-                                <a href="">
+                                <a href="#" class="pricelist">
                                     <div class="price-list">
                                         <i class="fas fa-tags"></i> <span>Pricelist</span>
                                     </div>
                                 </a>
+                                <script>
+                                    $(".pricelist").click(function(e) {
+                                        $("#menu-harga-d-v").addClass("active").attr("style", "color:#EBA1A1;");
+                                        $("#all-produk").removeClass("active").removeAttr("style");
+                                        $("#about-me-d-v").removeClass("active").removeAttr("style");
+                                        $("#promo-produk").removeClass("active").removeAttr("style");
+
+                                        $.ajax({
+                                            url: "<?= base_url(); ?>ui/vendors/cek_harga_produk",
+                                            type: "get",
+                                            data: {
+                                                id_vendor: id_vendor,
+                                                nama_kategori: "<?= $data_vendor['nama_kategori']; ?>"
+                                            },
+                                            success: function(data) {
+                                                $("#show-data").html(data);
+                                            }
+                                        });
+                                        e.preventDefault();
+                                    });
+                                </script>
                             </div>
                         </div>
                         <div class="card-right-3">
@@ -249,6 +270,18 @@
                                                     $("#all-produk").removeClass("active").removeAttr("style");
                                                     $("#about-me-d-v").removeClass("active").removeAttr("style");
                                                     $("#promo-produk").removeClass("active").removeAttr("style");
+
+                                                    $.ajax({
+                                                        url: "<?= base_url(); ?>ui/vendors/cek_harga_produk",
+                                                        type: "get",
+                                                        data: {
+                                                            id_vendor: id_vendor,
+                                                            nama_kategori: "<?= $data_vendor['nama_kategori']; ?>"
+                                                        },
+                                                        success: function(data) {
+                                                            $("#show-data").html(data);
+                                                        }
+                                                    });
                                                     e.preventDefault();
                                                 });
                                             </script>
@@ -261,6 +294,17 @@
                                                     $("#menu-harga-d-v").removeClass("active").removeAttr("style");
                                                     $("#all-produk").removeClass("active").removeAttr("style");
                                                     $("#promo-produk").removeClass("active").removeAttr("style");
+
+                                                    $.ajax({
+                                                        url: "<?= base_url(); ?>ui/vendors/tentang_kami",
+                                                        type: "get",
+                                                        data: {
+                                                            id_vendor: id_vendor
+                                                        },
+                                                        success: function(data) {
+                                                            $("#show-data").html(data);
+                                                        }
+                                                    });
                                                     e.preventDefault();
                                                 });
                                             </script>
@@ -273,6 +317,17 @@
                                                     $("#menu-harga-d-v").removeClass("active").removeAttr("style");
                                                     $("#about-me-d-v").removeClass("active").removeAttr("style");
                                                     $("#all-produk").removeClass("active").removeAttr("style");
+
+                                                    $.ajax({
+                                                        url: "<?= base_url(); ?>ui/produk/menu_promo_produk",
+                                                        type: "get",
+                                                        data: {
+                                                            id_vendor: id_vendor
+                                                        },
+                                                        success: function(data) {
+                                                            $("#show-data").html(data);
+                                                        }
+                                                    });
                                                     e.preventDefault();
                                                 });
                                             </script>
@@ -380,29 +435,6 @@
     });
     $(".chat-vendor").click(function(e) {
         window.open("<?= 'https://wa.me/' . '62' . substr($data_vendor['no_wa_bisnis'], 1); ?>");
-        e.preventDefault();
-    });
-    // about me desktop v
-    $('#about-me-d-v').on('click', function(e) {
-        $.ajax({
-            type: 'GET',
-            url: '<?php echo base_url(); ?>ui/vendors/menu_ajax',
-            dataType: 'JSON',
-            success: function(data) {
-                let p = '';
-                p +=
-                    '<div class="row justify-content-center">' +
-                    '<div class="col-8">' +
-                    '<div class="row">' +
-                    '<div class="col-md-12">' +
-                    '<p class="harga">' + data.about + '</p>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>';
-                $('#show-data').html(p);
-            }
-        });
         e.preventDefault();
     });
 

@@ -9,7 +9,7 @@ class Events extends CI_Controller
     {
         $data = [
             "judul" => "Events",
-            'member' => $this->db->get_where('tb_member',['email' => $this->session->userdata('email')])->row_array()
+            'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array()
         ];
         $this->load->view('templete/ui_header', $data);
         $this->load->view('events/index', $data);

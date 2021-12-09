@@ -93,7 +93,7 @@ class Auth extends CI_Controller
                     ];
                     $userdata = [
                         'nama_member' => $member['users']['nama_member'],
-                        'email' => $member['users']['email']
+                        'email_member' => $member['users']['email']
                     ];
                     $this->session->set_userdata($userdata);
                     echo json_encode($msg);

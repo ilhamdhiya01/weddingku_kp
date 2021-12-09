@@ -217,17 +217,65 @@
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col-3">
-                                                <a href="<?= base_url(); ?>ui/vendors/profile_vendor"><i class="fas fa-shopping-bag"></i> Produk (<?= count($total_produk); ?>)</a>
+                                                <a href="#" class="active" id="all-produk"><i class="fas fa-shopping-bag"></i> Produk (<?= count($total_produk); ?>)</a>
                                             </div>
+                                            <script>
+                                                $("#all-produk").addClass("active").attr("style", "color:#EBA1A1;");
+                                                $("#all-produk").click(function(e) {
+                                                    $(this).addClass("active").attr("style", "color:#EBA1A1;");
+                                                    $("#menu-harga-d-v").removeClass("active").removeAttr("style");
+                                                    $("#about-me-d-v").removeClass("active").removeAttr("style");
+                                                    $("#promo-produk").removeClass("active").removeAttr("style");
+
+                                                    $.ajax({
+                                                        url: "<?= base_url(); ?>ui/produk/load_semua_produk",
+                                                        type: "get",
+                                                        data: {
+                                                            id_vendor: id_vendor
+                                                        },
+                                                        success: function(data) {
+                                                            $("#show-data").html(data);
+                                                        }
+                                                    });
+                                                    e.preventDefault();
+                                                });
+                                            </script>
                                             <div class="col-3">
                                                 <a href="" id="menu-harga-d-v" class="disabled"><i class="fas fa-tags"></i> Harga</a>
                                             </div>
+                                            <script>
+                                                $("#menu-harga-d-v").click(function(e) {
+                                                    $(this).addClass("active").attr("style", "color:#EBA1A1;");
+                                                    $("#all-produk").removeClass("active").removeAttr("style");
+                                                    $("#about-me-d-v").removeClass("active").removeAttr("style");
+                                                    $("#promo-produk").removeClass("active").removeAttr("style");
+                                                    e.preventDefault();
+                                                });
+                                            </script>
                                             <div class="col-3">
                                                 <a href="" id="about-me-d-v"><i class="fas fa-address-card"></i> Tentang Kami</a>
                                             </div>
+                                            <script>
+                                                $("#about-me-d-v").click(function(e) {
+                                                    $(this).addClass("active").attr("style", "color:#EBA1A1;");
+                                                    $("#menu-harga-d-v").removeClass("active").removeAttr("style");
+                                                    $("#all-produk").removeClass("active").removeAttr("style");
+                                                    $("#promo-produk").removeClass("active").removeAttr("style");
+                                                    e.preventDefault();
+                                                });
+                                            </script>
                                             <div class="col-3">
-                                                <a href="<?= base_url(); ?>ui/vendors/promo"><i class="fas fa-percent"></i> Promo</a>
+                                                <a href="#" id="promo-produk"><i class="fas fa-percent"></i> Promo</a>
                                             </div>
+                                            <script>
+                                                $("#promo-produk").click(function(e) {
+                                                    $(this).addClass("active").attr("style", "color:#EBA1A1;");
+                                                    $("#menu-harga-d-v").removeClass("active").removeAttr("style");
+                                                    $("#about-me-d-v").removeClass("active").removeAttr("style");
+                                                    $("#all-produk").removeClass("active").removeAttr("style");
+                                                    e.preventDefault();
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -254,76 +302,20 @@
                             </div>
                         </div>
                         <div class="card-body" id="show-data">
-                            <section class="produk-profile-vendor">
-                                <?php
-                                $this->db->select('id_diskon');
-                                $this->db->where('id_vendor', $data_vendor['id_vendor']);
-                                $result = $this->db->get('tb_produk')->row_array();
-                                if ($result['id_diskon'] != null) :
-                                ?>
-                                    <div class="title-promo">
-                                        <div class="row">
-                                            <div class="col-9">
-                                                <h4>Produk Promo</h4>
-                                            </div>
-                                            <div class="col-3 desktop-v">
-                                                <a href="">Lihat Semua (<?= count($total_produk_promo); ?>)</a>
-                                            </div>
-                                            <div class="col-3 mobile-v">
-                                                <a href=""><i class="fas fa-ellipsis-h"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <section id="promo-profile-vendor" class="promo-profile-vendor">
-                                    </section>
-                                    <script>
-                                        $(document).ready(function() {
-                                            const id_vendor = "<?= $data_vendor['id_vendor']; ?>";
-                                            $.ajax({
-                                                url: "<?= base_url(); ?>ui/produk/promo_produk_vendor",
-                                                type: "get",
-                                                data: {
-                                                    id_vendor: id_vendor
-                                                },
-                                                success: function(data) {
-                                                    $("#promo-profile-vendor").html(data);
-                                                }
-                                            });
-                                        });
-                                    </script>
-                                <?php endif; ?>
-                                <div class="title-all">
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <h4>Semua Produk</h4>
-                                        </div>
-                                        <div class="col-3 desktop-v">
-                                            <a href="">Lihat Semua (<?= count($total_produk); ?>)</a>
-                                        </div>
-                                        <div class="col-3 mobile-v">
-                                            <a href=""><i class="fas fa-ellipsis-h"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <section id="all-produk-profile">
-                                </section>
-                                <script>
-                                    $(document).ready(function() {
-                                        const id_vendor = "<?= $data_vendor['id_vendor']; ?>"
-                                        $.ajax({
-                                            url: "<?= base_url(); ?>ui/produk/semua_produk_vendor",
-                                            type: "get",
-                                            data: {
-                                                id_vendor: id_vendor
-                                            },
-                                            success: function(data) {
-                                                $("#all-produk-profile").html(data)
-                                            }
-                                        });
-                                    });
-                                </script>
-                            </section>
                         </div>
+                        <script>
+                            const id_vendor = "<?= $data_vendor['id_vendor']; ?>"
+                            $.ajax({
+                                url: "<?= base_url(); ?>ui/produk/load_semua_produk",
+                                type: "get",
+                                data: {
+                                    id_vendor: id_vendor
+                                },
+                                success: function(data) {
+                                    $("#show-data").html(data);
+                                }
+                            });
+                        </script>
                     </div>
                     <!-- / -->
                 </div>

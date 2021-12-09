@@ -16,6 +16,21 @@ class Produk extends CI_Controller
         $this->load->view('templete/ui_footer');
     }
 
+    public function load_semua_produk()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_GET['id_vendor'];
+            $data = [
+                'id_vendor' => $id_vendor,
+                'total_produk_promo' =>  $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor, 'id_diskon !=' => null])->result_array(),
+                'total_produk' => $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor])->result_array(),
+            ];
+            echo json_encode($this->load->view('ajax-request-produk/semua-produk', $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
+
     public function semua_produk_vendor()
     {
         if ($this->input->is_ajax_request()) {

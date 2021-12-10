@@ -103,18 +103,38 @@
     </div>
     <script>
         $("#title").html("<?= $nama_vendor['nama_bisnis']; ?> | Semua produk");
+        const url = document.URL;
+        const url_result = url.split('/');
         const id_vendor = "<?= $id_vendor; ?>";
-        $.ajax({
-            url: "<?= base_url(); ?>ui/produk/show_all_produk_vendor",
-            type: "get",
-            data: {
-                id_vendor: id_vendor
-            },
-            success: function(data) {
-                $(".show-all-produk-vendor").html(data);
-                console.log(data);
-            }
-        });
+
+        switch (url_result[6]) {
+            case "semua_produk_promo":
+                $.ajax({
+                    url: "<?= base_url(); ?>ui/produk/show_promo_produk_vendor",
+                    type: "get",
+                    data: {
+                        id_vendor: id_vendor
+                    },
+                    success: function(data) {
+                        $(".show-all-produk-vendor").html(data);
+                    }
+                });
+                break;
+            case "semua_produk":
+                $.ajax({
+                    url: "<?= base_url(); ?>ui/produk/show_all_produk_vendor",
+                    type: "get",
+                    data: {
+                        id_vendor: id_vendor
+                    },
+                    success: function(data) {
+                        $(".show-all-produk-vendor").html(data);
+                    }
+                });
+                break;
+            default:
+                break;
+        }
     </script>
 </section>
 <!-- <section class="section-promo"> -->

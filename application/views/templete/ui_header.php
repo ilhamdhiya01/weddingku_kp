@@ -443,6 +443,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<?= base_url("assets/vendors/css/offcanvas.css"); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title id="title">Weddingku | <?= $judul; ?></title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
@@ -489,43 +490,145 @@
                     <span class="desktop-v-span">join member ? <a href="<?= base_url(); ?>ui/AuthMember">sign in </a></span>
                     <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#exampleModal"> are you a vendor ?</a>
                 <?php else : ?>
-                    <div class="user-profile online">
-                        <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png" alt="" class="user-img-profile">
-                        <span><?= $member['nama_member']; ?></span>
+                    <div class="action">
+                        <div class="profile" onclick="menuToggle();">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png">
+                        </div>
+                        <div class="menu-profile">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png" class="img-profile">
+                            <h3><?= $member['nama_member']; ?> <br><span>Weddingku Member</span></h3>
+                            <hr>
+                            <ul>
+                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/choices.png"><a href="#">Vendor Pilihan</a></li>
+                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/settings.png"><a href="#">Pengaturan User</a></li>
+                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/resume.png"><a href="#">Edit Profile</a></li>
+                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/power-button.png"><a href="#">Keluar</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#exampleModal"> are you a vendor ?</a>
                 <?php endif; ?>
+                <script>
+                    function menuToggle() {
+                        const toggleMenu = document.querySelector(".menu-profile");
+                        toggleMenu.classList.toggle("active");
+                    }
+                </script>
             </form>
         </div>
     </nav>
     <style>
-        .user-profile {
-            border-right: 1px solid #ccc;
-            padding: 0 13px;
+        .action {}
+
+        .action .profile {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .action .profile img {
+            width: 85%;
+            height: 85%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        .action .menu-profile {
+            position: absolute;
+            background-color: #ffffff;
+            width: 225px;
+            height: 250px;
+            top: 130px;
+            right: 150px;
+            box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            border-radius: 8px;
+            transition: 0.5s;
+            padding: 15px 5px;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .action .menu-profile.active {
+            top: 70px;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .menu-profile .img-profile {
+            position: relative;
+            top: -10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .menu-profile hr {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            position: relative;
+            top: -7px;
+
+        }
+
+        .menu-profile .img-profile,
+        h3 {
+            display: inline-block;
+            margin-left: 10px;
+            padding-top: 5px;
+        }
+
+        .menu-profile h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 8px;
+            letter-spacing: 1px;
+        }
+
+        .menu-profile span {
+            font-size: 12px;
+        }
+
+        .menu-profile ul {
+            position: relative;
+            right: 30px;
+            top: -18px;
+        }
+
+        .menu-profile ul li {
+            list-style: none;
+            padding: 8px 0;
             cursor: pointer;
         }
 
-        .user-img-profile {
-            /* position: absolute; */
-            border: 1px solid #ccc;
-            width: 40px;
-            height: 40px;
+        .menu-profile ul li img {
+            max-width: 18px;
+            margin-right: 8px;
+            opacity: 0.6;
+            transition: 0.5s;
+            justify-content: flex-start;
+            display: inline-block;
         }
 
-        .online {
-            position: relative;
+        .menu-profile ul li:hover img {
+            opacity: 1;
         }
 
-        .online::after {
-            content: "";
-            width: 10px;
-            height: 10px;
-            border: 1px solid #ffffff;
-            border-radius: 50%;
-            background-color: green;
-            position: absolute;
-            top: 0;
-            left: 15px;
+        .menu-profile ul li:hover a {
+            /* display: block; */
+            color: #EBA1A1;
+            text-shadow: 0px 0.5px #eba1a1;
+        }
+
+        .menu-profile ul li a {
+            font-size: 13px;
+            display: inline-block;
+            text-decoration: none;
+            color: #555;
         }
     </style>
 

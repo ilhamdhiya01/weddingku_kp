@@ -60,6 +60,15 @@ class Auth extends CI_Controller
         }
     }
 
+    public function load_login_member()
+    {
+        if ($this->input->is_ajax_request()) {
+            echo json_encode($this->load->view('auth_member/login_member'));
+        } else {
+            echo json_encode("Request failed");
+        }
+    }
+
     public function proses_login_member()
     {
         if ($this->input->is_ajax_request()) {
@@ -191,15 +200,29 @@ class Auth extends CI_Controller
         }
     }
 
+    public function setelah_login()
+    {
+        if ($this->input->is_ajax_request()) {
+            $data = [
+                'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array()
+            ];
+            echo json_encode($this->load->view('auth_member/setelah-login', $data));
+        } else {
+            echo json_encode("Request failed");
+        }
+    }
+
     public function logout_member()
     {
-        $this->session->unset_userdata('email');
-        $this->session->unset_userdata('id');
-        $this->session->unset_userdata('is_login');
-        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Logout berhasil
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button></div>');
-        redirect('ui/AuthMember');
+        if ($this->input->is_ajax_request()) {
+            $this->session->unset_userdata('email_member');
+            $this->session->unset_userdata('nama_member');
+            $msg = [
+                'status' => 200
+            ];
+            echo json_encode($msg);
+        } else {
+            echo json_encode("Request failed");
+        }
     }
 }

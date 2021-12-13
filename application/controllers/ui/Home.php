@@ -16,6 +16,15 @@ class Home extends CI_Controller
         $this->load->view('templete/ui_footer');
     }
 
+    public function load_btn_auth()
+    {
+        if ($this->input->is_ajax_request()) {
+            echo json_encode($this->load->view('home/setelah-login'));
+        } else {
+            echo json_encode('Request failed');
+        }
+    }
+
     public function load_tumbnail_produk_vendor()
     {
         if ($this->input->is_ajax_request()) {

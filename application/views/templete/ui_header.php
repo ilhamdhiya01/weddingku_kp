@@ -484,42 +484,23 @@
                     <img src="<?= base_url(); ?>assets/vendors/img/news/search.png">
                     <input type="text" placeholder="Search">
                 </div>
-                <?php if (!$this->session->userdata('email_member')) : ?>
-                    <a href="<?= base_url(); ?>ui/AuthMember" class="btn-login">Login</a>
-                    <a href="" class="btn-daftar ml-auto">Daftar</a>
-                    <span class="desktop-v-span">join member ? <a href="<?= base_url(); ?>ui/AuthMember">sign in </a></span>
-                    <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#exampleModal"> are you a vendor ?</a>
-                <?php else : ?>
-                    <div class="action">
-                        <div class="profile" onclick="menuToggle();">
-                            <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png">
-                        </div>
-                        <div class="menu-profile">
-                            <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png" class="img-profile">
-                            <h3><?= $member['nama_member']; ?> <br><span>Weddingku Member</span></h3>
-                            <hr>
-                            <ul>
-                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/choices.png"><a href="#">Vendor Pilihan</a></li>
-                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/settings.png"><a href="#">Pengaturan User</a></li>
-                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/resume.png"><a href="#">Edit Profile</a></li>
-                                <li><img src="<?= base_url(); ?>assets/vendors/img/icons/power-button.png"><a href="#">Keluar</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#exampleModal"> are you a vendor ?</a>
-                <?php endif; ?>
+
+                <div class="action">
+                </div>
+                <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#modal-auth"> are you a vendor ?</a>
                 <script>
-                    function menuToggle() {
-                        const toggleMenu = document.querySelector(".menu-profile");
-                        toggleMenu.classList.toggle("active");
-                    }
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/auth/setelah_login",
+                        type: "get",
+                        success: function(data) {
+                            $(".action").html(data);
+                        }
+                    });
                 </script>
             </form>
         </div>
     </nav>
     <style>
-        .action {}
-
         .action .profile {
             position: relative;
             overflow: hidden;
@@ -646,15 +627,9 @@
     <main role="main">
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+        <div class="modal fade" id="modal-auth" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
                     <div class="modal-body auth-vendor">
 
                     </div>
@@ -673,6 +648,8 @@
         </style>
         <script>
             $(".desktop-v-a").click(function() {
+                $("#modal-dialog").removeClass("modal-xl");
+                $(".modal-footer").removeAttr("style")
                 $.ajax({
                     url: "<?= base_url(); ?>ui/auth/registrasi_vendor",
                     type: "get",
@@ -681,16 +658,6 @@
                     }
                 });
             });
-
-            $("#registrasi-vendor").click(function() {
-                $.ajax({
-                    url: "<?= base_url(); ?>ui/auth/registrasi_vendor",
-                    type: "get",
-                    success: function(data) {
-                        $(".auth-vendor").html(data);
-                    }
-                });
-            })
 
             $("#login-vendor").click(function() {
                 $.ajax({

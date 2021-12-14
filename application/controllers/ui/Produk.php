@@ -82,6 +82,7 @@ class Produk extends CI_Controller
             $this->db->order_by('id_produk', 'DESC');
 
             $data = [
+                'id_vendor' => $id_vendor,
                 'produk_promo' => $this->db->get('tb_produk')->result_array(),
                 'total_produk_promo' =>  $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor, 'id_diskon !=' => null])->result_array()
             ];

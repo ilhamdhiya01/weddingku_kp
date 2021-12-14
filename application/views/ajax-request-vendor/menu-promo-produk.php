@@ -16,8 +16,13 @@
                 <h4>Produk Promo</h4>
             </div>
             <div class="col-3 desktop-v">
-                <a href="">Lihat Semua (<?= count($total_produk_promo); ?>)</a>
+                <a href="" class="show-semua-produk-promo">Lihat Semua (<?= count($total_produk_promo); ?>)</a>
             </div>
+            <script>
+                $(".show-semua-produk-promo").click(function() {
+                    window.open("<?= base_url(); ?>ui/produk/semua_produk_promo/<?= $id_vendor ?>");
+                });
+            </script>
             <div class="col-3 mobile-v">
                 <a href=""><i class="fas fa-ellipsis-h"></i></a>
             </div>

@@ -21,18 +21,28 @@
         }
 
         .filter-wrapper .filter {
-            width: 15%;
+            width: 14%;
             height: 100px;
         }
 
         .box-filter {
             position: relative;
             top: 25px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.14) 0px 1px 3px 1px;
             border-radius: 8px;
             height: 45px;
             width: 87%;
             padding: 5px 10px;
+        }
+
+        .filter-right,
+        .deals {
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .filter {
+            position: relative;
         }
 
         .fa-percent,
@@ -47,7 +57,7 @@
         .fa-chevron-down {
             display: inline-block;
             position: absolute;
-            right: 15px;
+            right: 14px;
             top: 9px;
         }
 
@@ -71,6 +81,60 @@
             width: 90px;
             height: 23px;
         }
+
+        .dropdown-filter {
+            position: absolute;
+            right: 28px;
+            width: 240px;
+            height: 140px;
+            margin-top: -30px;
+            top: 300px;
+            transition: 0.5s;
+            box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 7px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.14) 0px 1px 3px 1px;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1;
+            background: #ffffff;
+        }
+
+        .dropdown-filter.active {
+            top: 320px;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .dropdown-filter ul li a {
+            font-size: 13px;
+            position: relative;
+            color: black;
+            text-decoration: none;
+        }
+
+        .dropdown-filter ul {
+            width: 260px;
+            position: relative;
+            right: 30px;
+            top: 8px;
+        }
+
+        .dropdown-filter ul li {
+            list-style: none;
+            padding: 8px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-filter ul li:first-child {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+
+        .dropdown-filter ul li:hover {
+            background: #EBA1A1;
+            display: block;
+        }
     }
 </style>
 
@@ -91,13 +155,22 @@
         </div>
         <div class="filter">
             <div class="filter-right">
-                <div class="box-filter">
+                <div class="box-filter" onclick="">
                     <i class="fas fa-sort-amount-up-alt"></i>
-                    <label class="deals">Terbaru</label>
+                    <label class="deals label-filter">
+                        Terbaru
+                    </label>
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="dropdown-filter">
+        <ul>
+            <li id="terbaru"><a href="">Terbaru</a></li>
+            <li id="tertinggi-terendah"><a href="">Harga (Tertinggi - Terendah)</a></li>
+            <li id="terendah-tertinggi"><a href="">Harga (Terendah - Tertinggi)</a></li>
+        </ul>
     </div>
     <div class="card-promo show-all-produk-vendor pt-3">
     </div>
@@ -135,6 +208,28 @@
             default:
                 break;
         }
+
+        $(".filter-right").click(function() {
+            $(".dropdown-filter").toggleClass('active');
+        });
+
+        $("#terbaru").click(function(e) {
+            $(".dropdown-filter").removeClass("active");
+            $(".label-filter").html("Terbaru")
+            e.preventDefault();
+        });
+
+        $("#tertinggi-terendah").click(function(e) {
+            $(".dropdown-filter").removeClass("active");
+            $(".label-filter").html("<?php echo strlen("Harga (Tertinggi - Terendah)") > 14 ? substr("Harga (Tertinggi - Terendah)", 0, 14) . '...' : substr("Harga (Tertinggi - Terendah)", 0, 14); ?>");
+            e.preventDefault();
+        });
+
+        $("#terendah-tertinggi").click(function(e) {
+            $(".dropdown-filter").removeClass("active");
+            $(".label-filter").html("<?php echo strlen("Harga (Terendah - Tertinggi)") > 14 ? substr("Harga (Terendah - Tertinggi)", 0, 14) . '...' : substr("Harga (Terendah - Tertinggi)", 0, 14); ?>");
+            e.preventDefault();
+        });
     </script>
 </section>
 <!-- <section class="section-promo"> -->

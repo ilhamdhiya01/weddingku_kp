@@ -484,7 +484,6 @@
                     <img src="<?= base_url(); ?>assets/vendors/img/news/search.png">
                     <input type="text" placeholder="Search">
                 </div>
-
                 <div class="action">
                 </div>
                 <a href="#" class="desktop-v-a" data-toggle="modal" data-target="#modal-auth"> are you a vendor ?</a>
@@ -505,17 +504,17 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
         }
 
         .action .profile img {
-            width: 85%;
-            height: 85%;
+            width: 70%;
+            height: 70%;
             border-radius: 50%;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 10px;
+            left: 10px;
             object-fit: cover;
         }
 

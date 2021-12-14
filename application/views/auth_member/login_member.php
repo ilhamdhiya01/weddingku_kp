@@ -235,15 +235,15 @@
                 <h2>Atau</h2>
                 <div class="garis"></div>
             </div>
-            <form action="" class="mt-4">
+            <form action="" id="form-login-member" class="mt-4">
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Alamat email">
+                    <input type="text" name="email" value="<?= set_value('email'); ?>" class="form-control" id="input-email" placeholder="Alamat Email">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Kata Sandi">
+                    <input type="password" name="kata_sandi" class="form-control" id="pass" placeholder="Kata Sandi">
                 </div>
                 <center>
-                    <button class="btn">Lanjutkan</button>
+                    <button class="btn" id="login">Lanjutkan</button>
                     <small>Saya lupa kata sandi</small>
                     <p>Belum punya akun ? <a class="a">Daftar</a></p>
                 </center>
@@ -260,3 +260,97 @@
         </div>
     </div>
 </div>
+<script>
+    $("#login").click(function(e) {
+        $.ajax({
+            url: "<?= base_url(); ?>ui/auth/proses_login_member",
+            type: "post",
+            data: {
+                email: $("[name='email']").val(),
+                kata_sandi: $("[name='kata_sandi']").val()
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data.error) {
+                    if (data.error.email) {
+                        $("[name='email']").addClass("is-invalid");
+                        iziToast.error({
+                            title: 'Error',
+                            timeout: 3000,
+                            message: data.error.email,
+                            position: 'topCenter',
+                            transitionIn: 'flipInX',
+                            transitionOut: 'flipOutX'
+                        });
+                    } else {
+                        $("[name='email']").removeClass("is-invalid");
+                    }
+
+                    if (data.error.kata_sandi) {
+                        $("[name='kata_sandi']").addClass("is-invalid");
+                        iziToast.error({
+                            title: 'Error',
+                            timeout: 3000,
+                            message: data.error.kata_sandi,
+                            position: 'topCenter',
+                            transitionIn: 'flipInX',
+                            transitionOut: 'flipOutX'
+                        });
+                    } else {
+                        $("[name='kata_sandi']").removeClass("is-invalid");
+                    }
+                } else {
+                    if (data.status == 'null_email') {
+                        iziToast.error({
+                            title: 'Error',
+                            timeout: 3000,
+                            message: data.message,
+                            position: 'topCenter',
+                            transitionIn: 'flipInX',
+                            transitionOut: 'flipOutX'
+                        });
+                    } else {
+                        if (data.cek_kata_sandi != false) {
+                            iziToast.success({
+                                title: 'Success',
+                                timeout: 3000,
+                                message: 'Login success',
+                                position: 'topCenter',
+                                transitionIn: 'flipInX',
+                                transitionOut: 'flipOutX'
+                            });
+
+                            $("#modal-auth").modal('hide');
+
+                            $.ajax({
+                                url: "<?= base_url(); ?>ui/auth/setelah_login",
+                                type: "get",
+                                success: function(data) {
+                                    $(".action").html(data);
+                                }
+                            });
+
+                            $.ajax({
+                                url: "<?= base_url(); ?>ui/home/load_btn_auth",
+                                type: "get",
+                                success: function(data) {
+                                    $(".btn-auth").html(data);
+                                }
+                            });
+                        } else {
+                            iziToast.error({
+                                title: 'Error',
+                                timeout: 3000,
+                                message: 'Kata sandi yang anda masukan salah',
+                                position: 'topCenter',
+                                transitionIn: 'flipInX',
+                                transitionOut: 'flipOutX'
+                            });
+                        }
+                    }
+                }
+            }
+        });
+        e.preventDefault();
+    });
+</script>

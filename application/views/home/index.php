@@ -36,67 +36,24 @@
         <div class="vaforite-title">
             <div class="row">
                 <div class="col-10">
-                    <h3>Produk Diskon Minggu Ini</h3>
+                    <h3>Produk Diskon</h3>
                 </div>
                 <div class="col-2">
                     <a href="" class="float-right lihat-semua">Lihat Semua</a>
                 </div>
             </div>
         </div>
-        <div class="owl-carousel owl-theme vaforite-slider">
-            <?php for ($i = 1; $i <= 8; $i++) : ?>
-                <div class="item">
-                    <a href="">
-                        <div class="card">
-                            <div class="img">
-                                <img src="<?= base_url(); ?>assets/vendors/img/news/disc<?= $i; ?>.webp" alt="">
-                            </div>
-                            <div class="img-style">
-                                <span class="span-disc-1">Hemat</span>
-                                <span class="span-disc-2">8%</span>
-                            </div>
-                            <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                            <div class="disc disc-desktop-v">
-                                <h4>
-                                    <?php
-                                    $namaPromo = "Paket Antara Softcover Lipat ilham";
-                                    echo strlen($namaPromo) > 27 ? substr($namaPromo, 0, 27) . '...' : substr($namaPromo, 0, 27);
-                                    ?>
-                                </h4>
-                                <span class="span-1">
-                                    <?php
-                                    $span1 = "by <b>sedhahankenes</b> —  Invitation Printing";
-                                    echo strlen($span1) > 45 ? substr($span1, 0, 45) . '...' : substr($span1, 0, 45);
-                                    ?>
-                                </span><br>
-                                <div class="harga">
-                                    <span class="span-2">IDR 20.000</span><br>
-                                    <span class="span-3">IDR 15.000</span>
-                                </div>
-                            </div>
-                            <div class="disc disc-mobile-v">
-                                <h4>
-                                    <?php
-                                    $namaPromo = "Paket Antara Softcover Lipat";
-                                    echo strlen($namaPromo) > 22 ? substr($namaPromo, 0, 22) . '...' : substr($namaPromo, 0, 22);
-                                    ?>
-                                </h4>
-                                <span class="span-1">
-                                    <?php
-                                    $span1 = "by <b>sedhahankenes</b> —  Invitation Printing";
-                                    echo strlen($span1) > 35 ? substr($span1, 0, 35) . '...' : substr($span1, 0, 35);
-                                    ?>
-                                </span><br>
-                                <div class="harga">
-                                    <span class="span-2">IDR 20.000</span><br>
-                                    <span class="span-3">IDR 15.000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <?php endfor; ?>
+        <div class="vaforite-slider">
         </div>
+        <script>
+            $.ajax({
+                url: "<?= base_url(); ?>ui/home/home_all_produk_diskon",
+                type: "get",
+                success: function(data) {
+                    $(".vaforite-slider").html(data);
+                }
+            })
+        </script>
         <div class="btn-lihat-semua">
             <a href="" class="btn">Lihat Semua</a>
         </div>

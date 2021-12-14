@@ -41,4 +41,21 @@ class Home extends CI_Controller
             echo json_encode('Request failed');
         }
     }
+
+    public function home_all_produk_diskon()
+    {
+        if ($this->input->is_ajax_request()) {
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('id_diskon !=', null);
+
+            $data = [
+                'produk_promo' => $this->db->get('tb_produk')->result_array()
+            ];
+            echo json_encode($this->load->view('home/home-all-produk-diskon', $data));
+        } else {
+            echo json_encode('Request failed');
+        }
+    }
 }

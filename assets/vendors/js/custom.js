@@ -20,24 +20,6 @@ $('#promo .owl-carousel').owlCarousel({
     }
 });
 
-$('#vaforite .owl-carousel').owlCarousel({
-    loop: false,
-    margin: 10,
-    nav: true,
-    dots: false,
-    responsive: {
-        0: {
-            items: 2,
-            nav: false
-        },
-        600: {
-            items: 3
-        },
-        1000: {
-            items: 4,
-        }
-    }
-});
 
 $('#event .owl-carousel').owlCarousel({
     loop: true,

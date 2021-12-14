@@ -36,7 +36,6 @@
                         <div class="card">
                             <img src="<?= base_url(); ?>assets/vendors/img/gambar_produk/bridal/<?= $promo['gambar_tumbnail']; ?>" alt="">
                             <?php
-                            $disc = 1;
                             $diskon = $this->db->get_where('tb_diskon_produk', ['id_produk' => $promo['id_produk']])->row_array();
                             if ($promo['id_diskon'] != null) :
                             ?>

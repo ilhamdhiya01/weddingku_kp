@@ -115,7 +115,6 @@ class Produk extends CI_Controller
             $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
             $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
             $this->db->where('tb_produk.id_vendor', $id_vendor);
-            $this->db->order_by('id_produk', 'DESC');
 
             $data = [
                 'semua_produk' => $this->db->get('tb_produk')->result_array()
@@ -150,7 +149,6 @@ class Produk extends CI_Controller
             $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
             $this->db->where('id_diskon !=', null);
             $this->db->where('tb_produk.id_vendor', $id_vendor);
-            $this->db->order_by('id_produk', 'DESC');
 
             $data = [
                 'semua_produk' => $this->db->get('tb_produk')->result_array()
@@ -175,5 +173,128 @@ class Produk extends CI_Controller
         $this->load->view('templete/ui_header', $data);
         $this->load->view('produk/index', $data);
         $this->load->view('templete/ui_footer');
+    }
+
+    public function filter_produk_terbaru()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_GET['id_vendor'];
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('tb_produk.id_vendor', $id_vendor);
+            $this->db->order_by('id_produk', 'DESC');
+
+            $data = [
+                'semua_produk' => $this->db->get('tb_produk')->result_array(),
+                'id_vendor' => $id_vendor
+            ];
+            echo json_encode($this->load->view("ajax-request-filter/filter-produk-terbaru", $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
+
+    public function filter_produk_tertinggi()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_GET['id_vendor'];
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('tb_produk.id_vendor', $id_vendor);
+            $this->db->order_by('harga', 'DESC');
+
+            $data = [
+                'semua_produk' => $this->db->get('tb_produk')->result_array(),
+                'id_vendor' => $id_vendor
+            ];
+            echo json_encode($this->load->view("ajax-request-filter/filter-produk-tertinggi", $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
+
+    public function filter_produk_terendah()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_GET['id_vendor'];
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('tb_produk.id_vendor', $id_vendor);
+            $this->db->order_by('harga', 'ASC');
+
+            $data = [
+                'semua_produk' => $this->db->get('tb_produk')->result_array(),
+                'id_vendor' => $id_vendor
+            ];
+            echo json_encode($this->load->view("ajax-request-filter/filter-produk-terendah", $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
+
+    public function filter_promo_terbaru()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_GET['id_vendor'];
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('tb_produk.id_diskon !=', null);
+            $this->db->where('tb_produk.id_vendor', $id_vendor);
+            $this->db->order_by('id_produk', 'DESC');
+
+            $data = [
+                'semua_produk' => $this->db->get('tb_produk')->result_array(),
+                'id_vendor' => $id_vendor
+            ];
+            echo json_encode($this->load->view("ajax-request-filter/filter-promo-terbaru", $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
+
+    public function filter_promo_tertinggi()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_GET['id_vendor'];
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('tb_produk.id_diskon !=', null);
+            $this->db->where('tb_produk.id_vendor', $id_vendor);
+            $this->db->order_by('harga', 'DESC');
+
+            $data = [
+                'semua_produk' => $this->db->get('tb_produk')->result_array(),
+                'id_vendor' => $id_vendor
+            ];
+            echo json_encode($this->load->view("ajax-request-filter/filter-produk-tertinggi", $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
+
+    public function filter_promo_terendah()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_GET['id_vendor'];
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('tb_produk.id_diskon !=', null);
+            $this->db->where('tb_produk.id_vendor', $id_vendor);
+            $this->db->order_by('harga', 'ASC');
+
+            $data = [
+                'semua_produk' => $this->db->get('tb_produk')->result_array(),
+                'id_vendor' => $id_vendor
+            ];
+            echo json_encode($this->load->view("ajax-request-filter/filter-produk-terendah", $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
     }
 }

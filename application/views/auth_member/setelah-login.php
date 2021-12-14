@@ -1,5 +1,4 @@
 <?php if (!$this->session->userdata('email_member')) : ?>
-    <a href="<?= base_url(); ?>ui/AuthMember" class="btn-login">Login</a>
     <a href="" class="btn-daftar ml-auto">Daftar</a>
     <span class="desktop-v-span">join member ? <a href="">sign in </a></span>
 <?php else : ?>

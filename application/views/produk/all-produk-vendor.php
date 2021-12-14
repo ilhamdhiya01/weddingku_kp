@@ -84,7 +84,7 @@
 
         .dropdown-filter {
             position: absolute;
-            right: 28px;
+            right: 17px;
             width: 240px;
             height: 140px;
             margin-top: -30px;
@@ -135,6 +135,11 @@
             background: #EBA1A1;
             display: block;
         }
+
+        .dropdown-filter ul li i {
+            font-size: 12px;
+            color: #EB8B8D;
+        }
     }
 </style>
 
@@ -158,7 +163,7 @@
                 <div class="box-filter" onclick="">
                     <i class="fas fa-sort-amount-up-alt"></i>
                     <label class="deals label-filter">
-                        Terbaru
+                        Choice
                     </label>
                     <i class="fas fa-chevron-down"></i>
                 </div>
@@ -167,9 +172,9 @@
     </div>
     <div class="dropdown-filter">
         <ul>
-            <li id="terbaru"><a href="">Terbaru</a></li>
-            <li id="tertinggi-terendah"><a href="">Harga (Tertinggi - Terendah)</a></li>
-            <li id="terendah-tertinggi"><a href="">Harga (Terendah - Tertinggi)</a></li>
+            <li class="filter-choice" id="terbaru"><a href="">Terbaru</a><i class="fas float-right terbaru"></i></li>
+            <li class="filter-choice" id="tertinggi-terendah"><a href="">Harga (Tertinggi - Terendah)</a><i class="fas float-right tertinggi-terendah"></i></li>
+            <li class="filter-choice" id="terendah-tertinggi"><a href="">Harga (Terendah - Tertinggi)</a><i class="fas float-right terendah-tertinggi"></i></li>
         </ul>
     </div>
     <div class="card-promo show-all-produk-vendor pt-3">
@@ -179,6 +184,15 @@
         const url = document.URL;
         const url_result = url.split('/');
         const id_vendor = "<?= $id_vendor; ?>";
+
+        // var stateObj = {
+        //     foo: "page"
+        // };
+
+        // $("#harga").click(function(e) {
+        //     history.pushState(stateObj, "profile page", "<?= base_url(); ?>ui/events");
+        //     e.preventDefault();
+        // });
 
         switch (url_result[6]) {
             case "semua_produk_promo":
@@ -213,23 +227,132 @@
             $(".dropdown-filter").toggleClass('active');
         });
 
-        $("#terbaru").click(function(e) {
-            $(".dropdown-filter").removeClass("active");
-            $(".label-filter").html("Terbaru")
-            e.preventDefault();
-        });
+        switch (url_result[6]) {
+            case "semua_produk_promo":
+                $("#terbaru").click(function(e) {
+                    $(".dropdown-filter").removeClass("active");
+                    $(".terbaru").addClass("fa-check");
+                    $(".tertinggi-terendah").removeClass("fa-check");
+                    $(".terendah-tertinggi").removeClass("fa-check");
+                    $(".label-filter").html("Terbaru")
 
-        $("#tertinggi-terendah").click(function(e) {
-            $(".dropdown-filter").removeClass("active");
-            $(".label-filter").html("<?php echo strlen("Harga (Tertinggi - Terendah)") > 14 ? substr("Harga (Tertinggi - Terendah)", 0, 14) . '...' : substr("Harga (Tertinggi - Terendah)", 0, 14); ?>");
-            e.preventDefault();
-        });
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/produk/filter_promo_terbaru",
+                        type: "get",
+                        data: {
+                            id_vendor: "<?= $id_vendor; ?>"
+                        },
+                        success: function(data) {
+                            $(".show-all-produk-vendor").html(data);
+                        }
+                    });
+                    e.preventDefault();
+                });
 
-        $("#terendah-tertinggi").click(function(e) {
-            $(".dropdown-filter").removeClass("active");
-            $(".label-filter").html("<?php echo strlen("Harga (Terendah - Tertinggi)") > 14 ? substr("Harga (Terendah - Tertinggi)", 0, 14) . '...' : substr("Harga (Terendah - Tertinggi)", 0, 14); ?>");
-            e.preventDefault();
-        });
+                $("#tertinggi-terendah").click(function(e) {
+                    $(".dropdown-filter").removeClass("active");
+                    $(".tertinggi-terendah").addClass("fa-check");
+                    $(".terbaru").removeClass("fa-check");
+                    $(".terendah-tertinggi").removeClass("fa-check");
+                    $(".label-filter").html("<?php echo strlen("Harga (Tertinggi - Terendah)") > 14 ? substr("Harga (Tertinggi - Terendah)", 0, 14) . '...' : substr("Harga (Tertinggi - Terendah)", 0, 14); ?>");
+
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/produk/filter_promo_tertinggi",
+                        type: "get",
+                        data: {
+                            id_vendor: "<?= $id_vendor; ?>"
+                        },
+                        success: function(data) {
+                            $(".show-all-produk-vendor").html(data);
+                        }
+                    });
+                    e.preventDefault();
+                });
+
+                $("#terendah-tertinggi").click(function(e) {
+                    $(".dropdown-filter").removeClass("active");
+                    $(".terbaru").removeClass("fa-check");
+                    $(".tertinggi-terendah").removeClass("fa-check");
+                    $(".terendah-tertinggi").addClass("fa-check");
+                    $(".label-filter").html("<?php echo strlen("Harga (Terendah - Tertinggi)") > 14 ? substr("Harga (Terendah - Tertinggi)", 0, 14) . '...' : substr("Harga (Terendah - Tertinggi)", 0, 14); ?>");
+
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/produk/filter_promo_terendah",
+                        type: "get",
+                        data: {
+                            id_vendor: "<?= $id_vendor; ?>"
+                        },
+                        success: function(data) {
+                            $(".show-all-produk-vendor").html(data);
+                        }
+                    });
+                    e.preventDefault();
+                });
+                break;
+            case "semua_produk":
+                $("#terbaru").click(function(e) {
+                    $(".dropdown-filter").removeClass("active");
+                    $(".terbaru").addClass("fa-check");
+                    $(".tertinggi-terendah").removeClass("fa-check");
+                    $(".terendah-tertinggi").removeClass("fa-check");
+                    $(".label-filter").html("Terbaru")
+
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/produk/filter_produk_terbaru",
+                        type: "get",
+                        data: {
+                            id_vendor: "<?= $id_vendor; ?>"
+                        },
+                        success: function(data) {
+                            $(".show-all-produk-vendor").html(data);
+                        }
+                    });
+                    e.preventDefault();
+                });
+
+                $("#tertinggi-terendah").click(function(e) {
+                    $(".dropdown-filter").removeClass("active");
+                    $(".tertinggi-terendah").addClass("fa-check");
+                    $(".terbaru").removeClass("fa-check");
+                    $(".terendah-tertinggi").removeClass("fa-check");
+                    $(".label-filter").html("<?php echo strlen("Harga (Tertinggi - Terendah)") > 14 ? substr("Harga (Tertinggi - Terendah)", 0, 14) . '...' : substr("Harga (Tertinggi - Terendah)", 0, 14); ?>");
+
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/produk/filter_produk_tertinggi",
+                        type: "get",
+                        data: {
+                            id_vendor: "<?= $id_vendor; ?>"
+                        },
+                        success: function(data) {
+                            $(".show-all-produk-vendor").html(data);
+                        }
+                    });
+                    e.preventDefault();
+                });
+
+                $("#terendah-tertinggi").click(function(e) {
+                    $(".dropdown-filter").removeClass("active");
+                    $(".terbaru").removeClass("fa-check");
+                    $(".tertinggi-terendah").removeClass("fa-check");
+                    $(".terendah-tertinggi").addClass("fa-check");
+                    $(".label-filter").html("<?php echo strlen("Harga (Terendah - Tertinggi)") > 14 ? substr("Harga (Terendah - Tertinggi)", 0, 14) . '...' : substr("Harga (Terendah - Tertinggi)", 0, 14); ?>");
+
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/produk/filter_produk_terendah",
+                        type: "get",
+                        data: {
+                            id_vendor: "<?= $id_vendor; ?>"
+                        },
+                        success: function(data) {
+                            $(".show-all-produk-vendor").html(data);
+                        }
+                    });
+                    e.preventDefault();
+                });
+                break;
+            default:
+                break;
+        }
     </script>
 </section>
 <!-- <section class="section-promo"> -->

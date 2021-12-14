@@ -247,8 +247,8 @@
     <div class="container">
         <div class="produk-lain-title">
             <h4>Produk Lain oleh Vendor Ini</h4>
-            <a href="" class="d-v">Lihat Semua</a>
-            <a href="" class="m-v"><i class="fas fa-ellipsis-h"></i></a>
+            <a href="<?= base_url(); ?>ui/produk/semua_produk/<?= $detail_produk['id_vendor']; ?>" class="d-v show-semua-produk">Lihat Semua</a>
+            <a href="<?= base_url(); ?>ui/produk/semua_produk/<?= $detail_produk['id_vendor']; ?>" class="m-v show-semua-produk"><i class="fas fa-ellipsis-h"></i></a>
         </div>
         <section id="produk-lain-vendor-ini" class="produk-lain-vendor-ini">
             <div class="owl-carousel owl-theme">

@@ -73,48 +73,17 @@
                 </div>
             </div>
         </div>
-        <div class="owl-carousel owl-theme flexsible-slider">
-            <?php for ($i = 1; $i <= 10; $i++) : ?>
-                <div class="item">
-                    <a href="">
-                        <div class="card bg-transparent">
-                            <img src="<?= base_url(); ?>assets/vendors/img/news/flex<?= $i; ?>.webp" class="img-vendor" alt="">
-                            <div class="img-style">
-                                <span><i class="fas fa-check-circle"></i> Weddingku</span>
-                            </div>
-                            <div class="flex-icon">
-                                <img src="<?= base_url(); ?>assets/vendors/img/news/flex-icon.webp" alt="">
-                            </div>
-                            <div class="card-body-desktop">
-                                <div class="nama-vendor nama-vendor-d-v">
-                                    <h4>
-                                        <?php
-                                        $namaVendorFlex = "Hardpaper Double ilham dhiya ulhaq";
-                                        echo strlen($namaVendorFlex) > 26 ? substr($namaVendorFlex, 0, 26) . '...' : substr($namaVendorFlex, 0, 26);
-                                        ?>
-                                    </h4>
-                                </div>
-                                <div class="nama-vendor nama-vendor-m-v">
-                                    <h4>
-                                        <?php
-                                        $namaVendorFlex = "Hardpaper Double ilham dhiya";
-                                        echo strlen($namaVendorFlex) > 20 ? substr($namaVendorFlex, 0, 20) . '...' : substr($namaVendorFlex, 0, 20);
-                                        ?>
-                                    </h4>
-                                </div>
-                                <div class="rating-star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <?php endfor; ?>
+        <div class="flexsible-slider">
         </div>
+        <script>
+            $.ajax({
+                url: "<?= base_url(); ?>ui/home/home_all_vendor_flexible",
+                type: "get",
+                success: function(data) {
+                    $(".flexsible-slider").html(data);
+                }
+            })
+        </script>
         <div class="btn-lihat-semua">
             <a href="" class="">Lihat Semua</a>
         </div>

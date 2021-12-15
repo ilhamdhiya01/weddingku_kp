@@ -16,6 +16,15 @@ class Home extends CI_Controller
         $this->load->view('templete/ui_footer');
     }
 
+    public function loading()
+    {
+        if ($this->input->is_ajax_request()) {
+            echo json_encode($this->load->view('home/loading'));
+        } else {
+            echo json_encode('Request failed');
+        }
+    }
+
     public function load_btn_auth()
     {
         if ($this->input->is_ajax_request()) {
@@ -54,6 +63,22 @@ class Home extends CI_Controller
                 'produk_promo' => $this->db->get('tb_produk')->result_array()
             ];
             echo json_encode($this->load->view('home/home-all-produk-diskon', $data));
+        } else {
+            echo json_encode('Request failed');
+        }
+    }
+
+    public function home_all_vendor_flexible()
+    {
+        if ($this->input->is_ajax_request()) {
+            $this->db->select('tb_data_lengkap_vendor.tumbnail_vendor, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.flexible_vendor, tb_data_lengkap_vendor.id_vendor');
+            $this->db->where('flexible_vendor', 1);
+            $this->db->order_by('tb_data_lengkap_vendor.id_vendor', 'DESC');
+
+            $data = [
+                'vendor_flexible' => $this->db->get('tb_data_lengkap_vendor')->result_array()
+            ];
+            echo json_encode($this->load->view('home/home-all-vendor-flexible', $data));
         } else {
             echo json_encode('Request failed');
         }

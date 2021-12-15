@@ -87,7 +87,7 @@
             right: 17px;
             width: 240px;
             height: 140px;
-            margin-top: -30px;
+            margin-top: -35px;
             top: 300px;
             transition: 0.5s;
             box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
@@ -226,6 +226,9 @@
         $(".filter-right").click(function() {
             $(".dropdown-filter").toggleClass('active');
         });
+        $(".dropdown-filter").mouseleave(function() {
+            $(this).removeClass('active');
+        });
 
         switch (url_result[6]) {
             case "semua_produk_promo":
@@ -242,8 +245,13 @@
                         data: {
                             id_vendor: "<?= $id_vendor; ?>"
                         },
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
                         success: function(data) {
                             $(".show-all-produk-vendor").html(data);
+                            $(".loading").fadeOut('slow');
                         }
                     });
                     e.preventDefault();
@@ -262,8 +270,13 @@
                         data: {
                             id_vendor: "<?= $id_vendor; ?>"
                         },
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
                         success: function(data) {
                             $(".show-all-produk-vendor").html(data);
+                            $(".loading").fadeOut('slow');
                         }
                     });
                     e.preventDefault();
@@ -282,8 +295,13 @@
                         data: {
                             id_vendor: "<?= $id_vendor; ?>"
                         },
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
                         success: function(data) {
                             $(".show-all-produk-vendor").html(data);
+                            $(".loading").fadeOut('slow');
                         }
                     });
                     e.preventDefault();
@@ -303,8 +321,13 @@
                         data: {
                             id_vendor: "<?= $id_vendor; ?>"
                         },
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
                         success: function(data) {
                             $(".show-all-produk-vendor").html(data);
+                            $(".loading").fadeOut('slow');
                         }
                     });
                     e.preventDefault();
@@ -323,8 +346,13 @@
                         data: {
                             id_vendor: "<?= $id_vendor; ?>"
                         },
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
                         success: function(data) {
                             $(".show-all-produk-vendor").html(data);
+                            $(".loading").fadeOut('slow');
                         }
                     });
                     e.preventDefault();
@@ -343,8 +371,13 @@
                         data: {
                             id_vendor: "<?= $id_vendor; ?>"
                         },
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
                         success: function(data) {
                             $(".show-all-produk-vendor").html(data);
+                            $(".loading").fadeOut('slow');
                         }
                     });
                     e.preventDefault();

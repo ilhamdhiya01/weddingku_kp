@@ -448,7 +448,53 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="body" onload="hide_loading()">
+    <style>
+        .overlay img {
+            width: 250px;
+            height: 200px;
+            background-image: none !important;
+            position: relative;
+            top: 35%;
+        }
+
+        .overlay {
+            z-index: 99999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+    </style>
+    <div class="load">
+        <div class="loading overlay">
+            <img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt="">
+        </div>
+    </div>
+    <script>
+        let fadeTarget = document.querySelector(".loading");
+
+        function show_loading() {
+            fadeTarget.style.display = "block";
+        }
+
+        function hide_loading() {
+            const fadeEffect = setInterval(() => {
+                if (!fadeTarget.style.opacity) {
+                    fadeTarget.style.opacity = 1;
+                }
+                if (fadeTarget.style.opacity > 0) {
+                    fadeTarget.style.opacity -= 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                    fadeTarget.style.display = "none";
+                }
+            }, 200)
+        }
+    </script>
     <nav class="navbar navbar-expand-lg fixed-top">
         <a class="navbar-brand mr-auto mr-lg-0 logo" href="#">Weddingku</a>
         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
@@ -619,10 +665,22 @@
             <a class="nav-link" href="#">Inspirations</a>
             <a class="nav-link" href="<?= base_url('ui/vendors'); ?>">Vendors</a>
             <a class="nav-link" href="<?= base_url('ui/events'); ?>">Events</a>
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link click" href="#">Blog</a>
             <a class="nav-link" href="<?= base_url('ui/promo'); ?>">Promo <span class="badge badge-pill badge-danger"><small>New</small></span></a>
         </nav>
     </div>
+    <script>
+        $(".click").click(function(e) {
+            $.ajax({
+                url: "<?= base_url(); ?>ui/home/loading",
+                type: "get",
+                success: function(data) {
+                    $(".body").html(data)
+                }
+            });
+            e.preventDefault();
+        });
+    </script>
     <main role="main">
 
         <!-- Modal -->

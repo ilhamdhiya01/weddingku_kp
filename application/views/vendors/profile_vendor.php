@@ -241,6 +241,7 @@
                                                 <a href="#" class="active" id="all-produk"><i class="fas fa-shopping-bag"></i> Produk (<?= count($total_produk); ?>)</a>
                                             </div>
                                             <script>
+                                                const id_pesan = 1;
                                                 $("#all-produk").addClass("active").attr("style", "color:#EBA1A1;");
                                                 $("#all-produk").click(function(e) {
                                                     $(this).addClass("active").attr("style", "color:#EBA1A1;");
@@ -249,13 +250,34 @@
                                                     $("#promo-produk").removeClass("active").removeAttr("style");
 
                                                     $.ajax({
-                                                        url: "<?= base_url(); ?>ui/produk/load_semua_produk",
-                                                        type: "get",
+                                                        url: "<?= base_url(); ?>ui/produk/cek_produk",
+                                                        type: "post",
                                                         data: {
                                                             id_vendor: id_vendor
                                                         },
+                                                        dataType: "json",
+                                                        beforeSend: function() {
+                                                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                                            $(".load").html(html);
+                                                        },
                                                         success: function(data) {
-                                                            $("#show-data").html(data);
+                                                            console.log(data.produk.length);
+                                                            if (data.produk.length < 1) {
+                                                                not_data_found();
+                                                                $(".loading").fadeOut('slow');
+                                                            } else {
+                                                                $.ajax({
+                                                                    url: "<?= base_url(); ?>ui/produk/load_semua_produk",
+                                                                    type: "get",
+                                                                    data: {
+                                                                        id_vendor: id_vendor
+                                                                    },
+                                                                    success: function(data) {
+                                                                        $("#show-data").html(data);
+                                                                        $(".loading").fadeOut('slow');
+                                                                    }
+                                                                });
+                                                            }
                                                         }
                                                     });
                                                     e.preventDefault();
@@ -278,8 +300,13 @@
                                                             id_vendor: id_vendor,
                                                             nama_kategori: "<?= $data_vendor['nama_kategori']; ?>"
                                                         },
+                                                        beforeSend: function() {
+                                                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                                            $(".load").html(html);
+                                                        },
                                                         success: function(data) {
                                                             $("#show-data").html(data);
+                                                            $(".loading").fadeOut('slow');
                                                         }
                                                     });
                                                     e.preventDefault();
@@ -301,8 +328,13 @@
                                                         data: {
                                                             id_vendor: id_vendor
                                                         },
+                                                        beforeSend: function() {
+                                                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                                            $(".load").html(html);
+                                                        },
                                                         success: function(data) {
                                                             $("#show-data").html(data);
+                                                            $(".loading").fadeOut('slow');
                                                         }
                                                     });
                                                     e.preventDefault();
@@ -324,8 +356,13 @@
                                                         data: {
                                                             id_vendor: id_vendor
                                                         },
+                                                        beforeSend: function() {
+                                                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                                            $(".load").html(html);
+                                                        },
                                                         success: function(data) {
                                                             $("#show-data").html(data);
+                                                            $(".loading").fadeOut('slow');
                                                         }
                                                     });
                                                     e.preventDefault();
@@ -360,14 +397,43 @@
                         </div>
                         <script>
                             const id_vendor = "<?= $data_vendor['id_vendor']; ?>"
+
+                            function not_data_found() {
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/produk/not_result_found",
+                                    type: "get",
+                                    data: {
+                                        pesan: "Vendor belum menambahkan produk"
+                                    },
+                                    success: function(data) {
+                                        $("#show-data").html(data);
+                                    }
+                                });
+                            }
+
                             $.ajax({
-                                url: "<?= base_url(); ?>ui/produk/load_semua_produk",
-                                type: "get",
+                                url: "<?= base_url(); ?>ui/produk/cek_produk",
+                                type: "post",
                                 data: {
                                     id_vendor: id_vendor
                                 },
+                                dataType: "json",
                                 success: function(data) {
-                                    $("#show-data").html(data);
+                                    console.log(data.produk.length);
+                                    if (data.produk.length < 1) {
+                                        not_data_found();
+                                    } else {
+                                        $.ajax({
+                                            url: "<?= base_url(); ?>ui/produk/load_semua_produk",
+                                            type: "get",
+                                            data: {
+                                                id_vendor: id_vendor
+                                            },
+                                            success: function(data) {
+                                                $("#show-data").html(data);
+                                            }
+                                        });
+                                    }
                                 }
                             });
                         </script>

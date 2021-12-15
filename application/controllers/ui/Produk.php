@@ -297,4 +297,29 @@ class Produk extends CI_Controller
             echo json_encode("Request Failed");
         }
     }
+
+    public function cek_produk()
+    {
+        if ($this->input->is_ajax_request()) {
+            $id_vendor = $_POST['id_vendor'];
+            $data = [
+                'produk' => $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor])->result_array()
+            ];
+            echo json_encode($data);
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
+
+    public function not_result_found()
+    {
+        if ($this->input->is_ajax_request()) {
+            $data = [
+                'pesan' => $_GET['pesan']
+            ];
+            echo json_encode($this->load->view("produk/hasil-tidak-ada", $data));
+        } else {
+            echo json_encode("Request Failed");
+        }
+    }
 }

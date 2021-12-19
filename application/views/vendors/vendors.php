@@ -1,3 +1,97 @@
+<script>
+                        $("select.kategori").change(function() {
+                            const kategori = $(this).val();
+                            $("#cari").click(function(e) {
+                                alert(kategori);
+                                e.preventDefault();
+                            });
+                            // if (kategori == "Semua Kategori") {
+                            //     $("#cari").click(function(e) {
+                            //         $.ajax({
+                            //             url: "<?= base_url(); ?>ui/vendors/load_data_vendor",
+                            //             type: "get",
+                            //             success: function(data) {
+                            //                 $("#semua-kategori").html(kategori);
+                            //                 $(".card-vendor").html(data);
+                            //                 $(".loading").fadeOut('slow');
+                            //                 // console.log(data);
+                            //             }
+                            //         });
+                            //         e.preventDefault();
+                            //     });
+                            // } else {
+                            //     $("#cari").click(function(e) {
+                            //         $.ajax({
+                            //             url: "<?= base_url(); ?>ui/vendors/cari_kategori",
+                            //             type: "get",
+                            //             data: {
+                            //                 kategori: kategori
+                            //             },
+                            //             dataType: "html",
+                            //             beforeSend: function() {
+                            //                 const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            //                 $(".load").html(html);
+                            //             },
+                            //             success: function(data) {
+                            //                 $("#semua-kategori").html(kategori);
+                            //                 $(".card-vendor").html(data);
+                            //                 $(".loading").fadeOut('slow');
+                            //             }
+                            //         });
+                            //         e.preventDefault();
+                            //     });
+                            // }
+                        });
+                    </script>
+                </div>
+                <div class="col-3">
+                    <select class="option-cari kota" style="outline:none;">
+                        <option value="Semua Kota" class="text-center">Semua Kota</option>
+                        <?php foreach ($semua_kota as $kota) : ?>
+                            <option value="<?= $kota['city_name'] ?>"><?= $kota['city_name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <script>
+                        // $("select.kota").change(function() {
+                        //     const kota = $(this).val();
+                        //     if (kota == "Semua Kota") {
+                        //         $("#cari").click(function(e) {
+                        //             $.ajax({
+                        //                 url: "<?= base_url(); ?>ui/vendors/load_data_vendor",
+                        //                 type: "get",
+                        //                 success: function(data) {
+                        //                     $("#semua-kota").html(kota);
+                        //                     $(".card-vendor").html(data);
+                        //                     $(".loading").fadeOut('slow');
+                        //                     // console.log(data);
+                        //                 }
+                        //             });
+                        //             e.preventDefault();
+                        //         });
+                        //     } else {
+                        //         $("#cari").click(function(e) {
+                        //             $.ajax({
+                        //                 url: "<?= base_url(); ?>ui/vendors/cari_kota",
+                        //                 type: "get",
+                        //                 data: {
+                        //                     kota: kota
+                        //                 },
+                        //                 dataType: "html",
+                        //                 beforeSend: function() {
+                        //                     const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                        //                     $(".load").html(html);
+                        //                 },
+                        //                 success: function(data) {
+                        //                     $("#semua-kota").html(kota);
+                        //                     $(".card-vendor").html(data);
+                        //                     $(".loading").fadeOut('slow');
+                        //                 }
+                        //             });
+                        //             e.preventDefault();
+                        //         });
+                        //     }
+                        // });
+                    </script>
 <div class="cari-vendor">
     <div class="search-option">
         <form action="">

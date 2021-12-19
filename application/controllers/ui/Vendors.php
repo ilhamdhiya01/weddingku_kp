@@ -9,6 +9,8 @@ class Vendors extends CI_Controller
     {
         $data = [
             "judul" => "Vendors",
+            "semua_kategori" => $this->db->get('tb_kategori_service')->result_array(),
+            "semua_kota" => $this->db->get("cities")->result_array(),
             'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email')])->row_array()
         ];
         $this->load->view('templete/ui_header', $data);
@@ -108,5 +110,126 @@ class Vendors extends CI_Controller
         } else {
             echo json_encode("Request failed");
         }
+    }
+
+    public function semua_kategori()
+    {
+    }
+
+    public function cari_kategori()
+    {
+        $kategori = $_GET['kategori'];
+        $kota = $_GET['kota'];
+        $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
+        $this->db->from('tb_data_lengkap_vendor');
+        $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
+        $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+        $this->db->like('nama_kategori', $kategori, 'both');
+        $this->db->like('kota', $kota, 'both');
+
+        $data = [
+            'data_vendor' => $this->db->get()->result_array(),
+        ];
+        echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
+    }
+
+    public function cari_kota()
+    {
+        $kota = $_GET['kota'];
+        $kategori = $_GET['kategori'];
+        $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
+        $this->db->from('tb_data_lengkap_vendor');
+        $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
+        $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+        $this->db->like('kota', $kota, 'both');
+        $this->db->like('nama_kategori', $kategori, 'both');
+
+        $data = [
+            'data_vendor' => $this->db->get()->result_array(),
+        ];
+        echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
+    }
+
+    public function cari_harga()
+    {
+        $kota = $_GET['kota'];
+        $kategori = $_GET['kategori'];
+        $harga = $_GET['harga'];
+
+        switch ($harga) {
+            case '$':
+                $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
+                $this->db->from('tb_produk');
+                $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_vendor = tb_data_lengkap_vendor.id_vendor');
+                $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
+                $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+                $this->db->where('harga <=', 2500000);
+                $this->db->group_by('id_vendor');
+                $this->db->like('kota', $kota, 'both');
+                $this->db->like('nama_kategori', $kategori, 'both');
+
+                $data = [
+                    'data_vendor' => $this->db->get()->result_array(),
+                ];
+                echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
+                break;
+            case '$$':
+                $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
+                $this->db->from('tb_produk');
+                $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_vendor = tb_data_lengkap_vendor.id_vendor');
+                $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
+                $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+                $this->db->where('harga >', 2500000);
+                $this->db->where('harga <=', 10000000);
+                $this->db->group_by('id_vendor');
+                $this->db->like('kota', $kota, 'both');
+                $this->db->like('nama_kategori', $kategori, 'both');
+
+                $data = [
+                    'data_vendor' => $this->db->get()->result_array(),
+                ];
+                echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
+                break;
+            case '$$$':
+                $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
+                $this->db->from('tb_produk');
+                $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_vendor = tb_data_lengkap_vendor.id_vendor');
+                $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
+                $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+                $this->db->where('harga >', 10000000);
+                $this->db->group_by('id_vendor');
+                $this->db->like('kota', $kota, 'both');
+                $this->db->like('nama_kategori', $kategori, 'both');
+
+                $data = [
+                    'data_vendor' => $this->db->get()->result_array(),
+                ];
+                echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
+                break;
+
+            default:
+                # code...
+                break;
+        }
+    }
+
+    public function cari_harga_sedang()
+    {
+        $kota = $_GET['kota'];
+        $kategori = $_GET['kategori'];
+        $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
+        $this->db->from('tb_produk');
+        $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_vendor = tb_data_lengkap_vendor.id_vendor');
+        $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
+        $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+        $this->db->where('harga >', 2500000);
+        $this->db->group_by('id_vendor');
+        // $this->db->like('kota', $kota, 'both');
+        // $this->db->like('nama_kategori', $kategori, 'both');
+
+        $data = [
+            'data_vendor' => $this->db->get()->result_array(),
+        ];
+        echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
     }
 }

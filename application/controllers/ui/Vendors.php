@@ -213,23 +213,18 @@ class Vendors extends CI_Controller
         }
     }
 
-    public function cari_harga_sedang()
+    public function vendor_flexible()
     {
-        $kota = $_GET['kota'];
-        $kategori = $_GET['kategori'];
-        $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
-        $this->db->from('tb_produk');
-        $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_vendor = tb_data_lengkap_vendor.id_vendor');
-        $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
-        $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
-        $this->db->where('harga >', 2500000);
-        $this->db->group_by('id_vendor');
-        // $this->db->like('kota', $kota, 'both');
-        // $this->db->like('nama_kategori', $kategori, 'both');
-
-        $data = [
-            'data_vendor' => $this->db->get()->result_array(),
-        ];
-        echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
+        if ($this->input->is_ajax_request()) {
+            $this->db->select('tb_data_lengkap_vendor.*, tb_kategori_service.nama_kategori');
+            $this->db->from('tb_data_lengkap_vendor');
+            $this->db->join('tb_vendor', 'tb_data_lengkap_vendor.id_vendor = tb_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_data_lengkap_vendor.id_kategori_service = tb_kategori_service.id');
+            $this->db->where('flexible_vendor', 1);
+            $data = [
+                'data_vendor' => $this->db->get()->result_array(),
+            ];
+            echo json_encode($this->load->view('ajax-request-vendor/data-vendor', $data));
+        }
     }
 }

@@ -303,7 +303,8 @@ class Produk extends CI_Controller
         if ($this->input->is_ajax_request()) {
             $id_vendor = $_POST['id_vendor'];
             $data = [
-                'produk' => $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor])->result_array()
+                'produk' => $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor])->result_array(),
+                'produk_promo' => $this->db->get_where('tb_produk', ['id_vendor' => $id_vendor, 'id_diskon !=' => null])->result_array()
             ];
             echo json_encode($data);
         } else {

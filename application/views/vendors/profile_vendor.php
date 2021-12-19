@@ -1,43 +1,194 @@
-<div class="cari-vendor">
+<!-- <div class="cari-vendor">
     <div class="search-option">
         <form action="">
             <div class="row form-cari">
-                <div class="col-3">
-                    <select class="option-cari">
-                        <option>Semua Kategori</option>
+                <div class="col-4">
+                    <select class="option-cari kategori" id="kategori" style="outline:none;">
+                        <option value="Semua Kategori" class="text-center">Semua Kategori</option>
+                        <?php
+                        $semua_kategori = $this->db->get('tb_kategori_service')->result_array();
+                        foreach ($semua_kategori as $kategori) :
+                        ?>
+                            <option value="<?= $kategori['nama_kategori'] ?>"><?= $kategori['nama_kategori']; ?></option>
+                        <?php endforeach; ?>
                     </select>
-                </div>
-                <div class="col-3">
-                    <select class="option-cari">
-                        <option>Semua Kota</option>
-                    </select>
-                </div>
-                <div class="col-3">
-                    <select class="option-cari">
-                        <option>Semua Harga</option>
-                    </select>
-                </div>
-                <div class="col-3">
-                    <div class="btn-cari">
-                        <a href="">Cari Vendor</a>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+                    <script>
+                        $(".kategori").change(function() {
+                            $("#filter-kategori").val($(this).val());
+                            let kategori = $("#filter-kategori").val()
+                            let kota = $("#filter-kota").val()
+                            let harga = $("#filter-harga").val();
 
+                            if (kategori == "Semua Kategori") {
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/vendors/load_data_vendor",
+                                    type: "get",
+                                    success: function(data) {
+                                        $("#semua-kategori").html(kategori);
+                                        $(".card-vendor").html(data);
+                                        $(".loading").fadeOut('slow');
+                                        // console.log(data);
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/vendors/cari_kategori",
+                                    type: "get",
+                                    data: {
+                                        kategori: kategori,
+                                        kota: kota,
+                                        harga: harga
+                                    },
+                                    dataType: "html",
+                                    beforeSend: function() {
+                                        const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                        $(".load").html(html);
+                                    },
+                                    success: function(data) {
+                                        $("#semua-kategori").html(kategori);
+                                        $(".card-vendor").html(data);
+                                        $(".loading").fadeOut('slow');
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                </div>
+                <div class="col-4">
+                    <select class="option-cari kota" style="outline:none;">
+                        <option value="Semua Kota" class="text-center">Semua Kota</option>
+                        <?php
+                        $semua_kota = $this->db->get("cities")->result_array();
+                        foreach ($semua_kota as $kota) :
+                            $nama_kota = strtolower($kota['city_name']);
+                        ?>
+                            <option value="<?= $kota['city_name'] ?>"><?= ucwords($nama_kota); ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <script>
+                        $(".kota").change(function() {
+                            $("#filter-kota").val($(this).val());
+                            let kategori = $("#filter-kategori").val()
+                            let kota = $("#filter-kota").val()
+                            let harga = $("#filter-harga").val();
+
+                            if (kota == "Semua Kota") {
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/vendors/load_data_vendor",
+                                    type: "get",
+                                    success: function(data) {
+                                        $("#semua-kategori").html(kategori);
+                                        $(".card-vendor").html(data);
+                                        $(".loading").fadeOut('slow');
+                                        // console.log(data);
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/vendors/cari_kota",
+                                    type: "get",
+                                    data: {
+                                        kota: kota,
+                                        kategori: kategori,
+                                        harga: harga
+                                    },
+                                    dataType: "html",
+                                    beforeSend: function() {
+                                        const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                        $(".load").html(html);
+                                    },
+                                    success: function(data) {
+                                        $("#semua-kota").html(kota);
+                                        $(".card-vendor").html(data);
+                                        $(".loading").fadeOut('slow');
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                </div>
+                <div class="col-4">
+                    <select class="option-cari harga" style="outline:none;">
+                        <option class="text-center">Semua Harga</option>
+                        <option value="$">$</option>
+                        <option value="$$">$$</option>
+                        <option value="$$$">$$$</option>
+                    </select>
+                    <script>
+                        $(".harga").change(function() {
+                            $("#filter-harga").val($(this).val());
+                            let kategori = $("#filter-kategori").val()
+                            let kota = $("#filter-kota").val()
+                            let harga = $("#filter-harga").val();
+
+                            if (kota == "Semua Harga") {
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/vendors/load_data_vendor",
+                                    type: "get",
+                                    success: function(data) {
+                                        $("#semua-kategori").html(kategori);
+                                        $(".card-vendor").html(data);
+                                        $(".loading").fadeOut('slow');
+                                        // console.log(data);
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/vendors/cari_harga",
+                                    type: "get",
+                                    data: {
+                                        kota: kota,
+                                        kategori: kategori,
+                                        harga: harga
+                                    },
+                                    dataType: "html",
+                                    beforeSend: function() {
+                                        const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                        $(".load").html(html);
+                                    },
+                                    success: function(data) {
+                                        $("#semua-kota").html(kota);
+                                        $(".card-vendor").html(data);
+                                        $(".loading").fadeOut('slow');
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                </div>
+                <!-- <div class="col-3">
+                    <div class="btn-cari">
+                        <a href="" id="cari">Cari Vendor</a>
+                    </div>
+                </div> -->
+<input type="hidden" id="filter-kategori" value="">
+<input type="hidden" id="filter-kota" value="">
+<input type="hidden" id="filter-harga" value="">
+</div>
+</form>
+</div>
+</div> -->
 <section class="section-profile-vendor">
     <div class="container">
-        <div class="top-menu">
-            <div class="container-paket">
-                <div class="text-top-menu">
-                    <a href="">Home</a>
-                    <span class="span-1">></span>
-                    <span class="span-2">Profile Vendor</span>
-                </div>
-            </div>
-        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Profile Vendor</a></li>
+                <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
+            </ol>
+        </nav>
+        <style>
+            .text-menu a,
+            .span-1,
+            .span-2 {
+                display: inline-block;
+                font-size: 14px;
+            }
+
+            .text-menu a {
+                color: #EC9090;
+            }
+        </style>
         <div class="card-profile-vendor">
             <div class="row">
                 <div class="col-md-3">
@@ -241,13 +392,14 @@
                                                 <a href="#" class="active" id="all-produk"><i class="fas fa-shopping-bag"></i> Produk (<?= count($total_produk); ?>)</a>
                                             </div>
                                             <script>
-                                                const id_pesan = 1;
+                                                // const id_pesan = 1;
                                                 $("#all-produk").addClass("active").attr("style", "color:#EBA1A1;");
                                                 $("#all-produk").click(function(e) {
                                                     $(this).addClass("active").attr("style", "color:#EBA1A1;");
                                                     $("#menu-harga-d-v").removeClass("active").removeAttr("style");
                                                     $("#about-me-d-v").removeClass("active").removeAttr("style");
                                                     $("#promo-produk").removeClass("active").removeAttr("style");
+
 
                                                     $.ajax({
                                                         url: "<?= base_url(); ?>ui/produk/cek_produk",
@@ -261,7 +413,6 @@
                                                             $(".load").html(html);
                                                         },
                                                         success: function(data) {
-                                                            console.log(data.produk.length);
                                                             if (data.produk.length < 1) {
                                                                 not_data_found();
                                                                 $(".loading").fadeOut('slow');
@@ -322,6 +473,7 @@
                                                     $("#all-produk").removeClass("active").removeAttr("style");
                                                     $("#promo-produk").removeClass("active").removeAttr("style");
 
+
                                                     $.ajax({
                                                         url: "<?= base_url(); ?>ui/vendors/tentang_kami",
                                                         type: "get",
@@ -350,19 +502,48 @@
                                                     $("#about-me-d-v").removeClass("active").removeAttr("style");
                                                     $("#all-produk").removeClass("active").removeAttr("style");
 
+
                                                     $.ajax({
-                                                        url: "<?= base_url(); ?>ui/produk/menu_promo_produk",
-                                                        type: "get",
+                                                        url: "<?= base_url(); ?>ui/produk/cek_produk",
+                                                        type: "post",
                                                         data: {
                                                             id_vendor: id_vendor
                                                         },
+                                                        dataType: "json",
                                                         beforeSend: function() {
                                                             const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
                                                             $(".load").html(html);
                                                         },
                                                         success: function(data) {
-                                                            $("#show-data").html(data);
-                                                            $(".loading").fadeOut('slow');
+                                                            if (data.produk_promo.length < 1) {
+                                                                $.ajax({
+                                                                    url: "<?= base_url(); ?>ui/produk/not_result_found",
+                                                                    type: "get",
+                                                                    data: {
+                                                                        pesan: "Vendor belum menambahkan promo produk"
+                                                                    },
+                                                                    success: function(data) {
+                                                                        $("#show-data").html(data);
+                                                                    }
+                                                                });
+                                                                $(".loading").fadeOut('slow');
+                                                            } else {
+                                                                $.ajax({
+                                                                    url: "<?= base_url(); ?>ui/produk/menu_promo_produk",
+                                                                    type: "get",
+                                                                    data: {
+                                                                        id_vendor: id_vendor
+                                                                    },
+                                                                    beforeSend: function() {
+                                                                        const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                                                                        $(".load").html(html);
+                                                                    },
+                                                                    success: function(data) {
+                                                                        $("#show-data").html(data);
+                                                                        $(".loading").fadeOut('slow');
+                                                                    }
+                                                                });
+                                                            }
                                                         }
                                                     });
                                                     e.preventDefault();

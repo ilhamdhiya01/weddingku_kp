@@ -10,7 +10,7 @@ class Vendors extends CI_Controller
         $data = [
             "judul" => "Vendors",
             "semua_kategori" => $this->db->get('tb_kategori_service')->result_array(),
-            "semua_kota" => $this->db->get("cities")->result_array(),
+            // "semua_kota" => $this->db->get("cities")->result_array(),
             'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email')])->row_array()
         ];
         $this->load->view('templete/ui_header', $data);

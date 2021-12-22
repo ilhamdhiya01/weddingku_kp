@@ -54,7 +54,11 @@
                 <div class="col-4">
                     <select class="option-cari kota" style="outline:none;">
                         <option value="Semua Kota" class="text-center">Semua Kota</option>
-                        <?php foreach ($semua_kota as $kota) :
+                        <?php 
+                        $this->db->select('city_name');
+                        $this->db->order_by('city_name','ASC');
+                        $semua_kota = $this->db->get('cities')->result_array();
+                        foreach ($semua_kota as $kota) :
                             $nama_kota = strtolower($kota['city_name']);
                         ?>
                             <option value="<?= $kota['city_name'] ?>"><?= ucwords($nama_kota); ?></option>

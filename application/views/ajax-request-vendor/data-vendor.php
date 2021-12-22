@@ -96,8 +96,50 @@
         </div>
     <?php endforeach; ?>
 </div>
+<div class="coba">
+
+</div>
 <script>
     $(".profile").click(function() {
         window.open("<?= base_url(); ?>ui/vendors/profile_vendor/" + $(this).data('idvendor'));
     });
+    // var html = '<div class="col-md-3">' +
+    //     '<div class="card" id="card-coba" data-coba="1">' +
+    //     '<div class="image-vendor">' +
+    //     '<a href="#" class="profile" data-idvendor=""><img src="<?= base_url(); ?>assets/vendors/img/profile_vendor/alissha-bride.webp" class="card-img-top" alt="..."></a>' +
+    //     '</div>' +
+    //     '<div class="img-style-vendor">' +
+    //     '<span class="text-dark"><i class="fas fa-check-circle"></i> Weddingku</span>' +
+    //     '</div>' +
+    //     '<div class="card-body name-vendor-text">' +
+    //     '<a href="">' +
+    //     '<p class="card-text text-center">' +
+    //     '</p>' +
+    //     '</a>' +
+    //     '<div class="kategori-lokasi">' +
+    //     '<span class="kategori">' +
+    //     '</span>' +
+    //     '<br>' +
+    //     '<span class="lokasi">ID</span>' +
+    //     '<div class="rating-star-vendor">' +
+    //     '<i class="fas fa-star"></i>' +
+    //     '<i class="fas fa-star"></i>' +
+    //     '<i class="fas fa-star"></i>' +
+    //     '<i class="fas fa-star"></i>' +
+    //     '<i class="fas fa-star"></i>' +
+    //     '</div>' +
+    //     '</div>' +
+    //     '</div>' +
+    //     '<div class="card-footer">' +
+    //     '<small class="small-1"><i class="fas fa-hourglass-half"></i> Cicilan 0% hingga 24 bulan</small><br>' +
+    //     '<small class="small-2"><i class="far fa-credit-card"></i> Opsi pembayaran lebih banyak</small><br>' +
+    //     '<small class="small-3"><i class="fas fa-file-invoice"></i> Pembayaran aman & mudah</small>' +
+    //     '</div>' +
+    //     '</div>' +
+    //     '</div>';
+
+    // $(".coba").append(html);
+    // $("#card-coba").click(function(){
+    //     alert($(this).data("coba"));
+    // });
 </script>

@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="content">
-                            <a href="<?= base_url(); ?>login/StorePaket">
+                            <a href="<?= base_url(); ?>ui/store/paket_lengkap">
                                 <div class="card content-1">
                                     <img src="<?= base_url(); ?>assets/vendors/img/news/store1.png" alt="">
                                     <div class="card-body">

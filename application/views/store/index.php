@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="content">
-                            <a href="<?= base_url(); ?>ui/StorePaket">
+                            <a href="<?= base_url(); ?>ui/store/paket_lengkap">
                                 <div class="card content-1">
                                     <img src="<?= base_url(); ?>assets/vendors/img/news/store1.png" alt="">
                                     <div class="card-body">
@@ -108,66 +108,23 @@
                 <span>Paket yang sudah termasuk beragam jasa untuk mewujudkan pernikahan impian Anda</span>
             </div>
             <div class="col-2">
-                <a href="" class="desktop-v">Lihat Semua</a>
+                <a href="<?= base_url(); ?>ui/store/paket_lengkap" class="desktop-v">Lihat Semua</a>
                 <a href="" class="mobile-v"><i class="fas fa-ellipsis-h"></i></a>
             </div>
         </div>
     </div>
     <section id="store-paket">
-        <div class="owl-carousel owl-theme">
-            <?php for ($i = 1; $i <= 8; $i++) : ?>
-                <div class="item">
-                    <a href="">
-                        <div class="card">
-                            <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
-                            <?php
-                            $disc = 1;
-                            if ($disc == 1) :
-                            ?>
-                                <div class="img-style">
-                                    <span class="span-disc-1">Hemat</span>
-                                    <span class="span-disc-2">8%</span>
-                                </div>
-                            <?php
-                            endif;
-                            ?>
-                            <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                            <div class="info-paket">
-                                <h4 class="desktop-v">
-                                    <?php
-                                    $namaPaket = "Paket Lengkap Pasadenia Sportc ilhm dhiya";
-                                    echo strlen($namaPaket) > 30 ? substr($namaPaket, 0, 30) . '...' : substr($namaPaket, 0, 30);
-                                    ?>
-                                </h4>
-                                <h4 class="mobile-v">
-                                    <?php
-                                    $namaPaket = "Paket Lengkap Pasadenia Sportc ilhm dhiya";
-                                    echo strlen($namaPaket) > 20 ? substr($namaPaket, 0, 20) . '...' : substr($namaPaket, 0, 20);
-                                    ?>
-                                </h4>
-                                <span class="vendor vendor-d-v">
-                                    <?php
-                                    $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
-                                    echo strlen($vendor) > 43 ? substr($vendor, 0, 43) . '...' : substr($vendor, 0, 43);
-                                    ?>
-                                </span>
-                                <span class="vendor vendor-m-v">
-                                    <?php
-                                    $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
-                                    echo strlen($vendor) > 33 ? substr($vendor, 0, 33) . '...' : substr($vendor, 0, 33);
-                                    ?>
-                                </span>
-                                <div class="paket-harga">
-                                    <small class="before-price">IDR 111,800,000</small><br>
-                                    <span class="after-price">IDR 106,210,000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <?php endfor; ?>
-        </div>
     </section>
+    <script>
+        $.ajax({
+            url : "<?= base_url(); ?>ui/store/load_paket_lengkap",
+            type : "get",
+            dataType : "html",
+            success : function(data){
+                $("#store-paket").html(data);
+            }
+        });
+    </script>
 </section>
 
 <section class="venue-store">

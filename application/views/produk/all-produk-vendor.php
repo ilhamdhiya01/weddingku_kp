@@ -170,7 +170,7 @@
             </div>
         </div>
     </div>
-    <div class="dropdown-filter">
+    <div class="dropdown-filter hover">
         <ul>
             <li class="filter-choice" id="terbaru"><a href="">Terbaru</a><i class="fas float-right terbaru"></i></li>
             <li class="filter-choice" id="tertinggi-terendah"><a href="">Harga (Tertinggi - Terendah)</a><i class="fas float-right tertinggi-terendah"></i></li>
@@ -180,6 +180,11 @@
     <div class="card-promo show-all-produk-vendor pt-3">
     </div>
     <script>
+
+        // $(".hover").mouseleave(function() {
+        //     $(this).removeClass('active');
+        // });
+
         $("#title").html("<?= $nama_vendor['nama_bisnis']; ?> | Semua produk");
         const url = document.URL;
         const url_result = url.split('/');
@@ -226,6 +231,7 @@
         $(".filter-right").click(function() {
             $(".dropdown-filter").toggleClass('active');
         });
+
         $(".dropdown-filter").mouseleave(function() {
             $(this).removeClass('active');
         });

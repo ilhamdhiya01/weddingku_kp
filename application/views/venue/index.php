@@ -1,3 +1,23 @@
+<style>
+    .promo-desktop-v .flex-icon {
+        background-color: #ffffff;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 5px;
+        border-radius: 6px;
+    }
+
+    .promo-desktop-v .flex-icon img {
+        width: 90px;
+        height: 23px;
+    }
+
+    #active-sub {
+        background: linear-gradient(to right, #e46d6b, #daa7a5);
+        color: #FFFFFF !important;
+    }
+</style>
 <div class="daftar-venue">
     <div class="container-venue">
         <div class="text-daftar-venue">
@@ -13,101 +33,171 @@
     </div>
     <section id="jenis-venue" class="jenis-venue">
         <div class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="btn-venue text-center" id="active-sub">
+                    Semua
+                </div>
+            </div>
             <?php
-            $data = ['Semua', 'Paket Lamaran', 'Paket Pernikahan', 'Paket Pernikahan', 'Paket Pernikahan', 'Paket Pernikahan', 'Paket Pernikahan'];
-            foreach ($data as $kategori) :
+            $this->db->select('sub_kategori, tb_kategori_service.nama_kategori');
+            $this->db->join('tb_kategori_service', 'tb_sub_kategori.id_kategori_service = tb_kategori_service.id');
+            // $this->db->order_by('tb_sub_kategori.id','DESC');
+            $this->db->where('id_kategori_service', 16);
+            $data = $this->db->get('tb_sub_kategori')->result_array();
+            foreach ($data as $sub_kategori) :
             ?>
                 <div class="item">
-                    <a href="">
-                        <div class="btn-venue text-center">
-                            <?= $kategori; ?>
-                        </div>
-                    </a>
+                    <div class="btn-venue text-center" data-subkategori="<?= $sub_kategori['sub_kategori']; ?>">
+                        <?= $sub_kategori['sub_kategori']; ?>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
     </section>
-    <div class="card-venue">
-        <div class="row">
-            <?php for ($i = 1; $i <= 10; $i++) : ?>
-                <div class="col-md-3">
-                    <a href="">
-                        <div class="card">
-                            <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
-                            <?php
-                            $disc = 1;
-                            if ($disc == 1) :
-                            ?>
-                                <div class="img-style">
-                                    <span class="span-disc-1">Hemat</span>
-                                    <span class="span-disc-2">8%</span>
-                                </div>
-                            <?php
-                            endif;
-                            ?>
-                            <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                            <div class="info-venue">
-                                <h4>
-                                    <?php
-                                    $namaPaket = "Paket Lengkap Pasadenia Sportc ilham";
-                                    echo strlen($namaPaket) > 28 ? substr($namaPaket, 0, 28) . '...' : substr($namaPaket, 0, 28);
-                                    ?>
-                                </h4>
-                                <span class="vendor">
-                                    <?php
-                                    $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package ilham dhiya ulhaq";
-                                    echo strlen($vendor) > 40 ? substr($vendor, 0, 40) . '...' : substr($vendor, 0, 40);
-                                    ?>
-                                </span>
-                                <div class="venue-harga">
-                                    <small class="before-price">IDR 111,800,000</small><br>
-                                    <span class="after-price">IDR 106,210,000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="">
-                        <div class="card">
-                            <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
-                            <?php
-                            $disc = 1;
-                            if ($disc == 1) :
-                            ?>
-                                <div class="img-style">
-                                    <span class="span-disc-1">Hemat</span>
-                                    <span class="span-disc-2">8%</span>
-                                </div>
-                            <?php
-                            endif;
-                            ?>
-                            <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                            <div class="info-venue">
-                                <h4>
-                                    <?php
-                                    $namaPaket = "Paket Lengkap Pasadenia Sportc";
-                                    echo strlen($namaPaket) > 20 ? substr($namaPaket, 0, 20) . '...' : substr($namaPaket, 0, 20);
-                                    ?>
-                                </h4>
-                                <span class="vendor">
-                                    <?php
-                                    $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
-                                    echo strlen($vendor) > 33 ? substr($vendor, 0, 33) . '...' : substr($vendor, 0, 33);
-                                    ?>
-                                </span>
-                                <div class="venue-harga">
-                                    <small class="before-price">IDR 111,800,000</small><br>
-                                    <span class="after-price">IDR 106,210,000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <?php endfor; ?>
-        </div>
+    <div class="card-promo card-venue">
     </div>
 </section>
 <div class="chat-fixed">
     <a href="" class="chat"><i class="fab fa-whatsapp"></i> chat</a>
 </div>
+<script>
+    $.ajax({
+        url: "<?= base_url(); ?>ui/store/data_venue",
+        type: "get",
+        dataType: "html",
+        beforeSend: function() {
+            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+            $(".load").html(html);
+        },
+        success: function(data) {
+            $(".card-venue").html(data)
+            $(".loading").fadeOut('slow');
+        }
+    });
+
+    const active = document.querySelectorAll(".btn-venue");
+
+    $(active).css("cursor", "pointer");
+
+    $(active[0]).click(function() {
+        $(this).attr("id", "active-sub");
+        active[1].removeAttribute("id");
+        active[2].removeAttribute("id");
+        active[3].removeAttribute("id");
+        active[4].removeAttribute("id");
+
+        $.ajax({
+            url: "<?= base_url(); ?>ui/store/data_venue",
+            type: "get",
+            dataType: "html",
+            beforeSend: function() {
+                const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                $(".load").html(html);
+            },
+            success: function(data) {
+                $(".card-venue").html(data)
+                $(".loading").fadeOut('slow');
+            }
+        });
+    });
+
+    $(active[1]).click(function() {
+        $(this).attr("id", "active-sub");
+        active[0].removeAttribute("id");
+        active[2].removeAttribute("id");
+        active[3].removeAttribute("id");
+        active[4].removeAttribute("id");
+
+        $.ajax({
+            url: "<?= base_url(); ?>ui/store/filter_sub_kategori",
+            type: "get",
+            dataType: "html",
+            data: {
+                sub_kategori: $(this).data("subkategori")
+            },
+            beforeSend: function() {
+                const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                $(".load").html(html);
+            },
+            success: function(data) {
+                $(".card-venue").html(data)
+                $(".loading").fadeOut('slow');
+            }
+        });
+    });
+
+    $(active[2]).click(function() {
+        $(this).attr("id", "active-sub");
+        active[0].removeAttribute("id");
+        active[3].removeAttribute("id");
+        active[1].removeAttribute("id");
+        active[4].removeAttribute("id");
+
+        $.ajax({
+            url: "<?= base_url(); ?>ui/store/filter_sub_kategori",
+            type: "get",
+            dataType: "html",
+            data: {
+                sub_kategori: $(this).data("subkategori")
+            },
+            beforeSend: function() {
+                const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                $(".load").html(html);
+            },
+            success: function(data) {
+                $(".card-venue").html(data)
+                $(".loading").fadeOut('slow');
+            }
+        });
+    });
+
+    $(active[3]).click(function() {
+        $(this).attr("id", "active-sub");
+        active[0].removeAttribute("id");
+        active[1].removeAttribute("id");
+        active[2].removeAttribute("id");
+        active[4].removeAttribute("id");
+
+        $.ajax({
+            url: "<?= base_url(); ?>ui/store/filter_sub_kategori",
+            type: "get",
+            dataType: "html",
+            data: {
+                sub_kategori: $(this).data("subkategori")
+            },
+            beforeSend: function() {
+                const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                $(".load").html(html);
+            },
+            success: function(data) {
+                $(".card-venue").html(data)
+                $(".loading").fadeOut('slow');
+            }
+        });
+    });
+
+    $(active[4]).click(function() {
+        $(this).attr("id", "active-sub");
+        active[0].removeAttribute("id");
+        active[1].removeAttribute("id");
+        active[2].removeAttribute("id");
+        active[3].removeAttribute("id");
+
+        $.ajax({
+            url: "<?= base_url(); ?>ui/store/filter_sub_kategori",
+            type: "get",
+            dataType: "html",
+            data: {
+                sub_kategori: $(this).data("subkategori")
+            },
+            beforeSend: function() {
+                const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                $(".load").html(html);
+            },
+            success: function(data) {
+                $(".card-venue").html(data)
+                $(".loading").fadeOut('slow');
+            }
+        });
+    });
+</script>

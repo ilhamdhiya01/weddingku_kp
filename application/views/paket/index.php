@@ -39,8 +39,10 @@
                 </div>
             </div>
             <?php
-            $this->db->select('sub_kategori');
-            $this->db->order_by('id','DESC');
+            $this->db->select('sub_kategori, tb_kategori_service.nama_kategori');
+            $this->db->join('tb_kategori_service', 'tb_sub_kategori.id_kategori_service = tb_kategori_service.id');
+            $this->db->order_by('tb_sub_kategori.id','DESC');
+            $this->db->where('id_kategori_service', 8);
             $sub_kategori = $this->db->get('tb_sub_kategori')->result_array();
             foreach ($sub_kategori as $subkategori) :
             ?>

@@ -228,4 +228,41 @@ class Store extends CI_Controller
             echo json_encode("Request Failed");
         }
     }
+
+    public function filter_icon_kategori()
+    {
+        if ($this->input->is_ajax_request()) {
+            $kategori = $_GET['kategori'];
+            $this->db->select('tb_produk.gambar_tumbnail, tb_produk.harga, tb_produk.id as id_produk, tb_produk.id_diskon, tb_produk.id_vendor, tb_produk.nama_produk, tb_kategori_service.nama_kategori, tb_data_lengkap_vendor.nama_bisnis, tb_data_lengkap_vendor.kota, flexible_vendor');
+            $this->db->join('tb_data_lengkap_vendor', 'tb_produk.id_data_lengkap_vendor = tb_data_lengkap_vendor.id');
+            $this->db->join('tb_kategori_service', 'tb_produk.id_kategori_service = tb_kategori_service.id');
+            $this->db->like('nama_kategori', $kategori, 'both');
+
+            $data = [
+                'store_produk' => $this->db->get('tb_produk')->result_array()
+            ];
+            echo json_encode($this->load->view('semuaproduk/load-all-store-produk', $data));
+        } else {
+            echo json_encode("Request failed");
+        }
+    }
+
+    public function keranjang()
+    {
+        if ($this->input->is_ajax_request()) {
+            $data = [
+                'id_member' => $_POST['id_member'],
+                'id_vendor' => $_POST['id_vendor'],
+                'id_produk' => $_POST['id_produk']
+            ];
+            $this->db->insert('keranjang', $data);
+            $msg = [
+                'status' => 201,
+                'message' => 'Produk berhasil ditambahkan'
+            ];
+            echo json_encode($msg);
+        } else {
+            echo json_encode("Request failed");
+        }
+    }
 }

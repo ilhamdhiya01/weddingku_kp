@@ -20,7 +20,17 @@
             justify-content: space-between;
         }
 
-        .filter-wrapper .filter {
+        .filter-wrapper .filter:first-child {
+            width: 100%;
+        }
+
+        .filter-wrapper .filter .filter-right h2 {
+            position: relative;
+            top: 20px;
+            font-weight: bold;
+        }
+
+        .filter-wrapper .filter:not(:first-child) {
             width: 14%;
             height: 100px;
         }
@@ -164,46 +174,44 @@
                     </a>
                 </div>
                 <?php
-                $subkategori = [
-                    'Aksesoris Pernikahan',
-                    'Souvenir & Seserahan',
-                    'Gaun & Pakaian Wanita',
-                    'Bridal',
-                    'Jas & Pakaian Pria',
-                    'Wedding Palnning',
-                    'Rias Rambut & Makeup',
-                    'Fotografi',
-                    'Dekorasi & Pencahayaan',
-                    'Hiburan / Entertainment',
-                    'Videografi',
-                    'Makanan & Minuman',
-                    'Undangan',
-                    'Venue',
-                    'Aksesoris Pria',
-                    'Perhiasan',
-                    'Bulan Madu',
-                    'Perawatan & Kecantikan',
-                    'Jasa Pernikahan',
-                    'Paket Lengkap'
-                ];
-
-                for ($j = 0; $j < count($subkategori); $j++) :
+                $icon_kategori = $this->db->get('tb_kategori_service')->result_array();
+                foreach ($icon_kategori as $icon) :
                 ?>
                     <div class="item">
-                        <a href="">
-                            <div class="card">
-                                <img src="<?= base_url(); ?>assets/vendors/img/news/subkategori<?= $j; ?>.png" alt="">
-                                <span class="text-dark"><?= $subkategori[$j]; ?></span>
-                            </div>
-                        </a>
+                        <div class="card icon-kategori" data-icon="<?= $icon['nama_kategori']; ?>">
+                            <img src="<?= base_url(); ?>assets/vendors/img/news/<?= $icon['gambar_kategori']; ?>" alt="">
+                            <span class="text-dark"><?= $icon['nama_kategori']; ?></span>
+                        </div>
                     </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
+    <script>
+        $(".icon-kategori").click(function() {
+            $.ajax({
+                url: "<?= base_url(); ?>ui/store/filter_icon_kategori",
+                type: "get",
+                data: {
+                    kategori: $(this).data("icon")
+                },
+                beforeSend: function() {
+                    const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                    $(".load").html(html);
+                },
+                success: function(data) {
+                    $(".store-all").html(data);
+                    $(".loading").fadeOut('slow');
+                }
+            });
+        });
+    </script>
     <div class="produk">
         <div class="filter-wrapper">
             <div class="filter">
+                <div class="filter-right">
+                    <h2>Produk Lainnya yang Mungkin Anda Suka</h2>
+                </div>
             </div>
             <div class="filter">
                 <div class="filter-right">
@@ -270,6 +278,9 @@
         $.ajax({
             url: "<?= base_url(); ?>ui/store/filter_produk_terbaru",
             type: "get",
+            data: {
+                kategori: $(".icon-kategori").data("icon")
+            },
             beforeSend: function() {
                 const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
                 $(".load").html(html);
@@ -287,11 +298,14 @@
         $(".tertinggi-terendah").addClass("fa-check");
         $(".terbaru").removeClass("fa-check");
         $(".terendah-tertinggi").removeClass("fa-check");
-        $(".label-filter").html("<?php echo strlen("Harga (Tertinggi - Terendah)") > 14 ? substr("Harga (Tertinggi - Terendah)", 0, 14) . '...' : substr("Harga (Tertinggi - Terendah)", 0, 14); ?>");
+        $(".label-filter").html("<?php echo strlen("Harga (Tertinggi - Terendah)") > 12 ? substr("Harga (Tertinggi - Terendah)", 0, 12) . '...' : substr("Harga (Tertinggi - Terendah)", 0, 12); ?>");
 
         $.ajax({
             url: "<?= base_url(); ?>ui/store/filter_produk_tertinggi",
             type: "get",
+            data: {
+                kategori: $(".icon-kategori").data("icon")
+            },
             beforeSend: function() {
                 const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
                 $(".load").html(html);
@@ -309,11 +323,14 @@
         $(".terbaru").removeClass("fa-check");
         $(".tertinggi-terendah").removeClass("fa-check");
         $(".terendah-tertinggi").addClass("fa-check");
-        $(".label-filter").html("<?php echo strlen("Harga (Terendah - Tertinggi)") > 14 ? substr("Harga (Terendah - Tertinggi)", 0, 14) . '...' : substr("Harga (Terendah - Tertinggi)", 0, 14); ?>");
+        $(".label-filter").html("<?php echo strlen("Harga (Terendah - Tertinggi)") > 12 ? substr("Harga (Terendah - Tertinggi)", 0, 12) . '...' : substr("Harga (Terendah - Tertinggi)", 0, 12); ?>");
 
         $.ajax({
             url: "<?= base_url(); ?>ui/store/filter_produk_terendah",
             type: "get",
+            data: {
+                kategori: $(".icon-kategori").data("icon")
+            },
             beforeSend: function() {
                 const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
                 $(".load").html(html);

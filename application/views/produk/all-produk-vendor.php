@@ -190,14 +190,14 @@
         const url_result = url.split('/');
         const id_vendor = "<?= $id_vendor; ?>";
 
-        // var stateObj = {
-        //     foo: "page"
-        // };
+        var stateObj = {
+            foo: "page"
+        };
 
-        // $("#harga").click(function(e) {
-        //     history.pushState(stateObj, "profile page", "<?= base_url(); ?>ui/events");
-        //     e.preventDefault();
-        // });
+        $("#terbaru").click(function(e) {
+            history.pushState(stateObj, "profile page", "<?= base_url(); ?>ui/events");
+            e.preventDefault();
+        });
 
         switch (url_result[6]) {
             case "semua_produk_promo":

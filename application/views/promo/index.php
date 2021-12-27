@@ -37,90 +37,71 @@
                     <div class="col-2">
                         <div class="form-group kategori-option">
                             <select class="form-control" id="kategori">
-                                <option>Semua Kategori</option>
-                                <?php for ($i = 1; $i <= 10; $i++) : ?>
-                                    <option>Decoratin</option>
-                                <?php endfor; ?>
+                                <option value="Semua Kategori">Semua Kategori</option>
+                                <?php
+                                $icon_kategori = $this->db->get('tb_kategori_service')->result_array();
+                                foreach ($icon_kategori as $icon) :
+                                ?>
+                                    <option value="<?= $icon['nama_kategori']; ?>"><?= $icon['nama_kategori']; ?></option>
+                                <?php endforeach; ?>
                             </select>
-                        </div>
-                    </div>
-                    <div class="col-9">
-                        <div class="btn-find-kategori">
-                            <a href="">Cari Vendor</a>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
         <div class="card-promo">
-            <div class="row">
-                <?php for ($i = 1; $i <= 9; $i++) : ?>
-                    <div class="col-md-3 promo-desktop-v">
-                        <a href="">
-                            <div class="card">
-                                <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
-                                <div class="img-style">
-                                    <span class="span-disc-1">Hemat</span>
-                                    <span class="span-disc-2">8%</span>
-                                </div>
-                                <div class="flex-icon">
-                                    <img src="<?= base_url(); ?>assets/vendors/img/news/flex-icon.webp" alt="">
-                                </div>
-                                <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                                <div class="info-promo">
-                                    <h4>
-                                        <?php
-                                        $namaPromo = "Paket Lengkap Pasadenia location";
-                                        echo strlen($namaPromo) > 30 ? substr($namaPromo, 0, 30) . '...' : substr($namaPromo, 0, 30);
-                                        ?>
-                                    </h4>
-                                    <span class="vendor">
-                                        <?php
-                                        $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package milah";
-                                        echo strlen($vendor) > 45 ? substr($vendor, 0, 45) . '...' : substr($vendor, 0, 45);
-                                        ?>
-                                    </span>
-                                    <div class="promo-harga">
-                                        <small class="before-price">IDR 111,800,000</small><br>
-                                        <span class="after-price">IDR 106,210,000</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 promo-mobile-v">
-                        <a href="">
-                            <div class="card">
-                                <img src="<?= base_url(); ?>assets/vendors/img/news/paket<?= $i; ?>.webp" alt="">
-                                <div class="img-style">
-                                    <span class="span-disc-1">Hemat</span>
-                                    <span class="span-disc-2">8%</span>
-                                </div>
-                                <span class="kota"><i class="fas fa-map-marker-alt"></i> Jakarta. ID</span>
-                                <div class="info-promo">
-                                    <h4>
-                                        <?php
-                                        $namaPromo = "Paket Lengkap Pasadenia Sportclub";
-                                        echo strlen($namaPromo) > 20 ? substr($namaPromo, 0, 20) . '...' : substr($namaPromo, 0, 20);
-                                        ?>
-                                    </h4>
-                                    <span class="vendor">
-                                        <?php
-                                        $vendor = "by <b>Sanggar Wulandari</b> — Wedding Package";
-                                        echo strlen($vendor) > 33 ? substr($vendor, 0, 33) . '...' :  substr($vendor, 0, 33);
-                                        ?>
-                                    </span>
-                                    <div class="promo-harga">
-                                        <small class="before-price">IDR 111,800,000</small><br>
-                                        <span class="after-price">IDR 106,210,000</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                <?php endfor; ?>
-            </div>
         </div>
+        <script>
+            $.ajax({
+                url: "<?= base_url(); ?>ui/promo/load_all_promo",
+                type: "get",
+                dataType: "html",
+                beforeSend: function() {
+                    const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                    $(".load").html(html);
+                },
+                success: function(data) {
+                    $(".card-promo").html(data);
+                    $(".loading").fadeOut('slow');
+                }
+            });
+
+            $("#kategori").change(function() {
+                if ($(this).val() == "Semua Kategori") {
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/promo/load_all_promo",
+                        type: "get",
+                        dataType: "html",
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
+                        success: function(data) {
+                            $(".card-promo").html(data);
+                            $(".loading").fadeOut('slow');
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        url: "<?= base_url(); ?>ui/promo/filter_kategori_promo",
+                        type: "get",
+                        dataType: "html",
+                        data: {
+                            kategori: $(this).val()
+                        },
+                        beforeSend: function() {
+                            const html = '<div class="loading overlay"><img src="<?= base_url(); ?>assets/vendors/img/loader.gif" alt=""></div>';
+                            $(".load").html(html);
+                        },
+                        success: function(data) {
+                            $(".card-promo").html(data);
+                            $(".loading").fadeOut('slow');
+                        }
+                    });
+                }
+            });
+        </script>
     </div>
 </section>
 <div class="chat-fixed">

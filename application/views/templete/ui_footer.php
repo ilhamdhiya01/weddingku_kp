@@ -103,39 +103,24 @@
                         <div class="col-9">
                             <div class="row">
                                 <?php
-                                $subkategori = [
-                                    'Aksesoris Pernikahan',
-                                    'Souvenir & Seserahan',
-                                    'Gaun & Pakaian Wanita',
-                                    'Bridal',
-                                    'Jas & Pakaian Pria',
-                                    'Wedding Palnning',
-                                    'Rias Rambut & Makeup',
-                                    'Fotografi',
-                                    'Dekorasi & Pencahayaan',
-                                    'Hiburan / Entertainment',
-                                    'Videografi',
-                                    'Makanan & Minuman',
-                                    'Undangan',
-                                    'Venue',
-                                    'Aksesoris Pria',
-                                    'Perhiasan',
-                                    'Bulan Madu',
-                                    'Perawatan & Kecantikan',
-                                    'Jasa Pernikahan',
-                                    'Paket Lengkap'
-                                ];
-                                for ($i = 0; $i < count($subkategori); $i++) :
+                                $icon_kategori = $this->db->get('tb_kategori_service')->result_array();
+                                foreach ($icon_kategori as $icon) :
                                 ?>
                                     <div class="col-md-2">
-                                        <a href="">
-                                            <div class="card">
-                                                <img src="<?= base_url(); ?>assets/vendors/img/news/subkategori<?= $i; ?>.png" alt="">
-                                                <span class="text-dark"><?= $subkategori[$i]; ?></span>
-                                            </div>
-                                        </a>
+                                        <div class="card" data-icon="<?= $icon['nama_kategori']; ?>">
+                                            <img src="<?= base_url(); ?>assets/vendors/img/news/<?= $icon['gambar_kategori']; ?>" alt="">
+                                            <span class="text-dark"><?= $icon['nama_kategori']; ?></span>
+                                        </div>
                                     </div>
-                                <?php endfor; ?>
+                                <?php endforeach; ?>
+                                <div class="col-md-2">
+                                    <a href="">
+                                        <div class="card">
+                                            <img src="<?= base_url(); ?>assets/vendors/img/news/paket-lengkap.png" alt="">
+                                            <span class="text-dark">Paket Lengkap</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -187,13 +172,13 @@
 <!-- modal store -->
 <script>
     // store venue
-    $('#store-venue').click(function(e){
-        $('#paket').attr('id','venue');
+    $('#store-venue').click(function(e) {
+        $('#paket').attr('id', 'venue');
         e.preventDefault();
     })
     // store all kategori
-    $('#all').click(function(e){
-        $('#paket').attr('id','all-kategori');
+    $('#all').click(function(e) {
+        $('#paket').attr('id', 'all-kategori');
         e.preventDefault();
     });
 </script>

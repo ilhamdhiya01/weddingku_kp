@@ -337,6 +337,8 @@
                                     $(".btn-auth").html(data);
                                 }
                             });
+
+                            keranjang();
                         } else {
                             iziToast.error({
                                 title: 'Error',

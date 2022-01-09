@@ -533,6 +533,7 @@
                         type: "get",
                         success: function(data) {
                             $(".action").html(data);
+                            
                         }
                     });
                 </script>

@@ -258,7 +258,8 @@ class Store extends CI_Controller
             $this->db->insert('keranjang', $data);
             $msg = [
                 'status' => 201,
-                'message' => 'Produk berhasil ditambahkan'
+                'message' => 'Produk berhasil ditambahkan',
+                'keranjang' => $this->db->get_where('keranjang',['id_member' => $_POST['id_member']])->result_array()
             ];
             echo json_encode($msg);
         } else {

@@ -7,16 +7,17 @@
     </div>
     <div class="menu-profile">
         <img src="<?= base_url(); ?>assets/vendors/img/news/profile-pic.png" class="img-profile">
-        <h3><?= $member['nama_member']; ?> <br><span>Weddingku Member</span></h3>
+        <h3 style="font-size:12px;"><?= $member['nama_member']; ?> <br><span style="font-size:10px;">Weddingku Member</span></h3>
         <hr>
         <ul>
-            <li><img src="<?= base_url(); ?>assets/vendors/img/icons/choices.png"><a href="#">Vendor Pilihan</a></li>
+            <li><img src="<?= base_url(); ?>assets/vendors/img/icons/choices.png"><a href="#">Produk Pilihan</a><span style="position:relative; left:65px;" class="badge badge-danger keranjang-produk"><?= count($keranjang) ?></span></li>
             <li><img src="<?= base_url(); ?>assets/vendors/img/icons/settings.png"><a href="#">Pengaturan User</a></li>
             <li><img src="<?= base_url(); ?>assets/vendors/img/icons/resume.png"><a href="#">Edit Profile</a></li>
             <li id="logout-member"><img src="<?= base_url(); ?>assets/vendors/img/icons/power-button.png"><a href="#">Keluar</a></li>
         </ul>
     </div>
 <?php endif; ?>
+
 
 <script>
     $("#logout-member").click(function(e) {
@@ -41,6 +42,8 @@
                             $(".btn-auth").html(data);
                         }
                     });
+
+                    keranjang();
                 }
             }
         });

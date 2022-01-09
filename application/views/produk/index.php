@@ -230,65 +230,38 @@
                                 <div class="col-6">
                                     <a href="" class="btn btn-block btn-primary chat"><i class="far fa-comment-dots"></i> Chat</a>
                                 </div>
-                                <div class="col-6">
-                                    <?php if (!$this->session->userdata('email_member')) : ?>
-                                        <a href="#" class="btn btn-block btn-primary pesan" id="belum-login">Pesan Sekarang</a>
-                                    <?php else : ?>
-                                        <a href="#" class="btn btn-block btn-primary pesan" data-idmember="<?= $member["id"]; ?>" data-idproduk="<?= $detail_produk['id_produk'] ?>" data-idvendor="<?= $detail_produk['id_vendor'] ?>" id="sudah-login">Pesan Sekarang</a>
-                                    <?php endif; ?>
+                                <div class="col-6 tambah-keranjang">
+
                                 </div>
                             </div>
                             <span>Chat untuk informasi lebih lanjut & kustomisasi produk</span>
                             <script>
-                                $("#belum-login").click(function() {
-                                    $("#modal-auth").modal('show');
-                                    $("#modal-dialog").addClass("modal-xl");
-                                    $(".modal-footer").attr("style", "display:none;")
-                                    $("#modal-dialog").attr("style", "width:75%;")
-
-                                    $.ajax({
-                                        url: "<?= base_url(); ?>ui/auth/load_login_member",
-                                        type: "get",
-                                        success: function(data) {
-                                            $(".auth-vendor").html(data);
-                                        }
-                                    })
+                                $.ajax({
+                                    url: "<?= base_url(); ?>ui/auth/pesan_sekarang",
+                                    type: "get",
+                                    data: {
+                                        id_produk: "<?= $detail_produk['id_produk']; ?>",
+                                        id_vendor: "<?= $detail_produk['id_vendor']; ?>"
+                                    },
+                                    success: function(data) {
+                                        $(".tambah-keranjang").html(data);
+                                    }
                                 });
 
-                                $("#sudah-login").click(function() {
+                                function keranjang() {
                                     $.ajax({
-                                        url: "<?= base_url(); ?>ui/store/keranjang",
-                                        type: "post",
+                                        url: "<?= base_url(); ?>ui/auth/pesan_sekarang",
+                                        type: "get",
                                         data: {
-                                            id_member: $(this).data("idmember"),
-                                            id_vendor: $(this).data("idvendor"),
-                                            id_produk: $(this).data("idproduk")
+                                            id_produk: "<?= $detail_produk['id_produk']; ?>",
+                                            id_vendor: "<?= $detail_produk['id_vendor']; ?>"
                                         },
-                                        dataType: "json",
                                         success: function(data) {
-                                            if (data.status == 201) {
-                                                iziToast.success({
-                                                    title: 'Success',
-                                                    timeout: 3000,
-                                                    message: data.message,
-                                                    position: 'topCenter',
-                                                    transitionIn: 'flipInX',
-                                                    transitionOut: 'flipOutX'
-                                                });
-                                            } else {
-                                                iziToast.error({
-                                                    title: 'Error',
-                                                    timeout: 3000,
-                                                    message: 'Gagal menambahkan produk',
-                                                    position: 'topCenter',
-                                                    transitionIn: 'flipInX',
-                                                    transitionOut: 'flipOutX'
-                                                });
-                                            }
-
+                                            $(".tambah-keranjang").html(data);
+                                            console.log(data);
                                         }
                                     });
-                                });
+                                }
                             </script>
                         </div>
                     </form>

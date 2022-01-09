@@ -63,7 +63,38 @@ class Auth extends CI_Controller
     public function load_login_member()
     {
         if ($this->input->is_ajax_request()) {
-            echo json_encode($this->load->view('auth_member/login_member'));
+            if (!$this->session->userdata('email_member')) {
+                echo json_encode($this->load->view('auth_member/login_member'));
+            } else {
+                echo json_encode("login");
+            }
+
+            // $data = [
+            //     'id_member' => $_POST['id_member'],
+            //     'id_vendor' => $_POST['id_vendor'],
+            //     'id_produk' => $_POST['id_produk']
+            // ];
+            // $this->db->insert('keranjang', $data);
+            // $msg = [
+            //     'status' => 201,
+            //     'message' => 'Produk berhasil ditambahkan',
+            //     'keranjang' => $this->db->get_where('keranjang', ['id_member' => $_POST['id_member']])->result_array()
+            // ];
+            // echo json_encode($msg);
+        } else {
+            echo json_encode("Request failed");
+        }
+    }
+
+    public function pesan_sekarang()
+    {
+        if ($this->input->is_ajax_request()) {
+            $data = [
+                'id_member' => $this->db->get_where('tb_member',['email' => $this->session->userdata('email_member')])->row_array(),
+                'id_vendor' => $_GET['id_vendor'],
+                'id_produk' => $_GET['id_produk']
+            ];
+            echo json_encode($this->load->view('produk/pesan_sekarang', $data));
         } else {
             echo json_encode("Request failed");
         }
@@ -102,7 +133,8 @@ class Auth extends CI_Controller
                     ];
                     $userdata = [
                         'nama_member' => $member['users']['nama_member'],
-                        'email_member' => $member['users']['email']
+                        'email_member' => $member['users']['email'],
+                        'id_member' => $member['users']['id']
                     ];
                     $this->session->set_userdata($userdata);
                     echo json_encode($msg);
@@ -204,7 +236,8 @@ class Auth extends CI_Controller
     {
         if ($this->input->is_ajax_request()) {
             $data = [
-                'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array()
+                'member' => $this->db->get_where('tb_member', ['email' => $this->session->userdata('email_member')])->row_array(),
+                'keranjang' => $this->db->get_where('keranjang', ['id_member' => $this->session->userdata('id_member')])->result_array()
             ];
             echo json_encode($this->load->view('auth_member/setelah-login', $data));
         } else {

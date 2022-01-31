@@ -1,7 +1,7 @@
 <div class="owl-carousel owl-theme">
     <?php foreach ($produk_promo as $promo) : ?>
         <div class="item">
-            <div class="card">
+            <div class="card card-produk-promo" data-idproduk="<?= $promo['id_produk']; ?>">
                 <div class="img">
                     <img src="<?= base_url(); ?>assets/vendors/img/gambar_produk/bridal/<?= $promo['gambar_tumbnail']; ?>" alt="">
                 </div>
@@ -71,5 +71,11 @@
                 items: 4,
             }
         }
+    });
+
+    $(".card-produk-promo").css("cursor", "pointer");
+    $(".card-produk-promo").click(function() {
+        const id_produk = $(this).data("idproduk");
+        window.location.href = "<?= base_url(); ?>ui/produk/detail_produk/" + id_produk;
     });
 </script>

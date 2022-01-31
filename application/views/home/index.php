@@ -39,7 +39,7 @@
                     <h3>Produk Diskon</h3>
                 </div>
                 <div class="col-2">
-                    <a href="" class="float-right lihat-semua">Lihat Semua</a>
+                    <a href="<?= base_url(); ?>ui/promo" class="float-right lihat-semua">Lihat Semua</a>
                 </div>
             </div>
         </div>

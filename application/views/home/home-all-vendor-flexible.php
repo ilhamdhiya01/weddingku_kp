@@ -1,7 +1,7 @@
 <div class="owl-carousel owl-theme">
     <?php foreach ($vendor_flexible as $flexible) : ?>
         <div class="item">
-            <div class="card bg-transparent">
+            <div class="card bg-transparent card-produk-promo">
                 <img src="<?= base_url(); ?>assets/vendors/img/produk/<?= $flexible['tumbnail_vendor']; ?>" style="object-fit:cover;" class="img-vendor" alt="">
                 <div class="img-style">
                     <span><i class="fas fa-check-circle"></i> Weddingku</span>
@@ -56,4 +56,6 @@
             }
         }
     });
+
+    $(".card-produk-promo").css("cursor", "pointer");
 </script>
